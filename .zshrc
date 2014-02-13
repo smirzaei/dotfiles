@@ -67,3 +67,6 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+# path variables
+export COMMON_SCRIPTS=~/common-scripts
+export PATH=:$COMMON_SCRIPTS:$COMMON_SCRIPTS/ssh:$PATH
