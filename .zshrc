@@ -70,3 +70,6 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # path variables
 export COMMON_SCRIPTS=~/common-scripts
 export PATH=:$COMMON_SCRIPTS:$COMMON_SCRIPTS/ssh:$PATH
+
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
