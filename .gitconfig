@@ -1,0 +1,8 @@
+[user]
+	name = Soroush Mirzaei
+	email = soroush.mirzaei@gmail.com
+[core]
+	autocrlf = input
+	editor = /usr/bin/vim
+[alias]
+	tree = log --graph --decorate --pretty=oneline --abbrev-commit
