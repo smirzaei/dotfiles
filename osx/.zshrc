@@ -88,4 +88,5 @@ export PATH=$M2:$PATH
 
 # Go
 export GOPATH=~/projects/go
+export GOROOT=/usr/local/Cellar/go/1.4.2
 export PATH=$PATH:$GOPATH/bin
