@@ -73,3 +73,7 @@ export PATH=:$COMMON_SCRIPTS:$COMMON_SCRIPTS/ssh:$PATH
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+# Go
+export GOPATH=~/projects/go
+export PATH=$PATH:$GOPATH/bin
