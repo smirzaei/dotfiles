@@ -77,3 +77,7 @@ export PATH=:$COMMON_SCRIPTS:$COMMON_SCRIPTS/ssh:$PATH
 # Go
 export GOPATH=~/projects/go
 export PATH=$PATH:$GOPATH/bin
+
+# .NET
+source dnvm.sh
+
