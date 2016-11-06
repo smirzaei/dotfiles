@@ -1,6 +1,6 @@
 # help: http://www.nparikh.org/unix/prompt.php
 
-local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
+local ret_status="%(?:%{$fg_bold[green]%}λ :%{$fg_bold[red]%}λ %s)"
 PROMPT='%n@%m: %{$fg_bold[yellow]%}%~ %{$fg_bold[blue]%}$(git_prompt_info)
 ${ret_status}$reset_color'
 
