@@ -1,8 +1,11 @@
 [user]
 	name = Soroush Mirzaei
 	email = soroush.mirzaei@gmail.com
+	signingkey = 995937D2C64C42D3
 [core]
 	autocrlf = input
 	editor = /usr/bin/vim
 [alias]
 	tree = log --graph --decorate --pretty=oneline --abbrev-commit
+[commit]
+	gpgsign = true
