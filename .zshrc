@@ -45,13 +45,12 @@ ZSH_THEME="soroush"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ruby rails rvm sublime)
+plugins=(git colored-man-pages golang zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
@@ -67,17 +66,13 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# path variables
-export COMMON_SCRIPTS=~/common-scripts
-export PATH=:$COMMON_SCRIPTS:$COMMON_SCRIPTS/ssh:$PATH
-
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # Go
-export GOPATH=~/projects/go
+export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
 
-# .NET
-source dnvm.sh
+export GPG-TTY=$(tty)
 
+ssh-add ~/.ssh/id_ed25519
+
+eval "$(starship init zsh)"
