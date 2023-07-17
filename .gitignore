@@ -1,0 +1,9 @@
+*
+
+!.gitignore
+!.gitconfig
+!.wezterm.lua
+!.config
+!.config/starship.toml
+!.config/nvim/
+!.config/nvim/**
