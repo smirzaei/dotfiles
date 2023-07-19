@@ -40,6 +40,10 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
 
+-- disable F1 help (stupid accidental touchbar)
+keymap("n", "<F1>", "<nop>", opts)
+keymap("i", "<F1>", "<nop>", opts)
+
 -- Insert --
 
 -- Visual --

@@ -2,19 +2,19 @@ local plugins = {
   "nvim-lua/plenary.nvim",
   "navarasu/onedark.nvim",
   {
-    'nvim-tree/nvim-tree.lua',
+    "nvim-tree/nvim-tree.lua",
     dependencies = {
-      'nvim-tree/nvim-web-devicons',
+      "nvim-tree/nvim-web-devicons",
     },
   },
   {
     "nvim-lualine/lualine.nvim",
     dependencies = {
-      'nvim-tree/nvim-web-devicons',
+      "nvim-tree/nvim-web-devicons",
     }
   },
   {
-    'nvim-telescope/telescope.nvim', tag = '0.1.2',
+    "nvim-telescope/telescope.nvim", tag = "0.1.2",
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
@@ -24,23 +24,24 @@ local plugins = {
     build = ":TSUpdate",
   },
   {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
+    "VonHeikemen/lsp-zero.nvim",
+    branch = "v2.x",
     dependencies = {
       -- LSP Support
-      {'neovim/nvim-lspconfig'},             -- Required
+      {"neovim/nvim-lspconfig"},             -- Required
       {                                      -- Optional
-        'williamboman/mason.nvim',
+        "williamboman/mason.nvim",
         build = function()
-          pcall(vim.cmd, 'MasonUpdate')
+          pcall(vim.cmd, "MasonUpdate")
         end,
       },
-      {'williamboman/mason-lspconfig.nvim'}, -- Optional
+      {"williamboman/mason-lspconfig.nvim"}, -- Optional
 
       -- Autocompletion
-      {'hrsh7th/nvim-cmp'},     -- Required
-      {'hrsh7th/cmp-nvim-lsp'}, -- Required
-      {'L3MON4D3/LuaSnip'},     -- Required
+      {"hrsh7th/nvim-cmp"},     -- Required
+      {"hrsh7th/cmp-nvim-lsp"}, -- Required
+      {"L3MON4D3/LuaSnip"},     -- Required
+      {"hrsh7th/cmp-nvim-lsp-signature-help"},
     }
   },
   {
@@ -48,6 +49,24 @@ local plugins = {
     dependencies = {
       "nvim-lua/plenary.nvim"
     },
+  },
+  {
+    "lewis6991/gitsigns.nvim",
+  },
+  {
+    "numToStr/Comment.nvim",
+  },
+  {
+    "windwp/nvim-autopairs",
+  },
+  {
+    "norcalli/nvim-colorizer.lua",
+  },
+  {
+    "sindrets/diffview.nvim",
+  },
+  {
+    "lukas-reineke/indent-blankline.nvim",
   },
 }
 

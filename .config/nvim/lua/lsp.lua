@@ -30,8 +30,9 @@ lsp.on_attach(function (client, bufnr)
   local opts = {buffer = bufnr, remap = false}
 
   vim.keymap.set("n", "gd", function () vim.lsp.buf.definition() end, opts)
-  vim.keymap.set("n", "<C-h>", function () vim.lsp.buf.hover() end, opts)
-  vim.keymap.set("i", "<C-h>", function () vim.lsp.buf.hover() end, opts)
+  vim.keymap.set("n", "<C-Space>", function () vim.lsp.buf.hover() end, opts)
+  vim.keymap.set("i", "<C-Space>", function () vim.lsp.buf.hover() end, opts)
+  vim.keymap.set("i", "<C-Space>", function () vim.lsp.buf.signature_help() end, opts)
 end)
 
 lsp.setup()
@@ -41,17 +42,33 @@ local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 
 cmp.setup({
+  sources = cmp.config.sources({
+    { name = "nvim_lsp" },
+    { name = "nvim_lsp_signature_help" },
+  }),
   mapping = {
     -- `Enter` key to confirm completion
     ['<CR>'] = cmp.mapping.confirm({select = false}),
 
     ["<Tab>"] = cmp.mapping.select_next_item({behavior = cmp.SelectBehavior.Select}),
     -- Ctrl+Space to trigger completion menu
-    ['<C-Space>'] = cmp.mapping.complete(),
-
+    ['<C-n'] = cmp.mapping(function()
+      if cmp.visible() then
+        cmp.select_next_item({behavior = cmp.SelectBehavior.Select})
+      else
+        cmp.complete()
+      end
+    end),
     -- Navigate between snippet placeholder
-    ['<C-f>'] = cmp_action.luasnip_jump_forward(),
-    ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
   }
 })
+
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
+  vim.lsp.handlers['signature_help'], {
+    border = 'single',
+    close_events = {"CursorMoved", "BufHidden", "InsertCharPre"},
+  }
+)
 
