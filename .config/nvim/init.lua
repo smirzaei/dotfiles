@@ -12,5 +12,6 @@ require("comment_setup")
 require("autopair")
 require("color_preview")
 require("line_indent")
+require("lint")
 require("startup")
 

@@ -71,6 +71,13 @@ local plugins = {
   {
     "lukas-reineke/indent-blankline.nvim",
   },
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+
+  },
  }
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
