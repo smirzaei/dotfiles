@@ -24,6 +24,9 @@ local plugins = {
     build = ":TSUpdate",
   },
   {
+    "nvim-treesitter/nvim-treesitter-context",
+  },
+  {
     "VonHeikemen/lsp-zero.nvim",
     branch = "v2.x",
     dependencies = {
@@ -68,7 +71,7 @@ local plugins = {
   {
     "lukas-reineke/indent-blankline.nvim",
   },
-}
+ }
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
