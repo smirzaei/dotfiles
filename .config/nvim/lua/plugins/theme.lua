@@ -1,11 +1,28 @@
 return {
-  'catppuccin/nvim', name = 'catppuccin', priority = 1000,
-  opts = {
+  {
+    'catppuccin/nvim', name = 'catppuccin', priority = 1000,
+    opts = {
       flavour = 'mocha',
       show_end_of_buffer = true,
-  },
-  config = function()
+    },
+    config = function()
       vim.cmd.colorscheme('catppuccin')
-  end
+    end
+  },
+  {
+    'folke/tokyonight.nvim'
+  },
+  {
+    'EdenEast/nightfox.nvim',
+  },
+  {
+    'sainnhe/everforest',
+  },
+  {
+    'AlexvZyl/nordic.nvim',
+  },
+  {
+    'sainnhe/gruvbox-material',
+  },
 }
 
