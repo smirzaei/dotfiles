@@ -9,9 +9,9 @@ local config_cmp = function ()
     Constructor = "",
     Field = "󰇽",
     Variable = "󰂡",
-    Class = "󰠱",
-    Interface = "",
-    Module = "",
+    Class = "",
+    Interface = "",
+    Module = "",
     Property = "󰜢",
     Unit = "",
     Value = "󰎠",
@@ -24,12 +24,11 @@ local config_cmp = function ()
     Folder = "󰉋",
     EnumMember = "",
     Constant = "󰏿",
-    Struct = "",
+    Struct = "",
     Event = "",
     Operator = "󰆕",
     TypeParameter = "󰅲",
   }
-
 
   local cmp = require('cmp')
   local luasnip = require('luasnip')
@@ -98,10 +97,21 @@ local config_cmp = function ()
     },
     sources = {
       { name = 'nvim_lsp' },
+      { name = 'nvim_lsp_signature_help' },
       { name = 'luasnip' },
+      { name = 'calc' },
     },
   }
+
+  vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
+    vim.lsp.handlers['signature_help'], {
+      border = 'single',
+      close_events = {"CursorMoved", "BufHidden", "InsertCharPre"},
+    }
+  )
 end
+
+
 
 return {
   {
@@ -109,6 +119,8 @@ return {
     dependencies = {
       'L3MON4D3/LuaSnip',
       'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-nvim-lsp-signature-help',
+      'hrsh7th/cmp-calc',
     },
     config = config_cmp,
   },
