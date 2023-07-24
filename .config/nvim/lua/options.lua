@@ -1,7 +1,3 @@
--- Set the leader key before anything else
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
 -- Disable auto: comment on new line
 vim.opt_local.formatoptions:remove({ 'r', 'o' })
 
