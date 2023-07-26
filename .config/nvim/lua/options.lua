@@ -1,11 +1,16 @@
--- Disable auto: comment on new line
-vim.opt_local.formatoptions:remove({ 'r', 'o' })
+vim.api.nvim_create_autocmd('BufEnter', {
+  callback = function ()
+    -- Disable auto: comment on new line
+    vim.opt_local.formatoptions:remove({ 'r', 'o' })
+
+    -- Disable mouse mode
+    vim.o.mouse = ''
+  end
+})
 
 -- Make line numbers default
 vim.wo.number = true
 
--- Enable mouse mode
-vim.o.mouse = 'a'
 
 -- Enable break indent
 vim.o.breakindent = true
