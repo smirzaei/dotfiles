@@ -6,6 +6,7 @@ local init_null_ls = function()
     null_ls.builtins.formatting.stylua,
     null_ls.builtins.formatting.gofumpt,
     null_ls.builtins.formatting.goimports,
+    null_ls.builtins.formatting.shfmt,
   }
 
   null_ls.setup({

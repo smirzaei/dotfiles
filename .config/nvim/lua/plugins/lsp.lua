@@ -62,6 +62,9 @@ local config_lsp = function()
         telemetry = { enable = false },
       },
     },
+    bashls = {
+      filetypes = { "sh", "bash" }
+    }
   }
 
   -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
