@@ -89,7 +89,7 @@ if [ "$has_pacman" = true ]; then
 fi
 
 if [ "$has_brew" = true ]; then
-  sudo brew install "${pkgs[@]}"
+  brew install "${pkgs[@]}"
 fi
 
 go install "${go_pkgs[@]}"
