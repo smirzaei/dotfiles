@@ -77,6 +77,17 @@ pkgs+=('shellcheck' 'bash-language-server' 'bash-completion' 'shfmt')
 pkgs+=('gofumpt' 'gopls')
 go_pkgs+=('golang.org/x/tools/cmd/goimports@latest')
 
+# golangci-lint package is not available in pacman
+if [ "$has_brew" = true ]
+then
+  pkgs+=('golangci-lint')
+fi
+
+if [ "$has_pacman" = true ]
+then
+  go_pkgs+=('github.com/golangci/golangci-lint/cmd/golangci-lint@latest')
+fi
+
 # Lua
 pkgs+=('stylua')
 
