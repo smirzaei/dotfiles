@@ -90,3 +90,5 @@ keymap("v", "<leader>y", "\"+y", opts)
 keymap("n", "<leader>d", "\"_d", opts)
 keymap("v", "<leader>d", "\"_d", opts)
 
+-- Decrese indentation
+keymap("i", "<S-Tab>", "<C-D>", opts)
