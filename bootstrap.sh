@@ -52,7 +52,6 @@ if command -v cargo %> /dev/null
 then
   has_cargo=true
 fi
-# sudo pacman -S --needed --noconfirm "${test_pkgs[@]}"
 
 if [ "$has_go" = false ]
 then
@@ -66,6 +65,9 @@ then
   echo_err "${Red}Install cargo then come back!${Color_Off}"
   exit 1
 fi
+
+# CLI Tools
+pkgs+=('ripgrep')
 
 # Bash
 # Both pacman and homebrew have the same package names
