@@ -45,7 +45,7 @@ ZSH_THEME="soroush"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git colored-man-pages golang zsh-syntax-highlighting)
+plugins=(git colored-man-pages golang) 
 
 source $ZSH/oh-my-zsh.sh
 
@@ -68,11 +68,20 @@ source $ZSH/oh-my-zsh.sh
 
 
 # Go
-export GOPATH=~/go
-export PATH=$PATH:$GOPATH/bin
+if ! command -v "go version" %> /dev/null; then
+  if [[ "$(go env GOPATH)" ]]; then
+    export PATH=$PATH:"$(go env GOPATH)/bin"
+  else
+    echo "go env GOPATH is empty"
+  fi
+else
+  echo "go is not installed"
+fi
+export PATH=$PATH:/usr/local/go/bin
 
 export GPG-TTY=$(tty)
 
 ssh-add ~/.ssh/id_ed25519
 
 eval "$(starship init zsh)"
+
