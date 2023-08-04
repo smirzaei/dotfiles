@@ -27,7 +27,6 @@ has_brew=false
 has_go=false
 has_cargo=false
 pkgs=()
-go_pkgs=()
 
 echo_err() {
   echo -e "$@" 1>&2;
@@ -75,7 +74,7 @@ pkgs+=('shellcheck' 'bash-language-server' 'bash-completion' 'shfmt')
 # Go
 # Both pacman and homebrew have the same package names
 pkgs+=('gofumpt' 'gopls')
-go_pkgs+=('golang.org/x/tools/cmd/goimports@latest')
+go install 'golang.org/x/tools/cmd/goimports@latest'
 
 # golangci-lint package is not available in pacman
 if [ "$has_brew" = true ]
@@ -85,7 +84,7 @@ fi
 
 if [ "$has_pacman" = true ]
 then
-  go_pkgs+=('github.com/golangci/golangci-lint/cmd/golangci-lint@latest')
+  go install 'github.com/golangci/golangci-lint/cmd/golangci-lint@v1.53.3'
 fi
 
 # Lua
@@ -103,4 +102,3 @@ if [ "$has_brew" = true ]; then
   brew install "${pkgs[@]}"
 fi
 
-go install "${go_pkgs[@]}"
