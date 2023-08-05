@@ -98,6 +98,7 @@ local config_cmp = function ()
     sources = {
       { name = 'nvim_lsp' },
       { name = 'nvim_lsp_signature_help' },
+      { name = 'crates' },
       { name = 'luasnip' },
       { name = 'calc' },
     },

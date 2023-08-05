@@ -7,6 +7,13 @@ local init_null_ls = function()
     null_ls.builtins.formatting.gofumpt,
     null_ls.builtins.formatting.goimports,
     null_ls.builtins.formatting.shfmt,
+    null_ls.builtins.diagnostics.actionlint, -- Github Actions
+    null_ls.builtins.diagnostics.buf, -- Protocol Buffers
+    null_ls.builtins.diagnostics.checkmake, -- Makefile
+    null_ls.builtins.diagnostics.dotenv_linter, -- .env
+    null_ls.builtins.diagnostics.shellcheck, -- shell script
+    null_ls.builtins.diagnostics.tfsec, -- Terraform
+    null_ls.builtins.diagnostics.typos, -- Misspelling
   }
 
   null_ls.setup({

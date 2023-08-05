@@ -64,7 +64,11 @@ local config_lsp = function()
     },
     bashls = {
       filetypes = { "sh", "bash" }
-    }
+    },
+    helm_ls = {},
+    dockerls = {},
+    docker_compose_language_service = {},
+    yamlls = {},
   }
 
   -- nvim-cmp supports additional completion capabilities, so broadcast that to servers

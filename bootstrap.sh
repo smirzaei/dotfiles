@@ -92,6 +92,49 @@ fi
 # Lua
 pkgs+=('stylua')
 
+# Github Actions
+if [ "$has_brew" = true ]
+then
+  pkgs+=('actionlint')
+else
+  go install github.com/rhysd/actionlint/cmd/actionlint@latest
+fi
+
+# Proto Buffers
+pkgs+=('buf')
+
+# Makefile
+if [ "$has_brew" = true ]
+then
+  pkgs+=('checkmake')
+else
+  go install github.com/mrtazz/checkmake/cmd/checkmake@latest
+fi
+
+# .env
+if [ "$has_brew" = true ]
+then
+  pkgs+=('dotenv-linter')
+else
+  cargo install dotenv-linter
+fi
+
+# Terraform
+if [ "$has_brew" = true ]
+then
+  pkgs+=('tfsec')
+else
+  go install github.com/aquasecurity/tfsec/cmd/tfsec@latest
+fi
+
+# Misspelling
+if [ "$has_brew" = true ]
+then
+  pkgs+=('typos-cli')
+else
+  pkgs+=('typos')
+fi
+
 ####
 # Installing packages
 ####
