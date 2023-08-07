@@ -67,7 +67,7 @@ then
 fi
 
 # CLI Tools
-pkgs+=('ripgrep')
+pkgs+=('ripgrep' 'fzf')
 
 # Bash
 # Both pacman and homebrew have the same package names
