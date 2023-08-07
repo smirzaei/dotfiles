@@ -6,11 +6,11 @@ return {
     local function open(name)
       trouble.open(name)
     end
-    vim.keymap.set('n', '<leader>xx', function () open(nil) end)
-    vim.keymap.set('n', '<leader>xw', function () open('workspace_diagnostics') end)
-    vim.keymap.set('n', '<leader>xd', function () open('document_diagnostics') end)
-    vim.keymap.set('n', '<leader>xq', function () open('quickfix') end)
-    vim.keymap.set('n', '<leader>xl', function () open('loclist') end)
-    vim.keymap.set('n', 'gR', function () open('lsp_references') end)
+    vim.keymap.set('n', '<leader>do', function () open(nil) end, { desc = '[D]iagnostics [O]pen'})
+    vim.keymap.set('n', '<leader>dw', function () open('workspace_diagnostics') end, { desc = '[D]iagnostics [W]orkspace'})
+    vim.keymap.set('n', '<leader>dd', function () open('document_diagnostics') end, { desc = '[D]iagnostics [D]ocument'})
+    vim.keymap.set('n', '<leader>dq', function () open('quickfix') end, { desc = '[D]iagnostics [Q]ickfix'})
+    vim.keymap.set('n', '<leader>dl', function () open('loclist') end, { desc = '[D]iagnostics [L]oclist'})
+    vim.keymap.set('n', '<leader>dr', function () open('lsp_references') end, { desc = '[D]iagnostics LSP [R]eferences'})
   end
 }
