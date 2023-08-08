@@ -68,6 +68,10 @@ fi
 
 # CLI Tools
 pkgs+=('ripgrep' 'fzf')
+if [ "$has_brew" = true ]
+then
+  pkgs+=('gnu-sed')
+fi
 
 # Bash
 # Both pacman and homebrew have the same package names
