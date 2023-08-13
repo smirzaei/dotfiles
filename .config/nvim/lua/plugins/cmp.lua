@@ -69,10 +69,11 @@ local config_cmp = function ()
     mapping = cmp.mapping.preset.insert {
       ['<C-n>'] = cmp.mapping.select_next_item(),
       ['<C-p>'] = cmp.mapping.select_prev_item(),
-      ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
       ['<C-Space>'] = cmp.mapping.complete {},
-      ['<CR>'] = cmp.mapping.confirm {
+      ['<CR>'] = cmp.mapping.confirm({ select = true }),
+      ['<S-CR>'] = cmp.mapping.confirm {
         behavior = cmp.ConfirmBehavior.Replace,
         select = true,
       },
@@ -95,12 +96,15 @@ local config_cmp = function ()
         end
       end, { 'i', 's' }),
     },
+    -- https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
     sources = {
       { name = 'nvim_lsp' },
       { name = 'nvim_lsp_signature_help' },
+      { name = 'nvim_lsp_document_symbol' },
       { name = 'crates' },
       { name = 'luasnip' },
-      { name = 'calc' },
+      { name = 'buffer' },
+      { name = 'path' },
     },
   }
 
@@ -119,10 +123,13 @@ return {
     'hrsh7th/nvim-cmp',
     dependencies = {
       'L3MON4D3/LuaSnip',
+      'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-nvim-lsp-document-symbol',
       'hrsh7th/cmp-nvim-lsp-signature-help',
+      'hrsh7th/cmp-path',
       'hrsh7th/cmp-calc',
-    },
+   },
     config = config_cmp,
   },
 }

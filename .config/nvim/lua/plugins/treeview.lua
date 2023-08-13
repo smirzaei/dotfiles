@@ -15,7 +15,7 @@ return {
       }
     },
     init = function ()
-      vim.keymap.set('n', '<C-b>', ':NvimTreeToggle<CR>', { desc = 'Open Tree View'})
+      vim.keymap.set('n', '<leader>ot', ':NvimTreeToggle<CR>', { desc = '[O]pen [T]ree View'})
     end
   },
 }
