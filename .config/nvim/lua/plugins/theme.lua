@@ -34,7 +34,6 @@ return {
     },
     config = function()
       config_catppuccin()
-      vim.cmd.colorscheme('catppuccin')
     end
   },
   {
@@ -47,7 +46,22 @@ return {
     'sainnhe/everforest',
   },
   {
+    'nordtheme/vim',
+  },
+  {
     'AlexvZyl/nordic.nvim',
+    config = function ()
+      require('nordic').setup({
+        override = {
+          Visual = {
+            bg = '#3A515D'
+          }
+        }
+      })
+
+--      require('nordic').load()
+      vim.cmd.colorscheme('nordic')
+    end
   },
   {
     'sainnhe/gruvbox-material',

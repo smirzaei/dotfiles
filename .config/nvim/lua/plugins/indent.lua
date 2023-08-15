@@ -10,7 +10,10 @@ return {
       indent_blankline_show_current_context = true,
       indent_blankline_use_treesitter_scope = true,
       indent_blankline_use_treesitter = true,
-    }
+    },
+    config = function ()
+      vim.cmd([[highlight IndentBlanklineContextStart guisp=#8FBCBB gui=underline]])
+    end
   },
   {
     'Darazaki/indent-o-matic',
