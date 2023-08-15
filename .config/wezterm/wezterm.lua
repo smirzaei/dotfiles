@@ -1,8 +1,8 @@
 local wezterm = require 'wezterm'
 
 return {
-  audible_bel = "Disabled"
-  color_scheme = "Ayu Mirage"
+  audible_bell = "Disabled",
+  color_scheme = "nordic",
   font = wezterm.font_with_fallback {
     {
       family = "Cascadia Code PL",
