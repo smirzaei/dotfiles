@@ -32,8 +32,6 @@ vim.o.timeoutlen = 300
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
-vim.o.termguicolors = true
-
 -- Shamelessly taken from: https://github.com/LunarVim/Neovim-from-scratch/blob/01-options/lua/user/options.lua
 
 local options = {
