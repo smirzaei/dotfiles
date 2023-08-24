@@ -44,6 +44,9 @@ return {
   },
   {
     'sainnhe/everforest',
+    config = function ()
+      vim.cmd.colorscheme('everforest')
+    end
   },
   {
     'nordtheme/vim',
@@ -59,8 +62,7 @@ return {
         }
       })
 
---      require('nordic').load()
-      vim.cmd.colorscheme('nordic')
+      -- vim.cmd.colorscheme('nordic')
     end
   },
   {

@@ -2,7 +2,7 @@ return {
   {
     'windwp/nvim-autopairs',
     opts = {
-      icheck_ts = true,
+      check_ts = true,
     }
   },
 }
