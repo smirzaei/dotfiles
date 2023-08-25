@@ -67,7 +67,7 @@ then
 fi
 
 # CLI Tools
-pkgs+=('ripgrep' 'fzf')
+pkgs+=('bat' 'exa' 'git-delta' 'ripgrep' 'fzf')
 if [ "$has_brew" = true ]
 then
   pkgs+=('gnu-sed')
