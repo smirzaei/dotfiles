@@ -15,7 +15,7 @@
 [include]
 	path = ~/.config/delta/themes.gitconfig
 [delta]
-	features = mellow-barbet
+	features = chameleon
 	side-by-side = false
 [delta "interactive"]
 	keep-plus-minus-markers = false
