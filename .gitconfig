@@ -4,7 +4,7 @@
 	signingkey = 995937D2C64C42D3
 [core]
 	autocrlf = input
-	editor = /usr/bin/vim
+	editor = /usr/bin/env nvim
 	pager = delta
 [alias]
 	tree = log --graph --decorate --pretty=oneline --abbrev-commit
