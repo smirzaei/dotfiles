@@ -45,7 +45,7 @@ ZSH_THEME="soroush"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git colored-man-pages golang) 
+plugins=(git colored-man-pages golang kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -79,9 +79,12 @@ else
 fi
 export PATH=$PATH:/usr/local/go/bin
 
-export GPG-TTY=$(tty)
-
-ssh-add ~/.ssh/id_ed25519
-
 eval "$(starship init zsh)"
 
+if [ -e ~/.machine_specific ];
+then
+  source ~/.machine_specific
+fi
+
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export GPG_TTY=$(tty)
