@@ -2,8 +2,9 @@ local wezterm = require 'wezterm'
 
 return {
   audible_bell = "Disabled",
-  -- color_scheme = "nordic",
-  color_scheme = "Everforest Dark (Gogh)",
+  color_scheme = "nordic",
+  -- color_scheme = "Everforest Dark (Gogh)",
+  -- color_scheme = "GitHub Dark",
   font = wezterm.font_with_fallback {
     {
       family = "Cascadia Code PL",
