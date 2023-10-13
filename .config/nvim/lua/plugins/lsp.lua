@@ -102,7 +102,7 @@ return {
       'williamboman/mason-lspconfig.nvim',
 
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
+      { 'j-hui/fidget.nvim', tag = 'legacy', opts = {}, event = 'LspAttach' },
 
       -- neovim helper
       {

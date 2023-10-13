@@ -114,7 +114,7 @@ local config_cmp = function ()
       { name = 'nvim_lsp_document_symbol' },
       { name = 'crates' },
       { name = 'luasnip' },
-      { name = 'buffer' },
+      -- { name = 'buffer' },
       { name = 'path' },
     },
   }
@@ -139,7 +139,7 @@ return {
       'hrsh7th/cmp-nvim-lsp-document-symbol',
       'hrsh7th/cmp-nvim-lsp-signature-help',
       'hrsh7th/cmp-path',
-      'hrsh7th/cmp-calc',
+      -- 'hrsh7th/cmp-calc',
    },
     config = config_cmp,
   },
