@@ -7,6 +7,10 @@ local file_format = {
   }
 }
 
+local function icon()
+  return [[]]
+end
+
 local lualine_cfg = {
   options = {
     icons_enabled = true,
@@ -27,7 +31,7 @@ local lualine_cfg = {
     }
   },
   sections = {
-    lualine_a = {'mode'},
+    lualine_a = {icon, 'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename'},
     lualine_x = {'encoding', file_format, 'filetype' },

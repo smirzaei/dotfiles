@@ -62,11 +62,14 @@ return {
         }
       })
 
-      vim.cmd.colorscheme('nordic')
+      -- vim.cmd.colorscheme('nordic')
     end
   },
   {
     'sainnhe/gruvbox-material',
+    config = function ()
+      vim.cmd.colorscheme('gruvbox-material')
+    end
   },
   {
     'projekt0n/github-nvim-theme',
@@ -79,6 +82,20 @@ return {
       -- vim.cmd.colorscheme('github_dark_dimmed')
       -- vim.cmd.colorscheme('github_dark')
     end,
+  },
+  {
+    'Shatur/neovim-ayu',
+    config = function ()
+      local colors = require('ayu.colors')
+      require('ayu').setup({
+        dark = true,
+        overrides = function ()
+          return { Comment = { fg =  colors.comment }}
+        end
+      })
+
+      -- vim.cmd.colorscheme('ayu')
+    end
   }
 }
 
