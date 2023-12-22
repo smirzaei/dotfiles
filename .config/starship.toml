@@ -2,6 +2,28 @@
 success_symbol = '[λ](bold green)'
 error_symbol = '[λ](bold red)'
 
+[directory]
+style = 'green bold'
+truncation_length = 5
+truncate_to_repo = false
+
+[c]
+disabled = true
+
 [kubernetes]
-format = '[$symbol$context( \($namespace\))]($style) in '
+style = 'white'
+format = '[\[$context\]( \($namespace\))]($style) in '
 disabled = false
+
+[golang]
+disabled = true
+
+[python]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[docker_context]
+disabled = true
+
