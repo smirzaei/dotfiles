@@ -67,7 +67,7 @@ then
 fi
 
 # CLI Tools
-pkgs+=('bat' 'exa' 'git-delta' 'fd' 'dust' 'difftastic' 'hexyl' 'xh' 'atuin' 'fx' 'jless' 'xsv' 'ripgrep' 'fzf' 'xplr')
+pkgs+=('bat' 'eza' 'git-delta' 'fd' 'dust' 'difftastic' 'hexyl' 'xh' 'atuin' 'fx' 'jless' 'xsv' 'ripgrep' 'fzf' 'xplr')
 if [ "$has_brew" = true ]
 then
   pkgs+=('gnu-sed')
