@@ -7,6 +7,7 @@ return {
   -- color_scheme = "Everforest Dark (Gogh)",
   -- color_scheme = "GitHub Dark",
   color_scheme = "Gruvbox Material (Gogh)",
+  -- color_scheme = "Gruvbox dark, medium (base16)",
   -- color_scheme = "AyuDark (Gogh)",
   font = wezterm.font_with_fallback {
     {
