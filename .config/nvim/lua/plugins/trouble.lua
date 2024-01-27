@@ -6,11 +6,12 @@ return {
     local function open(name)
       trouble.open(name)
     end
-    vim.keymap.set('n', '<leader>do', function () open(nil) end, { desc = '[D]iagnostics [O]pen'})
-    vim.keymap.set('n', '<leader>dw', function () open('workspace_diagnostics') end, { desc = '[D]iagnostics [W]orkspace'})
-    vim.keymap.set('n', '<leader>dd', function () open('document_diagnostics') end, { desc = '[D]iagnostics [D]ocument'})
-    vim.keymap.set('n', '<leader>dq', function () open('quickfix') end, { desc = '[D]iagnostics [Q]ickfix'})
-    vim.keymap.set('n', '<leader>dl', function () open('loclist') end, { desc = '[D]iagnostics [L]oclist'})
-    vim.keymap.set('n', '<leader>dr', function () open('lsp_references') end, { desc = '[D]iagnostics LSP [R]eferences'})
+    vim.keymap.set('n', '<leader>odg', function () open(nil) end, { desc = 'Open Global Diagnostics'})
+    vim.keymap.set('n', '<leader>odw', function () open('workspace_diagnostics') end, { desc = 'Open Workspace Diagnostics'})
+    vim.keymap.set('n', '<leader>odd', function () open('document_diagnostics') end, { desc = 'Open Document Diagnostics'})
+    vim.keymap.set('n', '<leader>odq', function () open('quickfix') end, { desc = 'Open Diagnostics Quickfix'})
+    vim.keymap.set('n', '<leader>odl', function () open('loclist') end, { desc = 'Open Diagnostics Loclist'})
+    vim.keymap.set('n', '<leader>odr', function () open('lsp_references') end, { desc = 'Open Diagnostics LSP References'})
   end
 }
+
