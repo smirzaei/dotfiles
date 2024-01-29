@@ -13,7 +13,7 @@ return {
     {
       -- family = "Cascadia Code PL",
       family = "CaskaydiaCove Nerd Font",
-      weight = "Bold",
+      weight = "Regular",
       harfbuzz_features = { "calt=1", "liga=1", "ss02=1", "ss19=1" },
       -- harfbuzz_features = { "calt=1", "liga=1", "ss01=1", "ss02=1", "ss19=1" },
     },
