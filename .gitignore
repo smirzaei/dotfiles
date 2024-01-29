@@ -15,3 +15,6 @@
 !.config/zellij/**
 !.config/delta/
 !.config/delta/**
+!.config/zed/
+!.config/zed/keymap.json
+!.config/zed/settings.json
