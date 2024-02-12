@@ -24,4 +24,18 @@
   "ui_font_size": 18,
   "buffer_font_size": 18,
   "cursor_blink": false,
+  "preferred_line_length": 80,
+  "soft_wrap": "preferred_line_length",
+  "language_overrides": {
+    "Rust": {
+      "preferred_line_length": 120,
+    },
+    "Go": {
+      "preferred_line_length": 120,
+    }
+  },
+  // AI stuff
+  "semantic_index": {
+    "enabled": false,
+  }
 }
