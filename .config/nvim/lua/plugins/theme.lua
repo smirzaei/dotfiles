@@ -25,7 +25,9 @@ return {
         config = function()
             vim.g.gruvbox_material_background = "hard"
             vim.g.gruvbox_material_disable_italic_comment = 1
-            vim.cmd.colorscheme('gruvbox-material')
+            vim.g.gruvbox_material_diagnostic_text_highlight = 1
+            vim.g.gruvbox_material_diagnostic_virtual_text = "colored"
+            vim.cmd.colorscheme("gruvbox-material")
         end,
     },
     {
@@ -38,7 +40,7 @@ return {
                     comments = false,
                     emphasis = false,
                     operators = false,
-                }
+                },
             })
             -- vim.cmd.colorscheme("gruvbox")
         end,
