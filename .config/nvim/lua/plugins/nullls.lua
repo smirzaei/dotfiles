@@ -2,7 +2,9 @@ local init_null_ls = function()
   local null_ls = require('null-ls')
 
   local sources = {
-    null_ls.builtins.diagnostics.golangci_lint,
+    null_ls.builtins.diagnostics.golangci_lint.with({
+      extra_args = {"--allow-parallel-runners"},
+    }),
     null_ls.builtins.formatting.stylua,
     null_ls.builtins.formatting.gofumpt,
     null_ls.builtins.formatting.goimports,
