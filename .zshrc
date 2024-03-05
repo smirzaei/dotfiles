@@ -71,6 +71,7 @@ eval `ssh-agent -s`
 
 # Go
 if ! command -v "go version" %> /dev/null; then
+  export PATH=$PATH:/usr/local/go/bin
   if [[ "$(go env GOPATH)" ]]; then
     export PATH=$PATH:"$(go env GOPATH)/bin"
   else
@@ -79,13 +80,20 @@ if ! command -v "go version" %> /dev/null; then
 else
   echo "go is not installed"
 fi
-export PATH=$PATH:/usr/local/go/bin
 
 eval "$(starship init zsh)"
 
 if [ -e ~/.machine_specific ];
 then
   source ~/.machine_specific
+fi
+
+# K8s
+# kubectl completion -h
+if ! command -v "kubectl version" %> /dev/null; then
+  source <(kubectl completion zsh)
+else
+  echo "kubectl is not installed"
 fi
 
 if [ -e ~/.krew ];

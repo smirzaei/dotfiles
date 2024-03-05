@@ -59,7 +59,7 @@ if [ "$has_cargo" = false ]; then
 fi
 
 # CLI Tools
-pkgs+=('bat' 'eza' 'git-delta' 'fd' 'dust' 'difftastic' 'hexyl' 'xh' 'atuin' 'fx' 'jless' 'xsv' 'ripgrep' 'fzf' 'xplr')
+pkgs+=('bat' 'eza' 'git-delta' 'fd' 'dust' 'difftastic' 'hexyl' 'xh' 'atuin' 'fx' 'jless' 'xsv' 'ripgrep' 'fzf' 'xplr' 'bash-completion')
 if [ "$has_brew" = true ]; then
 	pkgs+=('gnu-sed')
 fi
