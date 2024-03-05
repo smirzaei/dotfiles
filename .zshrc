@@ -66,6 +66,8 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+# Start ssh agent for agent forwarding
+eval `ssh-agent -s`
 
 # Go
 if ! command -v "go version" %> /dev/null; then
@@ -86,5 +88,9 @@ then
   source ~/.machine_specific
 fi
 
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+if [ -e ~/.krew ];
+then
+    export PATH="$PATH:${KREW_ROOT:-$HOME/.krew}/bin"
+fi
+
 export GPG_TTY=$(tty)
