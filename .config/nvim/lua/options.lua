@@ -3,8 +3,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
     -- Disable auto: comment on new line
     vim.opt_local.formatoptions:remove({ 'r', 'o' })
 
-    -- Disable mouse mode
-    vim.opt.mouse = ''
+    vim.opt.laststatus = 3  -- show a global status line
   end
 })
 

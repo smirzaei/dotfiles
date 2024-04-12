@@ -6,9 +6,10 @@ local file_format = {
     mac = 'mac',
   }
 }
-
 local function icon()
-  return [[]]
+  -- return [[]]
+  -- return [[]]
+  return [[]]
 end
 
 local lualine_cfg = {
