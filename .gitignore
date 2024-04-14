@@ -9,6 +9,10 @@
 !.config/nvim/**
 !.config/wezterm/
 !.config/wezterm/**
+!.config/alacritty/
+!.config/alacritty/**
+!.config/alacritty/alacritty-theme/
+!.config/alacritty/alacritty-theme/**
 !.config/tmux/
 !.config/tmux/**
 !.config/zellij/
