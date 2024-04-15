@@ -4,28 +4,18 @@
   {
     "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
     "bindings": {
-      "ctrl-h": [
-        "workspace::ActivatePaneInDirection",
-        "Left"
-      ],
-      "ctrl-l": [
-        "workspace::ActivatePaneInDirection",
-        "Right"
-      ],
-      "ctrl-j": [
-        "workspace::ActivatePaneInDirection",
-        "Down"
-      ],
-      "ctrl-k": [
-        "workspace::ActivatePaneInDirection",
-        "Up"
-      ],
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
       "[ d": "editor::GoToPrevDiagnostic",
       "] d": "editor::GoToDiagnostic",
       "shift-k": "editor::Hover",
+      "g r": "editor::FindAllReferences",
+      "g d": "editor::GoToDefinition",
       "g c c": "editor::ToggleComments", // This needs to work with visual mode as well
       "space s f": "file_finder::Toggle",
-      "space s s": "project_symbols::Toggle",
+      "space s g": "project_symbols::Toggle",
       "space o t": "workspace::ToggleLeftDock"
     }
   },
