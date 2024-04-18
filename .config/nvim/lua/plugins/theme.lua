@@ -79,15 +79,15 @@ return {
             vim.g.gruvbox_material_disable_italic_comment = 1
             vim.g.gruvbox_material_diagnostic_text_highlight = 1
             vim.g.gruvbox_material_diagnostic_virtual_text = "colored"
-            vim.cmd.colorscheme("gruvbox-material")
+            -- vim.cmd.colorscheme("gruvbox-material")
 
             -- To get a list of available highlight groups run:
             -- :h nvim-tree-highlight
-            vim.api.nvim_set_hl(0, "NvimTreeFolderName", { fg = get_color("fg0") })
-            vim.api.nvim_set_hl(0, "NvimTreeGitDirty", { fg = get_color("blue") })
-            vim.api.nvim_set_hl(0, "NvimTreeGitNew", { fg = get_color("green") })
-            vim.api.nvim_set_hl(0, "DiagnosticError", { fg = get_color("red") })
-            vim.api.nvim_set_hl(0, "DiagnosticWarn", { fg = get_color("yellow") })
+            -- vim.api.nvim_set_hl(0, "NvimTreeFolderName", { fg = get_color("fg0") })
+            -- vim.api.nvim_set_hl(0, "NvimTreeGitDirty", { fg = get_color("blue") })
+            -- vim.api.nvim_set_hl(0, "NvimTreeGitNew", { fg = get_color("green") })
+            -- vim.api.nvim_set_hl(0, "DiagnosticError", { fg = get_color("red") })
+            -- vim.api.nvim_set_hl(0, "DiagnosticWarn", { fg = get_color("yellow") })
         end,
     },
     {
@@ -130,4 +130,19 @@ return {
             -- vim.cmd.colorscheme('ayu')
         end,
     },
+    {
+        "rose-pine/neovim",
+        name = "rose-pine",
+        config = function ()
+            require("rose-pine").setup({
+                variant = "main",
+                dark_variant = "main",
+                styles = {
+                    italic = false,
+                }
+            })
+
+            vim.cmd.colorscheme('rose-pine')
+        end
+    }
 }
