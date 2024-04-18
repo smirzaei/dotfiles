@@ -1,5 +1,5 @@
 import = [
-    "~/.config/alacritty/alacrity-themes/themes/gruvbox_material_hard_dark.toml"
+    "~/.config/alacritty/alacritty-theme/themes/rose-pine.toml"
 ]
 
 [font]
