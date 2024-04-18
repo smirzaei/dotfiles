@@ -7,7 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "theme": "One Dark",
+  "theme": "Rosé Pine",
   "vim_mode": true,
   "relative_line_numbers": true,
   "scrollbar": {
