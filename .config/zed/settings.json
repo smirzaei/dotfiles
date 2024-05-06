@@ -7,13 +7,20 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "theme": "Rosé Pine",
+  "theme": "Andromeda",
   "vim_mode": true,
+  "cursor_blink": false,
   "relative_line_numbers": true,
   "scrollbar": {
-    "show": "never"
+    "show": "never",
+    "git_diff": true,
+    "search_results": true,
+    "selected_symbol": true,
+    "diagnostics": true
   },
+  "autosave": "on_focus_change",
   "buffer_font_family": "CaskaydiaCove Nerd Font",
+  "buffer_font_size": 14,
   "buffer_font_features": {
     "calt": true,
     "liga": true,
@@ -21,17 +28,50 @@
     "ss02": true,
     "ss19": true
   },
+  "ui_font_family": "CaskaydiaCove Nerd Font",
   "ui_font_size": 16,
-  "buffer_font_size": 14,
-  "cursor_blink": false,
+  "ui_font_features": {
+    "calt": true,
+    "liga": true,
+    "ss01": true,
+    "ss02": true,
+    "ss19": true
+  },
+  "tab_size": 4,
+  "tabs": {
+    "git_status": true
+  },
+  "git": {
+    "git_gutter": "tracked_files",
+    "inline_blame": {
+      "enabled": true
+    }
+  },
+  "inlay_hints": {
+    "enabled": false
+  },
+  "show_whitespaces": "selection",
   "preferred_line_length": 80,
-  "soft_wrap": "preferred_line_length",
+  "soft_wrap": "prefer_line",
+  "wrap_guides": [80, 120],
+  "format_on_save": "off",
   "language_overrides": {
     "Rust": {
-      "preferred_line_length": 120
+      "preferred_line_length": 120,
+      "format_on_save": "language_server"
     },
     "Go": {
-      "preferred_line_length": 120
+      "preferred_line_length": 120,
+      "format_on_save": "language_server"
+    }
+  },
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "check": {
+          "command": "clippy"
+        }
+      }
     }
   },
   // AI stuff

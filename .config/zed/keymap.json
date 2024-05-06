@@ -11,12 +11,15 @@
       "[ d": "editor::GoToPrevDiagnostic",
       "] d": "editor::GoToDiagnostic",
       "shift-k": "editor::Hover",
+      "g I": "editor::GoToImplementation",
       "g r": "editor::FindAllReferences",
       "g d": "editor::GoToDefinition",
       "g c c": "editor::ToggleComments", // This needs to work with visual mode as well
       "space s f": "file_finder::Toggle",
-      "space s g": "project_symbols::Toggle",
-      "space o t": "workspace::ToggleLeftDock"
+      "space s g": "pane::DeploySearch",
+      "space s s": "project_symbols::Toggle",
+      "space o t": "workspace::ToggleLeftDock",
+      "space o d": "diagnostics::Deploy"
     }
   },
   {
