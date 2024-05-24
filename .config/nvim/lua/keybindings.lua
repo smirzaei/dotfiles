@@ -87,4 +87,4 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Next diagnostic' }
 vim.keymap.set('n', '<leader>odf', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>odl', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
-vim.keymap.set("n", "<leader>qf", vim.lsp.buf.code_action, { noremap = true, silent = true, desc = "Quick Fix" })
+vim.keymap.set("n", "<C-.>", vim.lsp.buf.code_action, { noremap = true, silent = true, desc = "Quick Fix" })
