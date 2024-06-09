@@ -59,14 +59,15 @@ if [ "$has_cargo" = false ]; then
 fi
 
 # CLI Tools
-pkgs+=('bat' 'eza' 'git-delta' 'fd' 'dust' 'difftastic' 'hexyl' 'xh' 'atuin' 'fx' 'jless' 'xsv' 'ripgrep' 'fzf' 'xplr' 'bash-completion')
+pkgs+=('bat' 'eza' 'git-delta' 'fd' 'dust' 'difftastic' 'hexyl' 'xh' 'atuin' 'fx' 'jless' 'xsv' 'ripgrep' 'fzf')
 if [ "$has_brew" = true ]; then
 	pkgs+=('gnu-sed')
 fi
 
 # Bash
 # Both pacman and homebrew have the same package names
-pkgs+=('shellcheck' 'bash-language-server' 'bash-completion' 'shfmt')
+# pkgs+=('shellcheck' 'bash-language-server' 'bash-completion' 'shfmt')
+pkgs+=('shellcheck' 'shfmt')
 
 # Go
 # Both pacman and homebrew have the same package names
@@ -91,6 +92,9 @@ if [ "$has_brew" = true ]; then
 else
 	go install github.com/rhysd/actionlint/cmd/actionlint@latest
 fi
+
+# Zig
+pkgs+=('zig zls')
 
 # Proto Buffers
 pkgs+=('buf')
@@ -137,7 +141,7 @@ pkgs+=('helm' 'kubectx' 'k9s')
 ####
 
 if [ "$has_pacman" = true ]; then
-	sudo pacman -Sy --needed --noconfirm "${pkgs[@]}"
+	sudo pacman -Sy --needed "${pkgs[@]}"
 fi
 
 if [ "$has_brew" = true ]; then
