@@ -7,7 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "theme": "Andromeda",
+  "theme": "Rosé Pine",
   "vim_mode": true,
   "cursor_blink": false,
   "relative_line_numbers": true,
