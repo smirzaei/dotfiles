@@ -88,6 +88,9 @@ then
   source ~/.machine_specific
 fi
 
+
+export PATH="$PATH:$HOME/.local/bin/"
+
 # K8s
 # kubectl completion -h
 if ! command -v "kubectl version" %> /dev/null; then
@@ -99,6 +102,11 @@ fi
 if [ -e ~/.krew ];
 then
     export PATH="$PATH:${KREW_ROOT:-$HOME/.krew}/bin"
+fi
+
+if [ -e ~/.cargo/bin ];
+then
+    export PATH="$PATH:$HOME/.cargo/bin"
 fi
 
 export GPG_TTY=$(tty)
