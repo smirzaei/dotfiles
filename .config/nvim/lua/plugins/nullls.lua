@@ -16,6 +16,7 @@ local init_null_ls = function()
     null_ls.builtins.diagnostics.shellcheck, -- shell script
     null_ls.builtins.diagnostics.tfsec, -- Terraform
     null_ls.builtins.diagnostics.typos, -- Misspelling
+    null_ls.builtins.diagnostics.vale,  -- Misspelling/Grammar
   }
 
   null_ls.setup({

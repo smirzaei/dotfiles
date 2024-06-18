@@ -121,6 +121,7 @@ else
 fi
 
 # Misspelling
+pkgs+=('vale')
 if [ "$has_brew" = true ]; then
 	pkgs+=('typos-cli')
 else
