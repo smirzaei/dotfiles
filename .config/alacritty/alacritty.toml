@@ -19,4 +19,5 @@ style = "Italic"
 
 [font.normal]
 family = "CaskaydiaCove Nerd Font"
-style = "Regular"
+# style = "Regular"
+style = "Semibold"
