@@ -1,5 +1,6 @@
 import = [
-    "~/.config/alacritty/alacritty-theme/themes/rose-pine.toml"
+    "~/.config/alacritty/themes/rose-pine.toml"
+    # "~/.config/alacritty/alacritty-theme/themes/rose-pine.toml"
 ]
 
 [font]
