@@ -55,7 +55,7 @@
   "soft_wrap": "prefer_line",
   "wrap_guides": [80, 120],
   "format_on_save": "off",
-  "language_overrides": {
+  "languages": {
     "Rust": {
       "preferred_line_length": 120,
       "format_on_save": "language_server"
