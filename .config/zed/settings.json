@@ -7,6 +7,13 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "tab_bar": {
+    "show": false
+  },
+  "toolbar": {
+      "breadcrumbs": true,
+      "quick_actions": false
+  },
   "theme": "Rosé Pine",
   "vim_mode": true,
   "cursor_blink": false,
@@ -55,6 +62,7 @@
   "soft_wrap": "prefer_line",
   "wrap_guides": [80, 120],
   "format_on_save": "off",
+  "remove_trailing_whitespace_on_save": true,
   "languages": {
     "Rust": {
       "preferred_line_length": 120,
@@ -62,7 +70,12 @@
     },
     "Go": {
       "preferred_line_length": 120,
-      "format_on_save": "language_server"
+      "format_on_save": "language_server",
+      "hard_tabs": true
+    },
+    "Zig": {
+        "preferred_line_length": 120,
+        "format_on_save": "language_server"
     }
   },
   "lsp": {
@@ -77,5 +90,15 @@
   // AI stuff
   "semantic_index": {
     "enabled": false
-  }
+  },
+  "collaboration_panel": {
+      "button": false
+  },
+  "chat_panel": {
+      "button": false
+  },
+  "assistant": {
+      "enabled": false,
+      "button": false
+  },
 }

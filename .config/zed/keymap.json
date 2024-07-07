@@ -1,28 +1,45 @@
 // https://zed.dev/ref/vim.json
 [
-  // Normal mode bindings
-  {
-    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
-    "bindings": {
-      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
-      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "[ d": "editor::GoToPrevDiagnostic",
-      "] d": "editor::GoToDiagnostic",
-      "shift-k": "editor::Hover",
-      "g I": "editor::GoToImplementation",
-      "g r": "editor::FindAllReferences",
-      "g d": "editor::GoToDefinition",
-      "space s f": "file_finder::Toggle",
-      "space s g": "pane::DeploySearch",
-      "space s s": "project_symbols::Toggle",
-      "space o t": "workspace::ToggleLeftDock",
-      "space o d": "diagnostics::Deploy"
-    }
-  },
-  {
-    "context": "Editor && (vim_mode == normal || vim_mode == visual) vi && !VimWaiting && !menu",
-    "bindings": {}
-  }
+    {
+        "context": "EmptyPane || SharedScreen || vim_operator == none && !VimWaiting && vim_mode != insert",
+        "bindings": {
+            "space s f": "file_finder::Toggle",
+        },
+    },
+    // Normal mode bindings
+    {
+        "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+        "bindings": {
+            "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+            "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+            "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+            "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+            "[ d": "editor::GoToPrevDiagnostic",
+            "] d": "editor::GoToDiagnostic",
+            "shift-k": "editor::Hover",
+            "g I": "editor::GoToImplementation",
+            "g r": "editor::FindAllReferences",
+            "g d": "editor::GoToDefinition",
+            "space s f": "file_finder::Toggle",
+            "space s g": "pane::DeploySearch",
+            "space s s": "project_symbols::Toggle",
+            "space o t": "workspace::ToggleLeftDock",
+            "space o d": "diagnostics::Deploy"
+        }
+    },
+    {
+        "context": "Editor && (vim_mode == normal || vim_mode == visual) vi && !VimWaiting && !menu",
+        "bindings": {}
+    },
+    {
+        // Terminal and other panes?
+        "context": "Dock",
+        "bindings": {
+            "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+            "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+            "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+            "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+        }
+    },
+
 ]
