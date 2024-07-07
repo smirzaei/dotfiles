@@ -64,6 +64,9 @@ if [ "$has_brew" = true ]; then
 	pkgs+=('gnu-sed')
 fi
 
+# WASM
+pkgs+=('wabt')
+
 # Bash
 # Both pacman and homebrew have the same package names
 # pkgs+=('shellcheck' 'bash-language-server' 'bash-completion' 'shfmt')
