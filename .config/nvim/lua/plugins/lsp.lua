@@ -3,8 +3,7 @@ local config_lsp = function()
   --  This function gets run when an LSP connects to a particular buffer.
   local on_attach = function(_, bufnr)
     -- NOTE: Remember that lua is a real programming language, and as such it is possible
-    -- to define small helper and utility functions so you don't have to repeat yourself
-    -- many times.
+    -- to define small helper and utility functions so you don't have to repeat yourself many times.
     --
     -- In this case, we create a function that lets us more easily define mappings specific
     -- for LSP related items. It sets the mode, buffer and description for us each time.
@@ -55,6 +54,9 @@ local config_lsp = function()
     },
     golangci_lint_ls = {},
     rust_analyzer = {},
+    clangd = {},
+    -- C
+    -- ccls = {},
 
     lua_ls = {
       Lua = {
@@ -62,13 +64,14 @@ local config_lsp = function()
         telemetry = { enable = false },
       },
     },
-    bashls = {
-      filetypes = { "sh", "bash" }
-    },
+--    bashls = {
+--      filetypes = { "sh", "bash" }
+--    },
     helm_ls = {},
-    dockerls = {},
-    docker_compose_language_service = {},
+    -- dockerls = {},
+    -- docker_compose_language_service = {},
     yamlls = {},
+    zls = {},
   }
 
   -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
@@ -109,7 +112,12 @@ return {
       'williamboman/mason-lspconfig.nvim',
 
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', tag = 'legacy', opts = {}, event = 'LspAttach' },
+      {
+        'j-hui/fidget.nvim',
+        event = 'LspAttach',
+        opts = {
+        },
+      },
 
       -- neovim helper
       {
