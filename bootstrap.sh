@@ -83,7 +83,7 @@ if [ "$has_brew" = true ]; then
 fi
 
 if [ "$has_pacman" = true ]; then
-	go install 'github.com/golangci/golangci-lint/cmd/golangci-lint@v1.53.3'
+	go install 'github.com/golangci/golangci-lint/cmd/golangci-lint@latest'
 fi
 
 # Lua
