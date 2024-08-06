@@ -98,8 +98,7 @@ local config_cmp = function()
                     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
 
                     return col ~= 0
-                        and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s")
-                        == nil
+                        and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
                 end
 
                 if cmp.visible() then
@@ -125,10 +124,10 @@ local config_cmp = function()
         -- https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
         sources = {
             { name = "nvim_lsp" },
-            { name = "nvim_lsp_signature_help" },
-            { name = "nvim_lsp_document_symbol" },
-            { name = "crates" },
-            { name = "luasnip" },
+            -- { name = "nvim_lsp_signature_help" },
+            -- { name = "nvim_lsp_document_symbol" },
+            -- { name = "crates" },
+            -- { name = "luasnip" },
             -- { name = 'buffer' },
             { name = "path" },
         },
