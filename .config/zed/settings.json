@@ -74,7 +74,7 @@
       "hard_tabs": true
     },
     "Zig": {
-        "preferred_line_length": 120,
+       "preferred_line_length": 100,
         "format_on_save": "language_server"
     }
   },
