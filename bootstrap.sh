@@ -76,6 +76,7 @@ pkgs+=('shellcheck' 'shfmt')
 # Both pacman and homebrew have the same package names
 pkgs+=('gofumpt' 'gopls')
 go install 'golang.org/x/tools/cmd/goimports@latest'
+go install 'github.com/go-delve/delve/cmd/dlv@latest'
 
 # golangci-lint package is not available in pacman
 if [ "$has_brew" = true ]; then
