@@ -51,6 +51,12 @@ local config_lsp = function()
   local servers = {
     gopls = {
       gofumpt = true,
+      experimentailPostfixCompletions = true,
+      analyses = {
+        unusedparams = true,
+        shadow = true
+      },
+      staticcheck = true,
     },
     golangci_lint_ls = {},
     rust_analyzer = {},
@@ -76,7 +82,13 @@ local config_lsp = function()
 
   -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
   local capabilities = vim.lsp.protocol.make_client_capabilities()
-  capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+  local ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+  if ok then
+    capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+  else
+    print("cmp_nvim_lsp is not installed")
+  end
+
 
   -- Ensure the servers above are installed
   local mason_lspconfig = require 'mason-lspconfig'
