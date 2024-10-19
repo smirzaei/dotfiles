@@ -100,28 +100,37 @@ local config_cmp = function()
 			-- { name = "crates" },
 			{
 				name = "luasnip",
-				option = { show_autosnippets = true, use_show_condition = false }
+				option = { show_autosnippets = true, use_show_condition = false },
 			},
 			{ name = "treesitter" },
 			{
+				name = "rg",
+				keyword_length = 3,
+				max_item_count = 5,
+				option = {
+					additional_arguments = "--smart-case --hidden",
+				},
+				priority = 80,
+			},
+			{
 				name = "git",
-				entry_filter = function ()
+				entry_filter = function()
 					if vim.bo.filetype ~= "gitcommit" then
 						return false
 					else
 						return true
 					end
-				end
+				end,
 			},
 			{
 				name = "conventionalcommits",
-				entry_filter = function ()
+				entry_filter = function()
 					if vim.bo.filetype ~= "gitcommit" then
 						return false
 					else
 						return true
 					end
-				end
+				end,
 			},
 			-- { name = 'buffer' },
 			{ name = "path" },
@@ -182,6 +191,13 @@ return {
 			"hrsh7th/cmp-calc",
 			"davidsierradz/cmp-conventionalcommits",
 			"ray-x/cmp-treesitter",
+			{
+				"lukas-reineke/cmp-rg",
+				lazy = true,
+				enabled = function()
+					return vim.fn.executable("rg") == 1
+				end,
+			},
 		},
 		config = config_cmp,
 	},
