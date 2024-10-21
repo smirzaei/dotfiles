@@ -94,14 +94,28 @@ local config_cmp = function()
 		}),
 		-- https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
 		sources = {
-			{ name = "nvim_lsp" },
-			{ name = "nvim_lsp_signature_help" },
-			{ name = "nvim_lsp_document_symbol" },
-			-- { name = "crates" },
 			{
 				name = "luasnip",
 				option = { show_autosnippets = true, use_show_condition = false },
+				priority = 150,
+				group_index = 1,
 			},
+			{
+				name = "nvim_lsp",
+				priority = 100,
+				group_index = 1,
+			},
+			{
+				name = "nvim_lsp_signature_help",
+				priority = 100,
+				group_index = 1,
+			},
+			{
+				name = "nvim_lsp_document_symbol",
+				priority = 100,
+				group_index = 1,
+			},
+			-- { name = "crates" },
 			{ name = "treesitter" },
 			{
 				name = "rg",
@@ -110,7 +124,8 @@ local config_cmp = function()
 				option = {
 					additional_arguments = "--smart-case",
 				},
-				priority = 80,
+				priority = 90,
+				group_index = 3,
 			},
 			{
 				name = "git",
@@ -133,8 +148,16 @@ local config_cmp = function()
 				end,
 			},
 			-- { name = 'buffer' },
-			{ name = "path" },
-			{ name = "calc" },
+			{
+				name = "path",
+				priority = 10,
+				group_index = 5,
+			},
+			{
+				name = "calc",
+				priority = 10,
+				group_index = 5,
+			},
 		},
 		preselect = cmp.PreselectMode.None,
 		sorting = {
