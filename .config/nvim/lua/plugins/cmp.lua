@@ -108,7 +108,7 @@ local config_cmp = function()
 				keyword_length = 3,
 				max_item_count = 5,
 				option = {
-					additional_arguments = "--smart-case --hidden",
+					additional_arguments = "--smart-case",
 				},
 				priority = 80,
 			},
