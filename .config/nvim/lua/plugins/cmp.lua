@@ -93,7 +93,7 @@ local config_cmp = function()
 			}),
 		}),
 		-- https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
-		sources = {
+		sources = cmp.config.sources({
 			{
 				name = "luasnip",
 				option = { show_autosnippets = true, use_show_condition = false },
@@ -158,7 +158,7 @@ local config_cmp = function()
 				priority = 10,
 				group_index = 5,
 			},
-		},
+		}),
 		preselect = cmp.PreselectMode.None,
 		sorting = {
 			priority_weight = 2,
