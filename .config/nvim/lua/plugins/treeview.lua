@@ -45,11 +45,19 @@ return {
 		},
 		config = function()
 			require("neo-tree").setup({
+				event_handlers = {
+					{
+						event = "file_open_requested",
+						handler = function()
+							vim.cmd("Neotree close")
+						end,
+					},
+				},
 				close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
 				popup_border_style = "rounded",
 				enable_git_status = true,
 				enable_diagnostics = true,
-				enable_normal_mode_for_inputs = false, -- Enable normal mode for input dialogs.
+				enable_normal_mode_for_inputs = false,                 -- Enable normal mode for input dialogs.
 				open_files_do_not_replace_types = { "terminal", "trouble", "qf" }, -- when opening files, do not use windows containing these filetypes or buftypes
 				default_component_configs = {
 					indent = {
@@ -202,7 +210,7 @@ return {
 						},
 					},
 					follow_current_file = {
-						enabled = false, -- This will find and focus the file in the active buffer every time
+						enabled = false,     -- This will find and focus the file in the active buffer every time
 						--               -- the current file is changed while the tree is open.
 						leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
 					},
