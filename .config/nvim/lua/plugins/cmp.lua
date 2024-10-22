@@ -56,7 +56,7 @@ local config_cmp = function()
 			end,
 		},
 		completion = {
-			completeopt = "menu,menuone,noinsert",
+			completeopt = "menu,menuone,preview,noinsert",
 		},
 		experimental = {
 			ghost_text = false,
@@ -94,6 +94,10 @@ local config_cmp = function()
 		}),
 		-- https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
 		sources = cmp.config.sources({
+			{
+				name = "lazydev",
+				group_index = 0,
+			},
 			{
 				name = "luasnip",
 				option = { show_autosnippets = true, use_show_condition = false },
@@ -206,7 +210,6 @@ return {
 	{
 		"hrsh7th/nvim-cmp",
 		dependencies = {
-			"L3MON4D3/LuaSnip",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-cmdline", -- depends on hrsh7th/cmp-buffer
 			"hrsh7th/cmp-nvim-lsp",
@@ -216,6 +219,10 @@ return {
 			"hrsh7th/cmp-calc",
 			"davidsierradz/cmp-conventionalcommits",
 			"ray-x/cmp-treesitter",
+			{
+				"L3MON4D3/LuaSnip",
+				dependencies = { "rafamadriz/friendly-snippets" },
+			},
 			{
 				"lukas-reineke/cmp-rg",
 				lazy = true,
