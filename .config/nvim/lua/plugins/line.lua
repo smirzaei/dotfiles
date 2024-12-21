@@ -6,6 +6,7 @@ local file_format = {
     mac = 'mac',
   }
 }
+
 local function icon()
   -- return [[]]
   -- return [[]]

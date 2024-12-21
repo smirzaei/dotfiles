@@ -44,7 +44,7 @@ vim.opt.undolevels = 1000
 vim.opt.virtualedit = "block"
 vim.opt.wildmode = "longest:full,full"
 vim.opt.wrap = false -- disable line wrap
--- vim.opt.smoothscroll = true -- available in neovim 0.10
+vim.opt.smoothscroll = true -- available in neovim 0.10
 vim.opt.colorcolumn = "80,100"
 vim.opt.vb = true -- don't make the terminal beep
 
@@ -59,6 +59,5 @@ vim.opt.diffopt:append('iwhite')
 vim.opt.diffopt:append('algorithm:histogram')
 vim.opt.diffopt:append('indent-heuristic')
 -- show a column at 80 characters as a guide for long lines
-vim.opt.colorcolumn = '80'
 --- except in Rust where the rule is 100 characters
 vim.api.nvim_create_autocmd('Filetype', { pattern = 'rust', command = 'set colorcolumn=100' })
