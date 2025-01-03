@@ -1,5 +1,12 @@
 # ctrl-shift-comma -> reload config
 
+# Change default shell to fish
+command = /usr/bin/fish
+
+# General
+# Don't ask for confirmation when exiting
+confirm-close-surface = false
+
 # Theme
 theme = rose-pine
 background = #191724
@@ -26,8 +33,11 @@ palette = 15=#e0def4
 
 # Window
 # Can't get the opacity and blur working
-background-opacity = 1.0
-background-blur-radius = 20
+# background-opacity = 1.0
+# background-blur-radius = 20
+# window-padding-y = 2,0
+# window-padding-balance = true
+window-decoration = true
 
 # Font
 font-family = CaskaydiaCove Nerd Font
@@ -36,12 +46,22 @@ font-family-italic = CaskaydiaCove Nerd Font
 font-family-bold-italic = CaskaydiaCove Nerd Font
 window-title-font-family = CaskaydiaCove Nerd Font
 
-adjust-cell-width = -1
-adjust-cell-height = 5
+adjust-cell-width = 0
+adjust-cell-height = 10
 
 # Cursor
+cursor-style = block
 cursor-style-blink = false
 
 # Linux
 gtk-single-instance = false
 gtk-titlebar = false
+
+# Mouse
+mouse-hide-while-typing = true
+
+# Keybindings
+keybind = ctrl+shift+i=inspector:toggle
+
+# Shell integration
+shell-integration-features = no-cursor,title
