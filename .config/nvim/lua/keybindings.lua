@@ -6,7 +6,6 @@ map("", "<Space>", "<nop>", { silent = true })
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-
 -- Move to window using the <ctrl> hjkl keys
 map("n", "<C-h>", "<C-w>h", { desc = "Go to left window" })
 map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window" })
@@ -34,15 +33,12 @@ map("i", "<F1>", "<nop>", opts)
 -- Clear search with <esc>
 map("n", "<esc>", ":noh<cr>", opts)
 
-
 -- Terminal Mappings
 map("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
 map("t", "<C-h>", "<cmd>wincmd h<cr>", { desc = "Go to left window" })
 map("t", "<C-j>", "<cmd>wincmd j<cr>", { desc = "Go to lower window" })
 map("t", "<C-k>", "<cmd>wincmd k<cr>", { desc = "Go to upper window" })
 map("t", "<C-l>", "<cmd>wincmd l<cr>", { desc = "Go to right window" })
-map("t", "<C-/>", "<cmd>close<cr>", { desc = "Hide Terminal" })
-map("t", "<c-_>", "<cmd>close<cr>", { desc = "which_key_ignore" })
 
 -- windows
 map("n", "<leader>ww", "<C-W>p", { desc = "Other window" })
@@ -60,7 +56,6 @@ map("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 
-
 -- Visual indent mode
 map("v", "<", "<gv", opts)
 map("v", ">", ">gv", opts)
@@ -70,21 +65,20 @@ map("n", "<C-d>", "<C-d>zz", opts)
 map("n", "<C-u>", "<C-u>zz", opts)
 
 -- Yank to system's clipboard
-map("n", "<leader>y", "\"+y", opts)
-map("v", "<leader>y", "\"+y", opts)
+map("n", "<leader>y", '"+y', opts)
+map("v", "<leader>y", '"+y', opts)
 
 -- Delete without yank
-map("n", "<leader>d", "\"_d", opts)
-map("v", "<leader>d", "\"_d", opts)
+map("n", "<leader>d", '"_d', opts)
+map("v", "<leader>d", '"_d', opts)
 
 -- Decrease indentation
 map("i", "<S-Tab>", "<C-D>", opts)
 
-
 -- Diognostic
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Previous diagnostic' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
-vim.keymap.set('n', '<leader>odf', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
-vim.keymap.set('n', '<leader>odl', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
+vim.keymap.set("n", "<leader>odf", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
+vim.keymap.set("n", "<leader>odl", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
 vim.keymap.set("n", "<C-.>", vim.lsp.buf.code_action, { noremap = true, silent = true, desc = "Quick Fix" })
