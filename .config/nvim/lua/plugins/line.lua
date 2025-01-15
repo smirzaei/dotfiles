@@ -1,24 +1,18 @@
 local file_format = {
-  'fileformat',
+  "fileformat",
   symbols = {
-    unix = 'unix',
-    dos = 'dos',
-    mac = 'mac',
-  }
+    unix = "unix",
+    dos = "dos",
+    mac = "mac",
+  },
 }
-
-local function icon()
-  -- return [[]]
-  -- return [[]]
-  return [[]]
-end
 
 local lualine_cfg = {
   options = {
     icons_enabled = true,
-    theme = 'auto',
-    component_separators = '|',
-    section_separators = '',
+    theme = "auto",
+    component_separators = "|",
+    section_separators = "",
     disabled_filetypes = {
       statusline = {},
       winbar = {},
@@ -30,36 +24,36 @@ local lualine_cfg = {
       statusline = 1000,
       tabline = 1000,
       winbar = 1000,
-    }
+    },
   },
   sections = {
-    lualine_a = {icon, 'mode'},
-    lualine_b = {'branch', 'diff', 'diagnostics'},
+    lualine_a = { "mode" },
+    lualine_b = { "branch", "diff", "diagnostics" },
     lualine_c = {
-      {'filename', path = 1}
+      { "filename", path = 1 },
     },
-    lualine_x = {'encoding', file_format, 'filetype' },
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
+    lualine_x = { "encoding", file_format, "filetype" },
+    lualine_y = { "progress" },
+    lualine_z = { "location" },
   },
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
+    lualine_c = { "filename" },
+    lualine_x = { "location" },
     lualine_y = {},
-    lualine_z = {}
+    lualine_z = {},
   },
   tabline = {},
   winbar = {},
   inactive_winbar = {},
-  extensions = {}
+  extensions = {},
 }
 
 return {
-  'nvim-lualine/lualine.nvim',
+  "nvim-lualine/lualine.nvim",
   dependencies = {
-    'nvim-tree/nvim-web-devicons',
+    "nvim-tree/nvim-web-devicons",
   },
   opts = lualine_cfg,
 }
