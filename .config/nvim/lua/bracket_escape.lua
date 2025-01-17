@@ -8,10 +8,14 @@ local PAIRS = {
 	["`"] = "`",
 }
 
-local function send_tab()
+local function default_behavior()
 	-- Do the default tab behavior
-	local tab = vim.api.nvim_replace_termcodes("<Tab>", true, true, true)
-	vim.fn.feedkeys(tab, "n")
+	-- local tab = vim.api.nvim_replace_termcodes("<Tab>", true, true, true)
+	-- vim.fn.feedkeys(tab, "n")
+
+	-- Jump to the next word instead
+	vim.cmd("normal! w")
+	vim.cmd("startinsert")
 end
 
 local function is_symmetrical(char)
@@ -32,7 +36,7 @@ local function escape_bracket()
 	local row, col = unpack(vim.api.nvim_win_get_cursor(0))
 	-- The cursor is at the first character of the line, there is nothing to do
 	if col == 0 then
-		send_tab()
+		default_behavior()
 		return
 	end
 
@@ -74,7 +78,7 @@ local function escape_bracket()
 
 	-- If stack is empty then it means there's no unmatched bracket behind the cursor
 	if #stack == 0 then
-		send_tab()
+		default_behavior()
 		return
 	end
 
@@ -106,7 +110,7 @@ local function escape_bracket()
 	end
 
 	-- No unmatched opening pair is found, do nothing
-	send_tab()
+	default_behavior()
 end
 
-vim.keymap.set("i", "<Tab>", escape_bracket, { noremap = true, silent = true })
+vim.keymap.set("i", "<C-l>", escape_bracket, { noremap = true, silent = true })

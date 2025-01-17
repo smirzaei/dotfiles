@@ -1,7 +1,7 @@
 require("options")
 require("keybindings")
 require("autocmds")
-require("bracket")
+require("bracket_escape")
 require("init_lazy")
 
 require("lazy").setup({
