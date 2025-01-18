@@ -95,17 +95,18 @@ local config_cmp = function()
 		-- https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
 		sources = cmp.config.sources({
 			{
-				name = "lazydev",
+				name = "nvim_lsp",
+				priority = 200,
 				group_index = 0,
 			},
 			{
 				name = "luasnip",
 				option = { show_autosnippets = true, use_show_condition = false },
 				priority = 150,
-				group_index = 1,
+				group_index = 0,
 			},
 			{
-				name = "nvim_lsp",
+				name = "lazydev",
 				priority = 100,
 				group_index = 1,
 			},
@@ -119,8 +120,11 @@ local config_cmp = function()
 				priority = 100,
 				group_index = 1,
 			},
-			-- { name = "crates" },
-			{ name = "treesitter" },
+			{
+				name = "treesitter",
+				priority = 100,
+				group_index = 1,
+			},
 			{
 				name = "rg",
 				keyword_length = 3,
@@ -129,7 +133,7 @@ local config_cmp = function()
 					additional_arguments = "--smart-case",
 				},
 				priority = 90,
-				group_index = 3,
+				group_index = 2,
 			},
 			{
 				name = "git",
@@ -151,16 +155,15 @@ local config_cmp = function()
 					end
 				end,
 			},
-			-- { name = 'buffer' },
 			{
 				name = "path",
 				priority = 10,
-				group_index = 5,
+				group_index = 3,
 			},
 			{
 				name = "calc",
 				priority = 10,
-				group_index = 5,
+				group_index = 3,
 			},
 		}),
 		preselect = cmp.PreselectMode.None,
