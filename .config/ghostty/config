@@ -40,6 +40,7 @@ palette = 15=#e0def4
 window-decoration = true
 
 # Font
+font-size = 10
 font-family = CaskaydiaCove Nerd Font
 font-family-bold = CaskaydiaCove Nerd Font
 font-family-italic = CaskaydiaCove Nerd Font
