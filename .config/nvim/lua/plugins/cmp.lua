@@ -62,6 +62,7 @@ local config_cmp = function()
 			ghost_text = false,
 		},
 		formatting = {
+			expandable_indicator = true,
 			fields = { "kind", "abbr", "menu" },
 			format = function(_, item)
 				local label_width = 30
@@ -91,17 +92,23 @@ local config_cmp = function()
 				behavior = cmp.ConfirmBehavior.Replace,
 				select = true,
 			}),
+			-- ["<C-a>"] = minuet.make_cmp_map(),
 		}),
 		-- https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
 		sources = cmp.config.sources({
 			{
-				name = "nvim_lsp",
+				name = "luasnip",
+				option = { show_autosnippets = true, use_show_condition = false },
 				priority = 200,
 				group_index = 0,
 			},
 			{
-				name = "luasnip",
-				option = { show_autosnippets = true, use_show_condition = false },
+				name = "copilot",
+				priority = 160,
+				group_index = 0,
+			},
+			{
+				name = "nvim_lsp",
 				priority = 150,
 				group_index = 0,
 			},
@@ -170,12 +177,13 @@ local config_cmp = function()
 		sorting = {
 			priority_weight = 2,
 			comparators = {
+				require("copilot_cmp.comparators").prioritize,
 				cmp.config.compare.offset,
 				cmp.config.compare.exact,
 				cmp.config.compare.score,
-				cmp.config.compare.kind,
 				cmp.config.compare.recently_used,
 				cmp.config.compare.locality,
+				cmp.config.compare.kind,
 				cmp.config.compare.length,
 				cmp.config.compare.order,
 			},
@@ -222,6 +230,7 @@ return {
 			"hrsh7th/cmp-calc",
 			"davidsierradz/cmp-conventionalcommits",
 			"ray-x/cmp-treesitter",
+			"zbirenbaum/copilot-cmp",
 			{
 				"L3MON4D3/LuaSnip",
 				dependencies = { "rafamadriz/friendly-snippets" },
