@@ -64,6 +64,13 @@ if [ "$has_brew" = true ]; then
 	pkgs+=('gnu-sed')
 fi
 
+# Github CLI
+if [ "$has_brew" = true ]; then
+	pkgs+=('gh')
+else
+	pkgs+=('github-cli')
+fi
+
 # WASM
 pkgs+=('wabt')
 
