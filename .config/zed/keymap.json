@@ -19,7 +19,7 @@
             "shift-k": "editor::Hover",
             "g I": "editor::GoToImplementation",
             "g r": "editor::FindAllReferences",
-            "g d": "editor::GoToDefinition",
+            // "g d": "editor::GoToDefinition",
             "space s f": "file_finder::Toggle",
             "space s g": "pane::DeploySearch",
             "space s s": "project_symbols::Toggle",
@@ -41,5 +41,4 @@
             "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
         }
     },
-
 ]

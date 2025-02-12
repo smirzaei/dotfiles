@@ -7,98 +7,106 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "tab_bar": {
-    "show": false
-  },
-  "toolbar": {
-      "breadcrumbs": true,
-      "quick_actions": false
-  },
-  "theme": "Rosé Pine",
-  "vim_mode": true,
-  "cursor_blink": false,
-  "relative_line_numbers": true,
-  "scrollbar": {
-    "show": "never",
-    "git_diff": true,
-    "search_results": true,
-    "selected_symbol": true,
-    "diagnostics": true
-  },
-  "autosave": "on_focus_change",
-  "buffer_font_family": "CaskaydiaCove Nerd Font",
-  "buffer_font_size": 14,
-  "buffer_font_features": {
-    "calt": true,
-    "liga": true,
-    "ss01": true,
-    "ss02": true,
-    "ss19": true
-  },
-  "ui_font_family": "CaskaydiaCove Nerd Font",
-  "ui_font_size": 16,
-  "ui_font_features": {
-    "calt": true,
-    "liga": true,
-    "ss01": true,
-    "ss02": true,
-    "ss19": true
-  },
-  "tab_size": 4,
-  "tabs": {
-    "git_status": true
-  },
-  "git": {
-    "git_gutter": "tracked_files",
-    "inline_blame": {
-      "enabled": true
-    }
-  },
-  "inlay_hints": {
-    "enabled": false
-  },
-  "show_whitespaces": "selection",
-  "preferred_line_length": 80,
-  "soft_wrap": "prefer_line",
-  "wrap_guides": [80, 120],
-  "format_on_save": "off",
-  "remove_trailing_whitespace_on_save": true,
-  "languages": {
-    "Rust": {
-      "preferred_line_length": 120,
-      "format_on_save": "language_server"
+    "tab_bar": {
+        "show": false
     },
-    "Go": {
-      "preferred_line_length": 120,
-      "format_on_save": "language_server",
-      "hard_tabs": true
+    "toolbar": {
+        "breadcrumbs": true,
+        "quick_actions": false
     },
-    "Zig": {
-       "preferred_line_length": 100,
-        "format_on_save": "language_server"
-    }
-  },
-  "lsp": {
-    "rust-analyzer": {
-      "initialization_options": {
-        "check": {
-          "command": "clippy"
+    "theme": "Rosé Pine",
+    "vim_mode": true,
+    "cursor_blink": false,
+    "relative_line_numbers": true,
+    "scrollbar": {
+        "show": "never",
+        "git_diff": true,
+        "search_results": true,
+        "selected_symbol": true,
+        "diagnostics": "all"
+    },
+    "autosave": "on_focus_change",
+    "buffer_font_family": "CaskaydiaCove Nerd Font",
+    "buffer_font_size": 14,
+    "buffer_font_features": {
+        "calt": true,
+        "liga": true,
+        "ss01": true,
+        "ss02": true,
+        "ss19": true
+    },
+    "ui_font_family": "CaskaydiaCove Nerd Font",
+    "ui_font_size": 16,
+    "ui_font_features": {
+        "calt": true,
+        "liga": true,
+        "ss01": true,
+        "ss02": true,
+        "ss19": true
+    },
+    "tab_size": 4,
+    "tabs": {
+        "git_status": true
+    },
+    "git": {
+        "git_gutter": "tracked_files",
+        "inline_blame": {
+            "enabled": true
         }
-      }
+    },
+    "inlay_hints": {
+        "enabled": false
+    },
+    "show_whitespaces": "selection",
+    "preferred_line_length": 80,
+    "soft_wrap": "prefer_line",
+    "wrap_guides": [80, 120],
+    "format_on_save": "off",
+    "remove_trailing_whitespace_on_save": true,
+    "languages": {
+        "Rust": {
+            "preferred_line_length": 120,
+            "format_on_save": "language_server"
+        },
+        "Go": {
+            "preferred_line_length": 120,
+            "format_on_save": "language_server",
+            "hard_tabs": true
+        },
+        "Zig": {
+            "preferred_line_length": 100,
+            "format_on_save": "language_server"
+        }
+    },
+    "lsp": {
+        "rust-analyzer": {
+            "initialization_options": {
+                "checkOnSave": {
+                    "command": "clippy"
+                },
+                "check": {
+                    "command": "clippy"
+                }
+            }
+        }
+    },
+    // AI stuff
+    "semantic_index": {
+        "enabled": true
+    },
+    "collaboration_panel": {
+        "button": false
+    },
+    "chat_panel": {
+        "button": "never"
+    },
+    "assistant": {
+        "default_model": {
+            "provider": "zed.dev",
+            "model": "claude-3-5-sonnet-latest"
+        },
+        "version": "2",
+        "enabled": true,
+        "button": true
     }
-  },
-  // AI stuff
-  "semantic_index": {
-    "enabled": false
-  },
-  "collaboration_panel": {
-      "button": false
-  },
-  "chat_panel": {
-      "button": false
-  },
-  "assistant": {
-      "enabled": false,
-      "button": false
-  },
 }
