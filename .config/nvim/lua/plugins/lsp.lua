@@ -68,13 +68,13 @@ local config_lsp = function()
 				telemetry = { enable = false },
 			},
 		},
-		--    bashls = {
-		--      filetypes = { "sh", "bash" }
-		--    },
+		bashls = {
+			filetypes = { "sh", "bash" },
+		},
 		helm_ls = {},
 		-- dockerls = {},
 		-- docker_compose_language_service = {},
-		-- yamlls = {},
+		yamlls = {},
 		zls = {},
 	}
 

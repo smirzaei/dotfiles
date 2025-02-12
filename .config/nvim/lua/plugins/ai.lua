@@ -5,11 +5,11 @@ local copilot_conf = {
     },
     panel = { enabled = false },
     filetypes = {
-        rust = true,
-        zig = true,
-        go = true,
-        lua = true,
-        ["*"] = false,
+        -- rust = true,
+        -- zig = true,
+        -- go = true,
+        -- lua = true,
+        ["*"] = true,
     },
 }
 
