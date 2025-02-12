@@ -1,70 +1,102 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+### Autocomplete stuff
+# Load and initialize the completion system
+autoload -Uz compinit
+compinit
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="soroush"
+# Enable completion caching
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# Completion settings
+zstyle ':completion:*' menu select # Enable menu selection
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # Case-insensitive matching
+zstyle ':completion:*' completer _expand _complete _correct _approximate # Enable various completion features
 
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
+# Better completion display
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*:descriptions' format '%F{green}-- %d --%f'
+zstyle ':completion:*:messages' format '%F{purple}-- %d --%f'
+zstyle ':completion:*:warnings' format '%F{red}-- no matches found --%f'
+zstyle ':completion:*:corrections' format '%F{yellow}-- %d (errors: %e) --%f'
 
-# Uncomment this to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+# Group matches and describe groups
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:*:-command-:*:*' group-order alias builtins functions commands
 
-# Uncomment to change how often before auto-updates occur? (in days)
-# export UPDATE_ZSH_DAYS=13
+# Fuzzy matching of completions
+zstyle ':completion:*' completer _complete _match _approximate
+zstyle ':completion:*:match:*' original only
+zstyle ':completion:*:approximate:*' max-errors 1 numeric
 
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
+# Auto-complete with dot files
+_comp_options+=(globdots)
 
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
+# Color completion suggestions
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
-# Uncomment following line if you want to disable command autocorrection
-# DISABLE_CORRECTION="true"
+# Git completions
+zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+# git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# Uncomment following line if you want to disable marking untracked files under
-# VCS as dirty. This makes repository status check for large repositories much,
-# much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Uncomment following line if you want to  shown in the command execution time stamp 
-# in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
-# yyyy-mm-dd
-# HIST_STAMPS="mm/dd/yyyy"
+###
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git colored-man-pages golang kubectl)
+### FZF
+# Check if fzf is installed
+if command -v fzf >/dev/null 2>&1; then
+    # Source fzf key bindings and completion
+    if [[ -d /usr/share/fzf ]]; then
+        # Linux
+        source /usr/share/fzf/key-bindings.zsh
+        source /usr/share/fzf/completion.zsh
+    elif [[ -d /opt/homebrew/opt/fzf/shell ]]; then
+        # macOS Homebrew (Apple Silicon)
+        source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
+        source /opt/homebrew/opt/fzf/shell/completion.zsh
+    elif [[ -d /usr/local/opt/fzf/shell ]]; then
+        # macOS Homebrew (Intel)
+        source /usr/local/opt/fzf/shell/key-bindings.zsh
+        source /usr/local/opt/fzf/shell/completion.zsh
+    fi
 
-source $ZSH/oh-my-zsh.sh
+    # Customize fzf appearance
+    export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --inline-info"
 
-# User configuration
+    # Use fd/ripgrep if available (faster than find)
+    if command -v fd > /dev/null; then
+        export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+        export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
+        export FZF_CTRL_T_COMMAND='fd --type f --hidden --follow --exclude .git'
+    fi
 
-# export MANPATH="/usr/local/man:$MANPATH"
+    # Preview file content using bat (if installed)
+    if command -v bat > /dev/null; then
+        export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'"
+    fi
 
-# # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+    # Preview directory content using tree
+    export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+    # fzf aliases
+    alias fh='history | fzf'
+    alias fk='kill -9 $(ps aux | fzf | awk "{print $2}")'
+    alias fp='ps aux | fzf'
+    alias ff='fzf --preview "bat --style=numbers --color=always --line-range :500 {}"'
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+    # Git + fzf
+    alias gco='git checkout $(git branch | fzf)'
+    alias glog='git log --oneline | fzf --preview "git show --color=always {1}"'
+else
+    echo "fzf is not installed"
+fi
+
+###
+
+
 
 # Start ssh agent for agent forwarding
 eval `ssh-agent -s`
