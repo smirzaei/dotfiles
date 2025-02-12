@@ -76,8 +76,7 @@ pkgs+=('wabt')
 
 # Bash
 # Both pacman and homebrew have the same package names
-# pkgs+=('shellcheck' 'bash-language-server' 'bash-completion' 'shfmt')
-pkgs+=('shellcheck' 'shfmt')
+pkgs+=('shellcheck' 'bash-language-server' 'bash-completion' 'shfmt')
 
 # Go
 # Both pacman and homebrew have the same package names
