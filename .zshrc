@@ -1,3 +1,12 @@
+# Make sure history is saved
+HISTFILE=~/.zsh_history
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt EXTENDED_HISTORY
+
 ### Autocomplete stuff
 # Load and initialize the completion system
 autoload -Uz compinit
@@ -150,3 +159,16 @@ then
 fi
 
 export GPG_TTY=$(tty)
+
+
+# Flatpak stuff
+if [ -e /var/lib/flatpak/exports/share ];
+then
+    export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:$XDG_DATA_DIRS"
+fi
+
+if [ -e "$HOME/.local/share/flatpak/exports/share" ];
+then
+    export XDG_DATA_DIRS="$HOME/.local/share/flatpak/exports/share:$XDG_DATA_DIRS"
+fi
+
