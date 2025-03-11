@@ -1,5 +1,7 @@
 # Make sure history is saved
 HISTFILE=~/.zsh_history
+HISTSIZE=50000
+SAVEHIST=50000
 setopt APPEND_HISTORY
 setopt SHARE_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
