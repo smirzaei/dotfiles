@@ -7,15 +7,21 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+    "features": {
+        "edit_prediction_provider": "zed" // Use zata
+    },
     "tab_bar": {
-        "show": false
+        "show": true
     },
     "toolbar": {
         "breadcrumbs": true,
         "quick_actions": false
     },
-    "theme": "Rosé Pine",
+    "theme": "Zed Legacy:  Andromeda",
     "vim_mode": true,
+    "vim": {
+        "highlight_on_yank_duration": 250,
+    },
     "cursor_blink": false,
     "relative_line_numbers": true,
     "scrollbar": {
@@ -59,7 +65,7 @@
     },
     "show_whitespaces": "selection",
     "preferred_line_length": 80,
-    "soft_wrap": "prefer_line",
+    // "soft_wrap": "preferred_line_length",
     "wrap_guides": [80, 120],
     "format_on_save": "off",
     "remove_trailing_whitespace_on_save": true,
@@ -70,8 +76,10 @@
         },
         "Go": {
             "preferred_line_length": 120,
+            "tab_size": 4,
             "format_on_save": "language_server",
-            "hard_tabs": true
+            "hard_tabs": true,
+            "language_servers": ["gopls", "golangci-lint"]
         },
         "Zig": {
             "preferred_line_length": 100,
@@ -88,6 +96,17 @@
                     "command": "clippy"
                 }
             }
+        },
+        "golangci-lint": {
+            "initialization_options": {
+                "command": [
+                    "golangci-lint",
+                    "run",
+                    "--out-format",
+                    "json",
+                    "--issues-exit-code=1"
+                ]
+            }
         }
     },
     // AI stuff
@@ -102,11 +121,13 @@
     },
     "assistant": {
         "default_model": {
-            "provider": "zed.dev",
-            "model": "claude-3-5-sonnet-latest"
+            "provider": "copilot_chat",
+            "model": "claude-3-7-sonnet"
         },
         "version": "2",
         "enabled": true,
-        "button": true
-    }
+        "button": true,
+        "type": "openai"
+    },
+
 }

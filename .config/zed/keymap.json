@@ -1,44 +1,74 @@
 // https://zed.dev/ref/vim.json
 [
     {
+        "context": "Workspace"
+    },
+    {
         "context": "EmptyPane || SharedScreen || vim_operator == none && !VimWaiting && vim_mode != insert",
         "bindings": {
             "space s f": "file_finder::Toggle",
-        },
+        }
     },
-    // Normal mode bindings
     {
         "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
         "bindings": {
-            "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-            "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-            "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
-            "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-            "[ d": "editor::GoToPrevDiagnostic",
-            "] d": "editor::GoToDiagnostic",
             "shift-k": "editor::Hover",
             "g I": "editor::GoToImplementation",
             "g r": "editor::FindAllReferences",
-            // "g d": "editor::GoToDefinition",
+
             "space s f": "file_finder::Toggle",
             "space s g": "pane::DeploySearch",
+            "space e": "project_panel::ToggleFocus",
+            "space f r": "pane::RevealInProjectPanel",
             "space s s": "project_symbols::Toggle",
+
             "space o t": "workspace::ToggleLeftDock",
-            "space o d": "diagnostics::Deploy"
+
+            "space o d": "diagnostics::Deploy",
+            "space b d": "pane::CloseActiveItem",
+            "ctrl-f": "editor::MovePageDown",
+            "ctrl-b": "editor::MovePageUp"
         }
     },
     {
-        "context": "Editor && (vim_mode == normal || vim_mode == visual) vi && !VimWaiting && !menu",
-        "bindings": {}
-    },
-    {
-        // Terminal and other panes?
-        "context": "Dock",
+        "context": "Editor || Terminal || Search || ProjectPanel || OutlinePanel || ChatPanel || CollaborationPanel",
         "bindings": {
-            "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-            "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-            "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
-            "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+            "ctrl-h": "workspace::ActivatePaneLeft",
+            "ctrl-l": "workspace::ActivatePaneRight",
+            "ctrl-j": "workspace::ActivatePaneDown",
+            "ctrl-k": "workspace::ActivatePaneUp",
+            "shift-escape": null // Disable the annoying full screen toggle (workspace::ToggleZoom)
         }
     },
+    {
+        "context": "ProjectPanel && not_editing",
+        "bindings": {
+            "ctrl-v": ["workspace::SendKeystrokes", "ctrl-w v enter"]
+        }
+    },
+    {
+        "context": "ChatPanel",
+        "bindings": {
+            "ctrl-shift-c": null
+        }
+    },
+    {
+        "context": "CollaborationPanel",
+        "bindings": {
+            "ctrl-shift-c": null
+        }
+    },
+    {
+        "context": "Terminal",
+        "bindings": {
+            "ctrl-`": "terminal_panel::ToggleFocus"
+        }
+    },
+    // Close search panel with Escape
+    {
+        "context": "Search",
+        "bindings": {
+            "escape": "project_search::ToggleFocus"
+        }
+    }
 ]
