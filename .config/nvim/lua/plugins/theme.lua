@@ -79,7 +79,7 @@ return {
             vim.g.gruvbox_material_disable_italic_comment = 1
             vim.g.gruvbox_material_diagnostic_text_highlight = 1
             vim.g.gruvbox_material_diagnostic_virtual_text = "colored"
-            -- vim.cmd.colorscheme("gruvbox-material")
+            vim.cmd.colorscheme("gruvbox-material")
 
             -- To get a list of available highlight groups run:
             -- :h nvim-tree-highlight
@@ -142,7 +142,7 @@ return {
                 }
             })
 
-            vim.cmd.colorscheme('rose-pine')
+            -- vim.cmd.colorscheme('rose-pine')
         end
     }
 }
