@@ -62,9 +62,9 @@ local lualine_cfg = {
 		always_divide_middle = true,
 		globalstatus = false,
 		refresh = {
-			statusline = 1000,
-			tabline = 1000,
-			winbar = 1000,
+			statusline = 200,
+			tabline = 200,
+			winbar = 200,
 		},
 	},
 	sections = {
@@ -94,7 +94,8 @@ local lualine_cfg = {
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = {
-		"nvim-tree/nvim-web-devicons",
+		"nvim-tree/nvim-web-devicons", -- TODO: Try using mini.icons instead
+		-- "echasnovski/mini.icons"
 	},
 	opts = lualine_cfg,
 }
