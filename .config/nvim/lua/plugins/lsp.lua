@@ -161,7 +161,9 @@ return {
 				bashls = {
 					filetypes = { "sh", "bash" },
 				},
-				helm_ls = {},
+				helm_ls = {
+					filetypes = { "helm" },
+				},
 				yamlls = {},
 				zls = {},
 				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
