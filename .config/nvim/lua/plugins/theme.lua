@@ -15,19 +15,16 @@ return {
 		end,
 	},
 	{
-		"RRethy/base16-nvim",
+		"vague2k/vague.nvim",
 		config = function()
-			-- vim.cmd.colorscheme("base16-schemer-medium")
-			-- vim.cmd.colorscheme("base16-precious-dark-fifteen")
-			-- vim.cmd.colorscheme("base16-da-one-ocean")
-			-- vim.cmd.colorscheme("base16-rose-pine-moon")
-		end,
-	},
-	{
-		"nyoom-engineering/oxocarbon.nvim",
-		opts = {},
-		config = function()
-			vim.cmd.colorscheme = "oxocarbon"
+			require("vague").setup({
+				style = {
+					comments = "none",
+					strings = "none",
+				},
+			})
+
+			vim.cmd.colorscheme("vague")
 		end,
 	},
 	-- {
