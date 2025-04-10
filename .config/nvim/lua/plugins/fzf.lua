@@ -128,5 +128,12 @@ return {
 			end,
 			desc = "[S]earch [n]eovim [c]onfig files",
 		},
+		{
+			"<leader>cs",
+			function()
+				require("fzf-lua").colorschemes()
+			end,
+			desc = "[C]olor [S]chemes",
+		},
 	},
 }

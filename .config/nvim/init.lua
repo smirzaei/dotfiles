@@ -8,8 +8,11 @@ require("lazy").setup({
 	{ import = "plugins" },
 })
 
+-- Playing around with colorscheme and Lush
+require("colorscheme")
+
 -- Custom Commands
-function format_then_write(opts)
+local function format_then_write()
 	vim.cmd.Format()
 	vim.cmd.write()
 end

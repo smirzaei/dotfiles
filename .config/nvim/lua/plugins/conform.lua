@@ -21,11 +21,11 @@ return {
 	},
 	keys = {
 		{
-			"<leader>cf",
+			"<leader>fc",
 			function()
 				require("conform").format({ lsp_format = "fallback" })
 			end,
-			desc = "[C]ode [F]ormat",
+			desc = "[F]ormat [C]ode",
 		},
 	},
 }

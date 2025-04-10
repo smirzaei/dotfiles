@@ -1,5 +1,8 @@
 return {
 	{
+		"rktjmp/lush.nvim", -- For playing around with colors
+	},
+	{
 		"rose-pine/neovim",
 		name = "rose-pine",
 		config = function()
@@ -24,8 +27,11 @@ return {
 				},
 			})
 
-			vim.cmd.colorscheme("vague")
+			-- vim.cmd.colorscheme("vague")
 		end,
+	},
+	{
+		"RRethy/base16-nvim",
 	},
 	-- {
 	-- 	"sainnhe/gruvbox-material",
