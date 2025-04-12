@@ -8,8 +8,8 @@ require("lazy").setup({
 	{ import = "plugins" },
 })
 
--- Playing around with colorscheme and Lush
-require("colorscheme")
+local colorscheme = require("colorscheme")
+colorscheme.apply()
 
 -- Custom Commands
 local function format_then_write()
