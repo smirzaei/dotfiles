@@ -1,8 +1,5 @@
 return {
 	{
-		"rktjmp/lush.nvim", -- For playing around with colors
-	},
-	{
 		"rose-pine/neovim",
 		name = "rose-pine",
 		config = function()
@@ -32,6 +29,12 @@ return {
 	},
 	{
 		"RRethy/base16-nvim",
+	},
+	{
+		"mellow-theme/mellow.nvim",
+	},
+	{
+		"projekt0n/github-nvim-theme",
 	},
 	-- {
 	-- 	"sainnhe/gruvbox-material",
