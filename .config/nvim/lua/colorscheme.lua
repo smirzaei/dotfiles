@@ -61,6 +61,24 @@ palette.keyword = palette.red
 palette.symbol = palette.cyan
 palette.type = palette.yellow
 
+-- Lualine
+-- Most of these colors are yoinked from the default colors.
+-- I just really dislike the huge white background that appears in the middle of
+-- my status line. It might be a misconfiguarion on my end
+-- stylua: ignore
+palette.lualine = {
+	red     = "#ffc0b9",
+	green   = "#c4ffd3",
+	blue    = "#b6f0ff",
+	cyan    = "#9affff",
+
+	gray1 = "#565a60",
+	gray2 = "#a7a9ae",
+
+	gray3 = "#16181d",
+	gray4 = "#65696f",
+}
+
 local function hl(group, opts)
 	vim.api.nvim_set_hl(0, group, opts)
 end
@@ -68,7 +86,49 @@ end
 local M = {
 	palette = palette,
 	lualine = {
-		normal = {},
+		normal = {
+			a = { bg = palette.lualine.gray1, fg = palette.lualine.gray2, gui = "bold" },
+			b = { bg = palette.lualine.gray3, fg = palette.lualine.gray4 },
+			c = { bg = palette.lualine.gray3, fg = palette.gray2 },
+			x = { bg = palette.lualine.gray3, fg = palette.lualine.gray4 },
+			y = { bg = palette.lualine.gray3, fg = palette.lualine.gray4 },
+			z = { bg = palette.lualine.gray1, fg = palette.lualine.gray2, gui = "bold" },
+		},
+		insert = {
+			a = { bg = palette.lualine.green, fg = palette.lualine.gray3, gui = "bold" },
+			b = { bg = palette.lualine.gray3, fg = palette.lualine.green },
+			c = { bg = palette.lualine.gray3, fg = palette.gray2 },
+			x = { bg = palette.lualine.gray3, fg = palette.lualine.gray4 },
+			y = { bg = palette.lualine.gray3, fg = palette.lualine.gray4 },
+			z = { bg = palette.lualine.green, fg = palette.lualine.gray3, gui = "bold" },
+		},
+		visual = {
+			a = { bg = palette.lualine.blue, fg = palette.lualine.gray3, gui = "bold" },
+			b = { bg = palette.lualine.gray3, fg = palette.lualine.blue },
+			c = { bg = palette.lualine.gray3, fg = palette.gray2 },
+			x = { bg = palette.lualine.gray3, fg = palette.lualine.gray4 },
+			y = { bg = palette.lualine.gray3, fg = palette.lualine.gray4 },
+			z = { bg = palette.lualine.blue, fg = palette.lualine.gray3, gui = "bold" },
+		},
+		replace = {
+			a = { bg = palette.lualine.red, fg = palette.lualine.gray3, gui = "bold" },
+			b = { bg = palette.lualine.gray3, fg = palette.lualine.red },
+			c = { bg = palette.lualine.gray3, fg = palette.gray2 },
+			x = { bg = palette.lualine.gray3, fg = palette.lualine.gray4 },
+			y = { bg = palette.lualine.gray3, fg = palette.lualine.gray4 },
+			z = { bg = palette.lualine.red, fg = palette.lualine.gray3, gui = "bold" },
+		},
+		command = {
+			a = { bg = palette.lualine.cyan, fg = palette.lualine.gray3, gui = "bold" },
+			b = { bg = palette.lualine.gray3, fg = palette.lualine.cyan },
+			c = { bg = palette.lualine.gray3, fg = palette.gray2 },
+			x = { bg = palette.lualine.gray3, fg = palette.lualine.gray4 },
+			y = { bg = palette.lualine.gray3, fg = palette.lualine.gray4 },
+			z = { bg = palette.lualine.cyan, fg = palette.lualine.gray3, gui = "bold" },
+		},
+		inactive = {
+			c = { bg = palette.lualine.gray3, fg = palette.lualine.gray2 },
+		},
 	},
 }
 
