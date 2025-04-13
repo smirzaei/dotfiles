@@ -34,8 +34,8 @@ return {
 						require("fzf-lua").lsp_typedefs,
 						"Type [D]efinition - Jump to the type of the word under the cursor"
 					)
-					map("<leader>fds", require("fzf-lua").lsp_document_symbols, "[F]ind [D]ocument [S]ymbols")
-					map("<leader>fs", require("fzf-lua").lsp_live_workspace_symbols, "[F]ind Workspace [S]ymbols")
+					map("<leader>sds", require("fzf-lua").lsp_document_symbols, "[S]earch [D]ocument [S]ymbols")
+					map("<leader>ss", require("fzf-lua").lsp_live_workspace_symbols, "[S]earch Workspace [S]ymbols")
 					map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 					map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
 					map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
