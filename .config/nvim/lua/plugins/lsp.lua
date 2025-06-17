@@ -157,13 +157,14 @@ return {
 				golangci_lint_ls = {},
 				-- clangd = {},
 				pyright = {},
-				rust_analyzer = {
-					check = {
-						command = "clippy",
-						extraArgs = { "--no-deps" },
-					},
-					checkOnSave = true,
-				},
+				-- Using https://github.com/mrcjkb/rustaceanvim instead
+				-- rust_analyzer = {
+				-- 	check = {
+				-- 		command = "clippy",
+				-- 		extraArgs = { "--no-deps" },
+				-- 	},
+				-- 	checkOnSave = true,
+				-- },
 				bashls = {
 					filetypes = { "sh", "bash" },
 				},
@@ -221,6 +222,7 @@ return {
 				automatic_installation = false,
 				handlers = {
 					function(server_name)
+						print("Setting up LSP server: " .. server_name)
 						local server = servers[server_name] or {}
 						-- This handles overriding only values explicitly passed
 						-- by the server configuration above. Useful when disabling
