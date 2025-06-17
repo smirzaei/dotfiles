@@ -222,7 +222,6 @@ return {
 				automatic_installation = false,
 				handlers = {
 					function(server_name)
-						print("Setting up LSP server: " .. server_name)
 						local server = servers[server_name] or {}
 						-- This handles overriding only values explicitly passed
 						-- by the server configuration above. Useful when disabling
