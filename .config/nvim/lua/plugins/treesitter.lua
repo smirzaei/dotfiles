@@ -36,6 +36,7 @@ local langs = {
 	"gitattributes",
 	"gitcommit",
 	"gitignore",
+	"nix",
 }
 
 local config_treesitter = function()

@@ -5,5 +5,6 @@ return {
 		"javascript",
 		"html",
 		"lua",
+		"tmux",
 	},
 }

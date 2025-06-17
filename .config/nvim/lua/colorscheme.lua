@@ -152,6 +152,7 @@ M.apply = function()
 	hl("@function.builtin.go", { fg = palette.symbol, italic = true }) -- make, append, len, cap
 	hl("@keyword.function.go", { fg = palette.keyword, italic = true }) -- func
 	hl("@keyword.repeat.go", { fg = palette.keyword, italic = true }) -- for
+	hl("@boolean.go", { fg = palette.symbol, bold = true }) -- true, false
 end
 
 return M
