@@ -157,7 +157,13 @@ return {
 				golangci_lint_ls = {},
 				-- clangd = {},
 				pyright = {},
-				rust_analyzer = {},
+				rust_analyzer = {
+					check = {
+						command = "clippy",
+						extraArgs = { "--no-deps" },
+					},
+					checkOnSave = true,
+				},
 				bashls = {
 					filetypes = { "sh", "bash" },
 				},
