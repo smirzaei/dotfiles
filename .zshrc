@@ -117,8 +117,12 @@ alias gp='git push'
 ###
 
 
-# Start ssh agent for agent forwarding
-eval `ssh-agent -s`
+# Start ssh agent for agent forwarding only if it's not already running
+# Turns out sharing the same `.zshrc` file on multiple NixOS servers was not a
+# great idea and this broke my agent forwarding.
+if [ -z "$SSH_AUTH_SOCK" ]; then
+    eval `ssh-agent -s`
+fi
 
 # Go
 if ! command -v "go version" %> /dev/null; then
