@@ -60,9 +60,3 @@ vim.opt.diffopt:append("iwhite")
 --- https://luppeng.wordpress.com/2020/10/10/when-to-use-each-of-the-git-diff-algorithms/
 vim.opt.diffopt:append("algorithm:histogram")
 vim.opt.diffopt:append("indent-heuristic")
-
--- Set the default shell to fish if available
-local fish_path = vim.fn.trim(vim.fn.system("which fish"))
-if vim.fn.executable(fish_path) == 1 then
-	vim.o.shell = fish_path
-end
