@@ -9,6 +9,9 @@ setopt HIST_SAVE_NO_DUPS
 setopt HIST_REDUCE_BLANKS
 setopt EXTENDED_HISTORY
 
+# Enable vi mode
+bindkey -v
+
 ### Autocomplete stuff
 # Load and initialize the completion system
 autoload -Uz compinit
