@@ -131,16 +131,12 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
     eval `ssh-agent -s`
 fi
 
-# Go
-if ! command -v "go version" %> /dev/null; then
-  export PATH=$PATH:/usr/local/go/bin
-  if [[ "$(go env GOPATH)" ]]; then
-    export PATH=$PATH:"$(go env GOPATH)/bin"
-  else
-    echo "go env GOPATH is empty"
+# Go: add GOPATH to PATH when Go exists
+if command -v go >/dev/null 2>&1; then
+  gopath="$(go env GOPATH 2>/dev/null)"
+  if [[ -n "$gopath" ]]; then
+    export PATH="$PATH:$gopath/bin"
   fi
-else
-  echo "go is not installed"
 fi
 
 eval "$(starship init zsh)"
@@ -153,12 +149,9 @@ fi
 
 export PATH="$PATH:$HOME/.local/bin/"
 
-# K8s
-# kubectl completion -h
-if ! command -v "kubectl version" %> /dev/null; then
+# K8s: enable completion when kubectl exists
+if command -v kubectl >/dev/null 2>&1; then
   source <(kubectl completion zsh)
-else
-  echo "kubectl is not installed"
 fi
 
 if [ -e ~/.krew ];
