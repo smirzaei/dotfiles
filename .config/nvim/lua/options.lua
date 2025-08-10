@@ -50,6 +50,10 @@ vim.opt.wrap = false -- disable line wrap
 vim.opt.colorcolumn = "80,100"
 vim.opt.vb = true -- don't make the terminal beep
 
+-- Terminal-only cursor shape: thin bar, no blink
+-- :h guicursor for the default
+vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,t:ver25-blinkoff0-TermCursor"
+
 -- "borrowed from https://github.com/jonhoo/configs/blob/475d6cfa5caf4cab910c74023a16b11f582bd3df/editor/.config/nvim/init.lua"
 -- more useful diffs (nvim -d)
 --- by ignoring whitespace
