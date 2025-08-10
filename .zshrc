@@ -20,11 +20,11 @@ compinit
 # Enable completion caching
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
+[[ -d ~/.zsh/cache ]] || mkdir -p ~/.zsh/cache
 
 # Completion settings
 zstyle ':completion:*' menu select # Enable menu selection
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # Case-insensitive matching
-zstyle ':completion:*' completer _expand _complete _correct _approximate # Enable various completion features
 
 # Better completion display
 zstyle ':completion:*' verbose yes
@@ -46,7 +46,9 @@ zstyle ':completion:*:approximate:*' max-errors 1 numeric
 _comp_options+=(globdots)
 
 # Color completion suggestions
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+if (( ${+LS_COLORS} )); then
+  zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+fi
 
 # Git completions
 zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
