@@ -5,7 +5,8 @@
 confirm-close-surface = false
 
 # Theme
-theme = light:gruvbox-material-hard-light,dark:gruvbox-material-hard-dark
+theme = NvimDark
+# theme = light:gruvbox-material-hard-light,dark:gruvbox-material-hard-dark
 # theme = rose-pine
 # background = #191724
 # foreground = #e0def4
@@ -43,6 +44,7 @@ font-family = CaskaydiaCove Nerd Font
 font-family-bold = CaskaydiaCove Nerd Font
 font-family-italic = CaskaydiaCove Nerd Font
 font-family-bold-italic = CaskaydiaCove Nerd Font
+font-feature = calt=1,liga=1,ss01=1,ss02=1,ss19=1
 window-title-font-family = CaskaydiaCove Nerd Font
 
 adjust-cell-width = 0
