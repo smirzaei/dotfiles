@@ -39,6 +39,8 @@ map("t", "<C-h>", "<cmd>wincmd h<cr>", { desc = "Go to left window" })
 map("t", "<C-j>", "<cmd>wincmd j<cr>", { desc = "Go to lower window" })
 map("t", "<C-k>", "<cmd>wincmd k<cr>", { desc = "Go to upper window" })
 map("t", "<C-l>", "<cmd>wincmd l<cr>", { desc = "Go to right window" })
+-- Pass Ctrl-y to the shell for zsh-autosuggestions
+map("t", "<C-y>", "<C-y>", { noremap = true })
 
 -- windows
 map("n", "<leader>ww", "<C-W>p", { desc = "Other window" })
