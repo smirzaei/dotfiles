@@ -7,6 +7,15 @@ vim.api.nvim_create_autocmd("BufEnter", {
 	end,
 })
 
+-- Spell check
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "*" },
+	callback = function()
+		vim.wo.spell = true
+	end,
+	desc = "Enable spell check",
+})
+
 vim.opt.autoindent = true
 vim.opt.breakindent = true
 vim.opt.completeopt = "menu,menuone,preview,noselect"
@@ -36,7 +45,6 @@ vim.opt.signcolumn = "yes"
 vim.opt.smartcase = true -- don't ignore case with capitals
 vim.opt.smartindent = true
 vim.opt.smarttab = true
-vim.opt.spelllang = "en_us"
 vim.opt.splitbelow = true -- put new splits below the current
 vim.opt.splitright = true -- put new splits to the right of the current
 vim.opt.tabstop = 4 -- number of spaces for each tab
@@ -50,6 +58,9 @@ vim.opt.wrap = false -- disable line wrap
 vim.opt.colorcolumn = "80,100"
 vim.opt.vb = true -- don't make the terminal beep
 vim.opt.winborder = "rounded" -- floating windows border
+vim.opt.spelllang = "en"
+vim.opt.spelloptions = "camel" -- spell check
+vim.opt.spellsuggest = "best,3" -- spell check suggestions
 
 -- Terminal-only cursor shape: thin bar, no blink
 -- :h guicursor for the default
