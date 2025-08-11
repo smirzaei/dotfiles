@@ -49,7 +49,7 @@ vim.opt.wildmode = "longest:full,full"
 vim.opt.wrap = false -- disable line wrap
 vim.opt.colorcolumn = "80,100"
 vim.opt.vb = true -- don't make the terminal beep
-vim.opt.winborder = "rounded"
+vim.opt.winborder = "rounded" -- floating windows border
 
 -- Terminal-only cursor shape: thin bar, no blink
 -- :h guicursor for the default
