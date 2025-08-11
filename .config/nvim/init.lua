@@ -1,5 +1,6 @@
 require("options")
 require("keybindings")
+require("diagnostics")
 require("autocmds")
 require("bracket_escape")
 require("init_lazy")
