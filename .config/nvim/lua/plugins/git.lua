@@ -15,4 +15,16 @@ return {
 	{
 		"sindrets/diffview.nvim",
 	},
+	{
+		"NeogitOrg/neogit",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"sindrets/diffview.nvim",
+			"ibhagwan/fzf-lua",
+		},
+		opts = {
+			graph_style = "unicode",
+			process_spinner = true,
+		},
+	},
 }
