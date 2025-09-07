@@ -12,11 +12,15 @@ setopt EXTENDED_HISTORY
 # Enable vi mode
 bindkey -v
 
-### Autocomplete stuff
-# Load and initialize the completion system
-autoload -Uz compinit
-compinit
+# Make sure homebrew installation is in PATH if we're running on mac
+for brew_path in /opt/homebrew/bin/brew /usr/local/bin/brew; do
+  if [ -x "$brew_path" ]; then
+    eval "$("$brew_path" shellenv)"
+    break
+  fi
+done
 
+### Autocomplete stuff
 # Enable completion caching
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
@@ -51,17 +55,23 @@ if (( ${+LS_COLORS} )); then
 fi
 
 # Git completions
-zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+if [[ -f ~/.zsh/git-completion.bash ]]; then
+    zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+fi
 
 # git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-bindkey '^Y' autosuggest-accept
-
+if [[ -f ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+    source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+    bindkey '^Y' autosuggest-accept
+fi
 
 # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [[ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+    source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
-###
+# Initialize completion system
+autoload -Uz compinit && compinit
 
 ### FZF
 # Check if fzf is installed
@@ -123,13 +133,14 @@ alias gc='git commit'
 alias gp='git push'
 ###
 
-
 # Start ssh agent for agent forwarding only if it's not already running
 # Turns out sharing the same `.zshrc` file on multiple NixOS servers was not a
 # great idea and this broke my agent forwarding.
 if [ -z "$SSH_AUTH_SOCK" ]; then
     eval `ssh-agent -s`
 fi
+
+export PATH="$PATH:$HOME/.local/bin/"
 
 # Go: add GOPATH to PATH when Go exists
 if command -v go >/dev/null 2>&1; then
@@ -139,15 +150,15 @@ if command -v go >/dev/null 2>&1; then
   fi
 fi
 
-eval "$(starship init zsh)"
-
 if [ -e ~/.machine_specific ];
 then
   source ~/.machine_specific
 fi
 
+if command -v starship >/dev/null 2>&1; then
+    eval "$(starship init zsh)"
+fi
 
-export PATH="$PATH:$HOME/.local/bin/"
 
 # K8s: enable completion when kubectl exists
 if command -v kubectl >/dev/null 2>&1; then
