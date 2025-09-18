@@ -5,7 +5,7 @@
 confirm-close-surface = false
 
 # Theme
-theme = NvimDark
+theme = Nvim Dark
 # theme = light:gruvbox-material-hard-light,dark:gruvbox-material-hard-dark
 # theme = rose-pine
 # background = #191724
