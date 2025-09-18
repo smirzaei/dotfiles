@@ -147,6 +147,10 @@ M.apply = function()
 	hl("Type", { fg = palette.type }) -- types like struct, class, etc.
 	hl("ColorColumn", { bg = palette.colorcolumn }) -- types like struct, class, etc.
 
+	-- Rust
+	hl("@keyword.rust", { fg = palette.keyword, italic = true }) -- let
+	hl("@keyword.function.rust", { fg = palette.keyword, italic = true }) -- fn
+
 	-- Go
 	hl("@constant.builtin.go", { fg = palette.symbol, italic = true }) -- nil
 	hl("@function.builtin.go", { fg = palette.symbol, italic = true }) -- make, append, len, cap
