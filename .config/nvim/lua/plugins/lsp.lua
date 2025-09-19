@@ -39,6 +39,10 @@ return {
 					map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 					map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
 					map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+					map("gsd", function()
+						vim.cmd.vsplit()
+						vim.lsp.buf.definition()
+					end, "[G]oto [D]efinition in Split")
 
 					-- TODO: Since I'm only running >= 0.11 this function should be removed
 					-- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
