@@ -34,21 +34,27 @@
 
 -- stylua: ignore
 local palette = {
-	red     = "#ffa9a0",
-	green   = "#9cf3ae",
-	blue    = "#8cd1ff",
-	yellow  = "#ffdb77",
-	magenta = "#ffb0ff",
-	cyan    = "#6cfffd",
-	white   = "#ffffff",
-	gray1   = "#eef1f8",
-	gray2   = "#e0e2ea",
-	gray3   = "#c4c6cd",
-	gray4   = "#9b9ea4",
-	gray5   = "#4f5258",
-	gray6   = "#2c2e33",
-	gray7   = "#14161b",
-	gray8   = "#07080d"
+	red           = "#ffa9a0",
+	red_light     = "#ffc0b9",
+	green         = "#9cf3ae",
+	green_light   = "#b3f6c0",
+	blue          = "#8cd1ff",
+	blue_light    = "#a6dbff",
+	yellow        = "#ffdb77",
+	yellow_light  = "#fce094",
+	magenta       = "#ffb0ff",
+	magenta_light = "#ffcaff",
+	cyan          = "#6cfffd",
+	cyan_light    = "#8cf8f7",
+	white         = "#ffffff",
+	gray1         = "#eef1f8",
+	gray2         = "#e0e2ea",
+	gray3         = "#c4c6cd",
+	gray4         = "#9b9ea4",
+	gray5         = "#4f5258",
+	gray6         = "#2c2e33",
+	gray7         = "#14161b",
+	gray8         = "#07080d"
 }
 
 palette.bg = palette.gray7
@@ -67,7 +73,7 @@ palette.type = palette.yellow
 -- my status line. It might be a misconfiguarion on my end
 -- stylua: ignore
 palette.lualine = {
-	red     = "#ffc0b9",
+	red     = palette.red_light,
 	green   = "#c4ffd3",
 	blue    = "#b6f0ff",
 	cyan    = "#9affff",
@@ -145,16 +151,41 @@ M.apply = function()
 	vim.o.background = "dark"
 
 	hl("Normal", { fg = palette.fg, bg = palette.bg }) -- Normal text, editor background
-	hl("Identifier", { fg = palette.fg }) -- Variable names, etc.
-	hl("@Variable", { fg = palette.fg }) -- Variable names, etc.
-	hl("Comment", { fg = palette.comment })
-	hl("Character", { fg = palette.string }) -- e.g. 'c'
-	hl("String", { fg = palette.string })
-	hl("Function", { fg = palette.fn_name }) -- Function names
-	hl("Statement", { fg = palette.keyword }) -- Keywords
-	hl("Special", { fg = palette.symbol }) -- Symbols
-	hl("Type", { fg = palette.type }) -- types like struct, class, etc.
-	hl("ColorColumn", { bg = palette.colorcolumn }) -- types like struct, class, etc.
+	hl("Visual", { bg = palette.gray5 }) -- Selected text in visual mode
+
+	hl("CursorLine", { bg = palette.gray6 }) -- Cursor line color
+	hl("CursorLineNr", { bg = palette.gray6, fg = palette.fg }) -- Cursor line color on the number line
+	hl("LineNr", { bg = palette.bg, fg = palette.gray5 }) -- Line number
+
+	-- https://neovim.io/doc/user/syntax.html
+	hl("@variable", { fg = palette.fg })
+	hl("Identifier", { link = "@variable" }) -- Variable names, etc.
+
+	hl("@comment", { fg = palette.comment })
+	hl("Comment", { link = "@comment" })
+
+	hl("@string", { fg = palette.string })
+	hl("String", { link = "@string" })
+	hl("Character", { link = "@string" }) -- e.g. 'c'
+
+	hl("@function", { fg = palette.fn_name })
+	hl("Function", { link = "@function" })
+
+	hl("@keyword", { fg = palette.keyword })
+	hl("Statement", { link = "@keyword" })
+
+	hl("@type", { fg = palette.type }) -- types like struct, class, etc.
+	hl("Type", { link = "@type" })
+
+	hl("@symbol", { fg = palette.symbol })
+	hl("Special", { link = "@symbol" })
+	hl("boolean", { link = "@symbol" })
+
+	hl("Search", { bg = palette.magenta_light, fg = palette.gray7 })
+
+	hl("Error", { bg = palette.red, fg = palette.gray7 })
+
+	hl("ColorColumn", { bg = palette.colorcolumn })
 
 	-- Rust
 	hl("@keyword.rust", { fg = palette.keyword, italic = true }) -- let
