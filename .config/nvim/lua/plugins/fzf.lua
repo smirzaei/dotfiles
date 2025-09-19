@@ -5,6 +5,9 @@ return {
 	-- or if using mini.icons/mini.nvim
 	dependencies = { "echasnovski/mini.icons" },
 	opts = {},
+	config = function()
+		require("fzf-lua").register_ui_select()
+	end,
 	-- TODO: Add more commands for LSP related searches. Like Search symbols, etc.
 	keys = {
 		{
