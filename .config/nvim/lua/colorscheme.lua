@@ -79,6 +79,15 @@ palette.lualine = {
 	gray4 = "#65696f",
 }
 
+palette.diffview = {
+	red = "#4f3a3b",
+	green = "#24352d",
+	gold = "#956a07",
+	yellow = "#433215",
+	bg = palette.gray7,
+	green_pop = "#1a5c4a",
+}
+
 local function hl(group, opts)
 	vim.api.nvim_set_hl(0, group, opts)
 end
@@ -157,6 +166,12 @@ M.apply = function()
 	hl("@keyword.function.go", { fg = palette.keyword, italic = true }) -- func
 	hl("@keyword.repeat.go", { fg = palette.keyword, italic = true }) -- for
 	hl("@boolean.go", { fg = palette.symbol, bold = true }) -- true, false
+
+	-- Diffview
+	hl("DiffAdd", { bg = palette.diffview.green })
+	hl("DiffDelete", { bg = palette.diffview.red, fg = palette.diffview.red })
+	hl("DiffChange", { bg = palette.diffview.yellow })
+	hl("DiffText", { bg = palette.diffview.green_pop, bold = true })
 end
 
 return M
