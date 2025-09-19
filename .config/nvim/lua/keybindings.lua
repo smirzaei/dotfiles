@@ -84,3 +84,15 @@ vim.keymap.set("n", "<leader>odf", vim.diagnostic.open_float, { desc = "Open flo
 vim.keymap.set("n", "<leader>odl", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
 vim.keymap.set("n", "<C-.>", vim.lsp.buf.code_action, { noremap = true, silent = true, desc = "Quick Fix" })
+
+-- Command mode typos
+vim.api.nvim_create_user_command("Q", "q", { nargs = 0 })
+vim.api.nvim_create_user_command("W", "w", { nargs = 0 })
+vim.api.nvim_create_user_command("Qa", "qa", { nargs = 0 })
+vim.api.nvim_create_user_command("QA", "qa", { nargs = 0 })
+vim.api.nvim_create_user_command("Wq", "wq", { nargs = 0 })
+vim.api.nvim_create_user_command("WQ", "wq", { nargs = 0 })
+vim.api.nvim_create_user_command("WA", "wa", { nargs = 0 })
+vim.api.nvim_create_user_command("Wa", "wa", { nargs = 0 })
+vim.api.nvim_create_user_command("WQA", "wqa", { nargs = 0 })
+vim.api.nvim_create_user_command("WQa", "wqa", { nargs = 0 })
