@@ -159,6 +159,7 @@ M.apply = function()
 	-- Rust
 	hl("@keyword.rust", { fg = palette.keyword, italic = true }) -- let
 	hl("@keyword.function.rust", { fg = palette.keyword, italic = true }) -- fn
+	hl("@lsp.typemod.keyword.unsafe.rust", { reverse = true, nocombine = true }) -- unsafe
 
 	-- Go
 	hl("@constant.builtin.go", { fg = palette.symbol, italic = true }) -- nil
