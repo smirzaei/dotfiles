@@ -67,6 +67,20 @@ return {
 			desc = "[S]earch [o]ld files (history)",
 		},
 		{
+			"<leader>sdb",
+			function()
+				require("fzf-lua").diagnostics_document()
+			end,
+			desc = "[S]earch [d]iagnostics for the current [b]uffer",
+		},
+		{
+			"<leader>sdw",
+			function()
+				require("fzf-lua").diagnostics_workspace()
+			end,
+			desc = "[S]earch [d]iagnostics for [w]orkspace",
+		},
+		{
 			"<leader>/",
 			function()
 				require("fzf-lua").lgrep_curbuf()
