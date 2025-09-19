@@ -98,8 +98,12 @@ local lualine_cfg = {
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = {
-		"nvim-tree/nvim-web-devicons", -- TODO: Try using mini.icons instead
-		-- "echasnovski/mini.icons"
+		"echasnovski/mini.icons",
 	},
-	opts = lualine_cfg,
+	config = function()
+		require("mini.icons").setup()
+		require("mini.icons").mock_nvim_web_devicons()
+
+		require("lualine").setup(lualine_cfg)
+	end,
 }
