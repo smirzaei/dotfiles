@@ -14,6 +14,22 @@ return {
 	},
 	{
 		"sindrets/diffview.nvim",
+		keys = {
+			{
+				"<leader>gdvo",
+				function()
+					vim.cmd("DiffviewOpen")
+				end,
+				desc = "[G]it [D]iff[v]iew [O]pen",
+			},
+			{
+				"<leader>gdvc",
+				function()
+					vim.cmd("DiffviewClose")
+				end,
+				desc = "[G]it [D]iff[v]iew [C]lose",
+			},
+		},
 	},
 	{
 		"NeogitOrg/neogit",
