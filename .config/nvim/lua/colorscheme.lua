@@ -193,6 +193,7 @@ M.apply = function()
 	hl("@keyword.rust", { fg = palette.keyword, italic = true }) -- let
 	hl("@keyword.function.rust", { fg = palette.keyword, italic = true }) -- fn
 	hl("@lsp.typemod.keyword.unsafe.rust", { reverse = true, nocombine = true }) -- unsafe
+	hl("@lsp.type.macro.rust", { fg = palette.fn_name })
 
 	-- Go
 	hl("@constant.builtin.go", { fg = palette.symbol, italic = true }) -- nil
