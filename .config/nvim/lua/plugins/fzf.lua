@@ -13,9 +13,9 @@ return {
 		{
 			"<leader><leader>",
 			function()
-				require("fzf-lua").buffers()
+				require("fzf-lua").global()
 			end,
-			desc = "Find existing buffers",
+			desc = "Open global search",
 		},
 		{
 			"<leader>sB",
