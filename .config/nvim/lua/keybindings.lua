@@ -26,9 +26,10 @@ map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
 map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
 map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 
--- disable F1 help
+-- Disable annoying stuff
 map("n", "<F1>", "<nop>", opts)
 map("i", "<F1>", "<nop>", opts)
+map("i", "<C-u>", "<nop>", opts)
 
 -- Clear search with <esc>
 map("n", "<esc>", ":noh<cr>", opts)
