@@ -182,7 +182,7 @@ M.apply = function()
 	hl("boolean", { link = "@symbol" })
 
 	hl("Search", { bg = palette.gray3, fg = palette.gray7 })
-	hl("CurSearch", { bg = palette.magenta, fg = palette.gray7 })
+	hl("CurSearch", { bg = palette.yellow, fg = palette.gray7 })
 	hl("Error", { bg = palette.red, fg = palette.gray7, bold = true })
 	hl("Todo", { bg = palette.yellow, fg = palette.gray7, bold = true })
 	hl("Whitespace", { fg = palette.gray5 })
