@@ -8,6 +8,13 @@
         eza
     ];
 
+    programs.starship = {
+        enable = true;
+        enableZshIntegration = true;
+    };
+    # `programs.starship.settings` won't handle escape characters properly
+    xdg.configFile."starship.toml".source = ../../home/.config/starship.toml;
+
     # This value determines the Home Manager release that your
     # configuration is compatible with. This helps avoid breakage
     # when a new Home Manager release introduces backwards

@@ -1,0 +1,30 @@
+[character]
+success_symbol = '[\$](bold green)'
+error_symbol = '[\$](bold red)'
+vimcmd_symbol = '[](bold blue)'
+
+[directory]
+style = 'green bold'
+truncation_length = 5
+truncate_to_repo = false
+
+[c]
+disabled = true
+
+[kubernetes]
+style = 'white'
+format = '[\[$context\]( \($namespace\))]($style) in '
+disabled = false
+
+[golang]
+disabled = true
+
+[python]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[docker_context]
+disabled = true
+
