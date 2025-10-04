@@ -17,6 +17,7 @@
         # ripgrep-all # ripgrep with pdf, docx, etc support
         shellcheck  # shell script analyzer
         shfmt       # shell script formatter
+        stylua      # Lua formatter
         wabt        # WebAssembly tools
     ];
 
