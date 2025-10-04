@@ -11,6 +11,7 @@
         fd          # better find
         fx          # Interactive JSON viewer
         hexyl       # better xxd
+        kubectx     # kubernetes context and namespace switcher
         ripgrep     # better grep
         # Disabling this because it brings a bunch of dependencies which I
         # don't necessarily need.
@@ -40,6 +41,7 @@
             git_protocol = "ssh";
         };
     };
+
 
     # This value determines the Home Manager release that your
     # configuration is compatible with. This helps avoid breakage
