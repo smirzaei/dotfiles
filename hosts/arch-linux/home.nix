@@ -7,7 +7,6 @@
     home.packages = with pkgs; [
         bat         # better cat
         delta       # better git diff, replace with difftastic?
-        dust        # better du
         difftastic  # better diff
         eza         # better ls
         fd          # better find
