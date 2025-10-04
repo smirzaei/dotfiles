@@ -16,6 +16,7 @@
         # don't necessarily need.
         # ripgrep-all # ripgrep with pdf, docx, etc support
         shellcheck  # shell script analyzer
+        shfmt       # shell script formatter
         wabt        # WebAssembly tools
     ];
 
