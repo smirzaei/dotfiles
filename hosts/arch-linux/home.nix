@@ -5,14 +5,18 @@
     home.homeDirectory = "/home/soroush";
 
     home.packages = with pkgs; [
-        bat        # better cat
-        delta      # better git diff, replace with difftastic?
-        dust       # better du
-        difftastic # better diff
-        eza        # better ls
-        fd         # better find
-        fx         # Interactive JSON viewer
-        hexyl      # better xxd
+        bat         # better cat
+        delta       # better git diff, replace with difftastic?
+        dust        # better du
+        difftastic  # better diff
+        eza         # better ls
+        fd          # better find
+        fx          # Interactive JSON viewer
+        hexyl       # better xxd
+        ripgrep     # better grep
+        # Disabling this because it brings a bunch of dependencies which I
+        # don't necessarily need.
+        # ripgrep-all # ripgrep with pdf, docx, etc support
     ];
 
     programs.starship = {
