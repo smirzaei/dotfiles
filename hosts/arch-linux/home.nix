@@ -7,10 +7,11 @@
     home.packages = with pkgs; [
         bat        # better cat
         delta      # better git diff, replace with difftastic?
-        eza        # better ls
-        fd         # better find
         dust       # better du
         difftastic # better diff
+        eza        # better ls
+        fd         # better find
+        fx         # Interactive JSON viewer
         hexyl      # better xxd
     ];
 
