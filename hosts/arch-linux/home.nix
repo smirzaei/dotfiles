@@ -42,6 +42,10 @@
         };
     };
 
+    programs.k9s = {
+        enable = true;
+    };
+
     programs.kubecolor = {
         enable = true;
         enableZshIntegration = true;
