@@ -15,6 +15,7 @@
         # Disabling this because it brings a bunch of dependencies which I
         # don't necessarily need.
         # ripgrep-all # ripgrep with pdf, docx, etc support
+        shellcheck  # shell script analyzer
         wabt        # WebAssembly tools
     ];
 
