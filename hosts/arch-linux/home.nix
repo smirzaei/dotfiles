@@ -5,9 +5,10 @@
     home.homeDirectory = "/home/soroush";
 
     home.packages = with pkgs; [
-        bat
-        delta
-        eza
+        bat   # better cat
+        delta # better git diff
+        eza   # better ls
+        fd    # better find
     ];
 
     programs.starship = {
