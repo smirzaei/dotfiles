@@ -5,6 +5,7 @@
     home.homeDirectory = "/home/soroush";
 
     home.packages = with pkgs; [
+        bat
         eza
     ];
 
