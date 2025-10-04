@@ -11,6 +11,7 @@
         fd         # better find
         dust       # better du
         difftastic # better diff
+        hexyl      # better xxd
     ];
 
     programs.starship = {
