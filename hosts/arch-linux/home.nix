@@ -6,6 +6,7 @@
 
     home.packages = with pkgs; [
         bat
+        delta
         eza
     ];
 
@@ -15,6 +16,8 @@
     };
     # `programs.starship.settings` won't handle escape characters properly
     xdg.configFile."starship.toml".source = ../../home/.config/starship.toml;
+
+    xdg.configFile."delta/themes.gitconfig".source = ../../home/.config/delta/themes.gitconfig;
 
     # This value determines the Home Manager release that your
     # configuration is compatible with. This helps avoid breakage
