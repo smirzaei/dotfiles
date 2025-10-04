@@ -9,10 +9,11 @@
         difftastic  # better diff
         eza         # better ls
         fd          # better find
-        fx          # Interactive JSON viewer
+        fx          # interactive JSON viewer
         hexyl       # better xxd
-        kubectx     # kubernetes context and namespace switcher
-        ripgrep     # better grep
+        kubectl     # k8s CLI
+        kubectx     # k8 context and namespace switcher
+        ripgrep     # Better grep
         # Disabling this because it brings a bunch of dependencies which I
         # don't necessarily need.
         # ripgrep-all # ripgrep with pdf, docx, etc support
