@@ -9,6 +9,7 @@
         delta # better git diff
         eza   # better ls
         fd    # better find
+        dust  # better du
     ];
 
     programs.starship = {
