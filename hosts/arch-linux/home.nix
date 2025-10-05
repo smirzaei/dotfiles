@@ -60,15 +60,16 @@
             fk = ''kill -9 $(ps aux | fzf | awk "{print \$2}")'';
             fp = "ps aux | fzf";
         };
+        initContent = builtins.readFile ../../home/.zshrc;
     };
 
     programs.git = {
         enable = true;
-        userEmail = private.personalEmail;
+        userEmail = private.git.personalEmail;
         userName = "Soroush Mirzaei";
         signing = {
             signByDefault = true;
-            key = private.gitSigningKey;
+            key = private.git.signingKey;
         };
         aliases = {
             tree = "log --graph --decorate --pretty=oneline --abbrev-commit";
@@ -129,6 +130,20 @@
     programs.kubecolor = {
         enable = true;
         enableZshIntegration = true;
+    };
+
+    programs.ssh = {
+        enable = true;
+        enableDefaultConfig = false;
+        matchBlocks = {
+            zima = private.ssh.hosts.zima;
+        };
+    };
+    # gpg-agent for agent forwarding
+    services.gpg-agent = {
+        enable = true;
+        enableZshIntegration = true;
+        enableSshSupport = true;
     };
 
     # This value determines the Home Manager release that your
