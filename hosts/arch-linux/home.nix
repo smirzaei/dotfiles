@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, private, ... }:
 
 {
     home.username = "soroush";
@@ -22,6 +22,31 @@
         stylua      # Lua formatter
         wabt        # WebAssembly tools
     ];
+
+    programs.git = {
+        enable = true;
+        userEmail = private.personalEmail;
+        userName = "Soroush Mirzaei";
+        signing = {
+            signByDefault = true;
+            key = private.gitSigningKey;
+        };
+        aliases = {
+            tree = "log --graph --decorate --pretty=oneline --abbrev-commit";
+        };
+        difftastic = {
+            enable = true;
+            enableAsDifftool = true;
+        };
+        extraConfig = {
+            core = {
+                editor = "nvim";
+            };
+            difftool = {
+                prompt = false;
+            };
+        };
+    };
 
     programs.starship = {
         enable = true;

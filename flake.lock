@@ -37,10 +37,26 @@
         "type": "github"
       }
     },
+    "private": {
+      "locked": {
+        "lastModified": 1759681187,
+        "narHash": "sha256-2LJQQigLVz/ZFHIihprUDmNCmaFL72+gxFmL8v5k61o=",
+        "ref": "refs/heads/master",
+        "rev": "196b4005f3b52326000b9b5ae337c398dedc0f6f",
+        "revCount": 3,
+        "type": "git",
+        "url": "ssh://git@github.com/smirzaei/nix-private.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/smirzaei/nix-private.git"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "private": "private"
       }
     }
   },
