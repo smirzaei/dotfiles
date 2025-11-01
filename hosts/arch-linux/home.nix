@@ -11,8 +11,9 @@
         fd          # better find
         fx          # interactive JSON viewer
         hexyl       # better xxd
-        kubectl     # k8s CLI
-        kubectx     # k8 context and namespace switcher
+        kubectl     #
+        kubectx     #
+        neovim      #
         ripgrep     # Better grep
         # Disabling this because it brings a bunch of dependencies which I
         # don't necessarily need.
@@ -94,6 +95,8 @@
     };
     # `programs.starship.settings` won't handle escape characters properly
     xdg.configFile."starship.toml".source = ../../home/.config/starship.toml;
+    xdg.configFile."nvim".source = ../../home/.config/nvim;
+
 
     programs.fzf = {
         enable = true;
