@@ -1,5 +1,8 @@
 { config, pkgs, private, ... }:
 
+let
+    monoFont = "CaskaydiaCove Nerd Font";
+in
 {
     home.username = "soroush";
     home.homeDirectory = "/home/soroush";
@@ -93,10 +96,9 @@
         enable = true;
         enableZshIntegration = true;
     };
+
     # `programs.starship.settings` won't handle escape characters properly
     xdg.configFile."starship.toml".source = ../../home/.config/starship.toml;
-    xdg.configFile."nvim".source = ../../home/.config/nvim;
-
 
     programs.fzf = {
         enable = true;
@@ -142,12 +144,61 @@
             zima = private.ssh.hosts.zima;
         };
     };
+
+    programs.ghostty = {
+        enable = true;
+        enableZshIntegration = true;
+        installBatSyntax = true;
+        installVimSyntax = true;
+        settings = {
+            # Don't ask for confirmation when exiting
+            confirm-close-surface = false;
+
+            # General look and feel
+            theme = "Nvim Dark";
+            window-decoration = true;
+
+            # Font
+            font-size = 10;
+            font-family = monoFont;
+            font-family-bold = monoFont;
+            font-family-italic = monoFont;
+            font-family-bold-italic = monoFont;
+            font-feature = "calt=1,liga=1,ss01=1,ss02=1,ss19=1";
+            window-title-font-family = monoFont;
+
+            # Cell (char and line) space adjustment
+            adjust-cell-width = 0;
+            adjust-cell-height = 10;
+
+            # Cursor
+            cursor-style = "block";
+            cursor-style-blink = false;
+
+            # Linux
+            gtk-single-instance = false;
+            gtk-titlebar = false;
+
+            # Mouse
+            mouse-hide-while-typing = true;
+
+            shell-integration-features = "no-cursor,title";
+
+            keybind = [
+                "ctrl+shift+i=inspector:toggle"
+            ];
+        };
+    };
+
     # gpg-agent for agent forwarding
     services.gpg-agent = {
         enable = true;
         enableZshIntegration = true;
         enableSshSupport = true;
     };
+
+    # It's much easier to manage neovim through Lua
+    xdg.configFile."nvim".source = ../../home/.config/nvim;
 
     # This value determines the Home Manager release that your
     # configuration is compatible with. This helps avoid breakage
