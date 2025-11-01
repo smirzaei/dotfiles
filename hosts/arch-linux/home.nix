@@ -2,6 +2,15 @@
 
 let
     monoFont = "CaskaydiaCove Nerd Font";
+    theme = {
+        red = "#ffc0b9";
+        green = "#c4ffd3";
+        blue = "#b6f0ff";
+        gray1 = "#565a60";
+        gray2 = "#a7a9ae";
+        gray3 = "#16181d";
+        gray4 = "#65696f";
+    };
 in
 {
     home.username = "soroush";
@@ -188,6 +197,72 @@ in
                 "ctrl+shift+i=inspector:toggle"
             ];
         };
+    };
+
+    programs.tmux = {
+        enable = true;
+        terminal = "screen-256color";
+        focusEvents = true;
+        baseIndex = 1; # Window index starts at 1
+        mouse = true; # Enable mouse - useful for scrolling and pane resizing
+        historyLimit = 100000; # Increase scrollback buffer
+        keyMode = "vi"; # Enable vi keybindings in copy mode
+        escapeTime = 0; # Disable escape time for faster key response
+
+        extraConfig = ''
+            # Reload config with prefix + r
+            bind r source-file ${pkgs.tmux}/share/tmux/tmux.conf
+
+            # Enable true color
+            set -ga terminal-overrides ",*256col*:Tc"
+
+            # Enable apps like nvim to bind to all? key combinations
+            set -s extended-keys on
+
+            # Pane index starts at 1
+            set -g pane-base-index 1
+
+            # Automatically renumber windows when one is closed
+            set -g renumber-windows on
+
+            # Set window titles
+            set -g set-titles on
+            set -g set-titles-string "#{pane_title}" # Set window title to current command
+
+            # Custom keybinds
+            bind | split-window -h # Vertical split
+            bind - split-window -v # Horizontal split
+
+            bind c new-window -c "#{pane_current_path}" # Create new window in current directory
+            bind '"' split-window -c "#{pane_current_path}" # Create a vertical split in current directory
+            bind % split-window -h -c "#{pane_current_path}" # Create a horizontal split in current directory
+
+            # Vi-style pane navigation
+            bind h select-pane -L
+            bind j select-pane -D
+            bind k select-pane -U
+            bind l select-pane -R
+
+            # Overall
+            set -g status-style bg=${theme.gray3},fg=${theme.gray2}
+
+            # Left
+            set -g status-left "#[bg=${theme.gray1},fg=${theme.gray2}]   #S #[default]      "
+            set -g status-left-length 100 # Allow the left side to grow
+
+            ## Window
+            setw -g window-status-separator " "
+
+            # Inactive window
+            setw -g window-status-format " #I:#W#F "
+
+            # Active window
+            setw -g window-status-current-format " #I:#W#F "
+            setw -g window-status-current-style bold,bg=${theme.green},fg=${theme.gray3}
+
+            # Right
+            set -g status-right ""
+        '';
     };
 
     # gpg-agent for agent forwarding
