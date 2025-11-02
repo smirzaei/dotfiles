@@ -17,23 +17,24 @@ in
     home.homeDirectory = "/home/soroush";
 
     home.packages = with pkgs; [
-        bat         # better cat
-        difftastic  # better diff
-        eza         # better ls
-        fd          # better find
-        fx          # interactive JSON viewer
-        hexyl       # better xxd
-        kubectl     #
-        kubectx     #
-        neovim      #
-        ripgrep     # Better grep
+        bat                       # better cat
+        difftastic                # better diff
+        eza                       # better ls
+        fd                        # better find
+        fx                        # interactive JSON viewer
+        hexyl                     # better xxd
+        kubectl                   #
+        kubectx                   #
+        neovim                    #
+        ripgrep                   # Better grep
         # Disabling this because it brings a bunch of dependencies which I
         # don't necessarily need.
         # ripgrep-all # ripgrep with pdf, docx, etc support
-        shellcheck  # shell script analyzer
-        shfmt       # shell script formatter
-        stylua      # Lua formatter
-        wabt        # WebAssembly tools
+        shellcheck                # shell script analyzer
+        shfmt                     # shell script formatter
+        stylua                    # Lua formatter
+        wabt                      # WebAssembly tools
+        nerd-fonts.caskaydia-cove #
     ];
 
     programs.zsh = {
