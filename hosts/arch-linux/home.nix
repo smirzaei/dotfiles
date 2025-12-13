@@ -174,7 +174,7 @@ in
             font-family-bold = monoFont;
             font-family-italic = monoFont;
             font-family-bold-italic = monoFont;
-            font-feature = "calt=1,liga=1,ss01=1,ss02=1,ss19=1";
+            font-feature = "calt=1,liga=1,ss01=0,ss02=1,ss19=1";
             window-title-font-family = monoFont;
 
             # Cell (char and line) space adjustment
