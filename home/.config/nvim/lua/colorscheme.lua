@@ -190,16 +190,10 @@ M.apply = function()
 	hl("ColorColumn", { bg = palette.colorcolumn })
 
 	-- Rust
-	hl("@keyword.rust", { fg = palette.keyword, italic = true }) -- let
-	hl("@keyword.function.rust", { fg = palette.keyword, italic = true }) -- fn
 	hl("@lsp.typemod.keyword.unsafe.rust", { reverse = true, nocombine = true }) -- unsafe
 	hl("@lsp.type.macro.rust", { fg = palette.fn_name })
 
 	-- Go
-	hl("@constant.builtin.go", { fg = palette.symbol, italic = true }) -- nil
-	hl("@function.builtin.go", { fg = palette.symbol, italic = true }) -- make, append, len, cap
-	hl("@keyword.function.go", { fg = palette.keyword, italic = true }) -- func
-	hl("@keyword.repeat.go", { fg = palette.keyword, italic = true }) -- for
 	hl("@boolean.go", { fg = palette.symbol, bold = true }) -- true, false
 
 	-- Diffview
