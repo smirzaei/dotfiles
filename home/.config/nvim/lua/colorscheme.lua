@@ -191,6 +191,7 @@ M.apply = function()
 
 	-- Rust
 	hl("@lsp.typemod.keyword.unsafe.rust", { reverse = true, nocombine = true }) -- unsafe
+	hl("@custom.method.warn", { reverse = true, nocombine = true }) -- unwrap, expect (defined in highlights.scm)
 	hl("@lsp.type.macro.rust", { fg = palette.fn_name })
 
 	-- Go
