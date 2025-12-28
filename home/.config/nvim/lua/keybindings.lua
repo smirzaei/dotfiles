@@ -84,7 +84,11 @@ vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" }
 vim.keymap.set("n", "<leader>odf", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 vim.keymap.set("n", "<leader>odl", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
-vim.keymap.set("n", "<C-.>", vim.lsp.buf.code_action, { noremap = true, silent = true, desc = "Quick Fix" })
+-- Code actions
+vim.keymap.set("n", "<C-.>", vim.lsp.buf.code_action, { noremap = true, silent = true, desc = "Code Actions" })
+
+-- Change the word under the cursor and go to next occurrence
+vim.keymap.set("n", "<leader>*", "*Ncgn", { noremap = true, silent = true, desc = "Change word and go to next" })
 
 -- Command mode typos
 vim.api.nvim_create_user_command("Q", "q", { nargs = 0 })
