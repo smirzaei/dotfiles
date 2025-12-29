@@ -11,8 +11,15 @@ local function set_rust_target(platform)
 		return
 	end
 
-	vim.cmd("RustAnalyzer target " .. target_triple)
-	vim.notify("Switched Rust target to " .. target_triple, vim.log.levels.INFO)
+	local cmd = string.format(
+		"RustAnalyzer config { cargo = { target = '%s' }, check = { targets = { '%s' } } }",
+		target_triple,
+		target_triple
+	)
+	vim.cmd(cmd)
+
+	vim.notify("Switching Rust target to " .. target_triple, vim.log.levels.INFO)
+	vim.cmd("RustAnalyzer restart")
 end
 
 -- Usage: :RustTarget {linux|macos|windows}
