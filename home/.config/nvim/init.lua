@@ -9,6 +9,9 @@ require("lazy").setup({
 	{ import = "plugins" },
 })
 
+-- Language specific
+require("lang.lua")
+
 local colorscheme = require("colorscheme")
 colorscheme.apply()
 
