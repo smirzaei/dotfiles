@@ -12,6 +12,7 @@ require("lazy").setup({
 
 -- Language specific
 require("lang.lua")
+require("lang.rust")
 
 local colorscheme = require("colorscheme")
 colorscheme.apply()
