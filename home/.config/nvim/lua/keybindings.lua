@@ -90,6 +90,49 @@ vim.keymap.set("n", "<C-.>", vim.lsp.buf.code_action, { noremap = true, silent =
 -- Change the word under the cursor and go to next occurrence
 vim.keymap.set("n", "<leader>*", "*Ncgn", { noremap = true, silent = true, desc = "Change word and go to next" })
 
+-- LSP
+-- ~/.config/nvim/lua/keybindings.lua
+
+-- ... your existing global mappings ...
+
+-- LSP Keybindings
+-- This autocommand runs only when an LSP attaches to a buffer
+vim.api.nvim_create_autocmd("LspAttach", {
+	group = vim.api.nvim_create_augroup("lsp-keymap", {}),
+	callback = function(args)
+		local lsp_map = function(keys, func, desc, mode)
+			mode = mode or "n"
+			vim.keymap.set(mode, keys, func, { buffer = args.buf, desc = "LSP: " .. desc })
+		end
+
+		lsp_map("gd", require("fzf-lua").lsp_definitions, "[G]oto [d]efinition")
+		lsp_map("gD", require("fzf-lua").lsp_declarations, "[G]oto [D]decleration")
+		lsp_map("gr", require("fzf-lua").lsp_references, "[G]oto [r]eferences")
+		lsp_map("gI", require("fzf-lua").lsp_implementations, "[G]oto [I]mplementation")
+		lsp_map("K", vim.lsp.buf.hover, "Hover Documentation")
+		lsp_map(
+			"gtd",
+			require("fzf-lua").lsp_typedefs,
+			"[t]ype [D]efinition - Jump to the type of the word under the cursor"
+		)
+		lsp_map("<leader>sds", require("fzf-lua").lsp_document_symbols, "[S]earch [D]ocument [S]ymbols")
+		lsp_map("<leader>ss", require("fzf-lua").lsp_live_workspace_symbols, "[S]earch Workspace [S]ymbols")
+		lsp_map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
+		lsp_map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
+		lsp_map("gsd", function()
+			vim.cmd.vsplit()
+			vim.lsp.buf.definition()
+		end, "[G]oto [D]efinition in Split")
+
+		local client = vim.lsp.get_client_by_id(args.data.client_id)
+		if client.supports_method("textDocument/formatting", args.buf) then
+			lsp_map("<leader>f", function()
+				vim.lsp.buf.format({ async = true })
+			end, "Format Document")
+		end
+	end,
+})
+
 -- Command mode typos
 vim.api.nvim_create_user_command("Q", "q", { nargs = 0 })
 vim.api.nvim_create_user_command("W", "w", { nargs = 0 })

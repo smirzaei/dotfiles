@@ -4,6 +4,7 @@ require("diagnostics")
 require("autocmds")
 require("bracket_escape")
 require("init_lazy")
+require("lsp")
 
 require("lazy").setup({
 	{ import = "plugins" },
