@@ -1,5 +1,5 @@
 vim.api.nvim_create_autocmd("LspAttach", {
-	group = vim.api.nvim_create_augroup("lsp-keymap-group", {}),
+	group = vim.api.nvim_create_augroup("lsp-highlight-group", {}),
 	callback = function(args)
 		local client = vim.lsp.get_client_by_id(args.data.client_id)
 		if client.supports_method("textDocument/documentHighlight", args.buf) then
@@ -24,7 +24,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("lsp-detach", { clear = true }),
 				callback = function(event)
 					vim.lsp.buf.clear_references()
-					vim.api.nvim_clear_autocmds({ group = "nvim-lsp-highlight", buffer = event.buf })
+					vim.api.nvim_clear_autocmds({ group = highlight_augroup, buffer = event.buf })
 				end,
 			})
 
