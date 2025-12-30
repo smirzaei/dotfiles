@@ -24,7 +24,6 @@ local targets = {
 
 local default_on_attach = lspconfig.on_attach
 local on_attach = function(client, bufnr)
-	vim.print("Rust Analyzer attached")
 	if default_on_attach then
 		default_on_attach(client, bufnr)
 	end
