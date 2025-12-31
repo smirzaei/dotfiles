@@ -48,7 +48,6 @@ local on_attach = function(client, bufnr)
 		})
 
 		vim.cmd("LspRestart rust_analyzer")
-		vim.notify("Target switched", vim.log.levels.INFO)
 	end, {
 		nargs = 1,
 		complete = function()
