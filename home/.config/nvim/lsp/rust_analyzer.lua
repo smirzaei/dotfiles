@@ -4,6 +4,9 @@ return {
 			lens = {
 				enable = false,
 			},
+			check = {
+				command = "clippy",
+			},
 		},
 	},
 }
