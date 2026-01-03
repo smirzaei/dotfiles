@@ -35,6 +35,9 @@ in
         stylua                    # Lua formatter
         wabt                      # WebAssembly tools
         nerd-fonts.caskaydia-cove #
+
+        # LSPs
+        lua-language-server
     ];
 
     programs.zsh = {
