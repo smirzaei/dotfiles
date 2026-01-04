@@ -19,6 +19,7 @@ require("lang.nix")
 require("lang.yaml")
 require("lang.bash")
 require("lang.go")
+require("lang.helm")
 
 local colorscheme = require("colorscheme")
 colorscheme.apply()

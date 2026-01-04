@@ -45,6 +45,7 @@ in
         golangci-lint
         golangci-lint-langserver
         nil
+        helm-ls
     ];
 
     programs.zsh = {
