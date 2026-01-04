@@ -17,6 +17,7 @@ require("lang.lua")
 require("lang.rust")
 require("lang.nix")
 require("lang.yaml")
+require("lang.bash")
 
 local colorscheme = require("colorscheme")
 colorscheme.apply()

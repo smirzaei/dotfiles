@@ -40,6 +40,7 @@ in
         lua-language-server
         copilot-language-server
         yaml-language-server
+        bash-language-server
         nil
     ];
 
