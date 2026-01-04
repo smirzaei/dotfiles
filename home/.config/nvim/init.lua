@@ -18,6 +18,7 @@ require("lang.rust")
 require("lang.nix")
 require("lang.yaml")
 require("lang.bash")
+require("lang.go")
 
 local colorscheme = require("colorscheme")
 colorscheme.apply()

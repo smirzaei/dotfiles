@@ -41,6 +41,9 @@ in
         copilot-language-server
         yaml-language-server
         bash-language-server
+        gopls
+        golangci-lint
+        golangci-lint-langserver
         nil
     ];
 
