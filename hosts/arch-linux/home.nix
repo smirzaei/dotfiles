@@ -38,6 +38,7 @@ in
 
         # LSPs
         lua-language-server
+        copilot-language-server
     ];
 
     programs.zsh = {

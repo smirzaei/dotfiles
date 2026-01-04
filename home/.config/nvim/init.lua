@@ -7,7 +7,9 @@ require("init_lazy")
 require("lsp")
 
 require("lazy").setup({
-	{ import = "plugins" },
+	import = "plugins",
+}, {
+	lockfile = vim.fn.stdpath("data") .. "/lazy/lazy-lock.json",
 })
 
 -- Language specific
