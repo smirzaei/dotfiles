@@ -39,6 +39,7 @@ in
         # LSPs
         lua-language-server
         copilot-language-server
+        yaml-language-server
         nil
     ];
 
