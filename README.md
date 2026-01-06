@@ -1,6 +1,4 @@
 ```
-stow --target="$HOME" --dir="$HOME/projects/smirzaei/dotfiles" .
-
 # Nix
 # Update all
 nix flake update
