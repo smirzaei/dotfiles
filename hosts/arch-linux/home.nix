@@ -13,6 +13,8 @@ let
     };
 in
 {
+    imports = [ ../../modules/git.nix ];
+
     home.username = "soroush";
     home.homeDirectory = "/home/soroush";
 
@@ -89,27 +91,11 @@ in
     };
 
     programs.git = {
-        enable = true;
         userEmail = private.git.personalEmail;
         userName = "Soroush Mirzaei";
         signing = {
             signByDefault = true;
             key = private.git.signingKey;
-        };
-        aliases = {
-            tree = "log --graph --decorate --pretty=oneline --abbrev-commit";
-        };
-        difftastic = {
-            enable = true;
-            enableAsDifftool = true;
-        };
-        extraConfig = {
-            core = {
-                editor = "nvim";
-            };
-            difftool = {
-                prompt = false;
-            };
         };
     };
 
