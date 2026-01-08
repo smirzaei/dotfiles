@@ -13,7 +13,10 @@ let
     };
 in
 {
-    imports = [ ../../modules/git.nix ];
+    imports = [
+        ../../modules/git.nix
+        ../../modules/starship.nix
+    ];
 
     home.username = "soroush";
     home.homeDirectory = "/home/soroush";
@@ -98,14 +101,6 @@ in
             key = private.git.signingKey;
         };
     };
-
-    programs.starship = {
-        enable = true;
-        enableZshIntegration = true;
-    };
-
-    # `programs.starship.settings` won't handle escape characters properly
-    xdg.configFile."starship.toml".source = ../../home/.config/starship.toml;
 
     programs.fzf = {
         enable = true;
