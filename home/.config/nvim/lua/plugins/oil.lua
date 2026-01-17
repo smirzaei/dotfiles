@@ -1,5 +1,3 @@
--- vim.keymap.set("n", "-", "<cmd>Oil --float<CR>", { desc = "Open Oil" })
-
 return {
 	"stevearc/oil.nvim",
 	---@module 'oil'
@@ -11,6 +9,12 @@ return {
 		keymaps = {
 			["<C-v>"] = { "actions.select", opts = { vertical = true } },
 			["C-p"] = "actions.preview",
+
+			-- Prevent accidentally leaving the floating window
+			["<C-h>"] = function() end,
+			["<C-l>"] = function() end,
+			["<C-k>"] = function() end,
+			["<C-j>"] = function() end,
 		},
 	},
 	-- Optional dependencies
