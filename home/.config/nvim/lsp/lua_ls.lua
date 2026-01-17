@@ -1,9 +1,8 @@
 return {
 	settings = {
 		lua = {
-			codeLens = {
-				enable = false,
-			},
+			codeLens = { enable = false },
+			hint = { enable = false },
 		},
 	},
 }
