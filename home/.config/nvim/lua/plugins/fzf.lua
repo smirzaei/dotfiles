@@ -4,11 +4,23 @@ return {
 	-- dependencies = { "nvim-tree/nvim-web-devicons" },
 	-- or if using mini.icons/mini.nvim
 	dependencies = { "echasnovski/mini.icons" },
-	opts = {},
 	config = function()
 		require("fzf-lua").register_ui_select()
+
+		-- Disabling window navigation keymaps when fzf is open
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = "fzf",
+			callback = function()
+				-- Keymap options: current buffer only, do not wait for other sequences
+				local opts = { buffer = true, nowait = true }
+
+				vim.keymap.set("t", "<C-h>", "<Nop>", opts)
+				vim.keymap.set("t", "<C-j>", "<Nop>", opts)
+				vim.keymap.set("t", "<C-k>", "<Nop>", opts)
+				vim.keymap.set("t", "<C-l>", "<Nop>", opts)
+			end,
+		})
 	end,
-	-- TODO: Add more commands for LSP related searches. Like Search symbols, etc.
 	keys = {
 		{
 			"<leader><leader>",
