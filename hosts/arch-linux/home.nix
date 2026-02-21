@@ -205,6 +205,7 @@ in
         enable = true;
         enableZshIntegration = true;
         enableSshSupport = true;
+        pinentry.package = pkgs.pinentry-curses;
     };
 
     # It's much easier to manage neovim through Lua
