@@ -178,6 +178,14 @@ in
             bind k select-pane -U
             bind l select-pane -R
 
+            # Swapping panes
+            bind -r H swap-pane -D
+            bind -r L swap-pane -U
+
+            # Moving windows
+            bind -r "<" swap-window -d -t -1
+            bind -r ">" swap-window -d -t +1
+
             # Overall
             set -g status-style bg=${theme.gray3},fg=${theme.gray2}
 
