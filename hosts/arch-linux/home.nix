@@ -208,13 +208,17 @@ in
         '';
     };
 
-    # gpg-agent for agent forwarding
     services.gpg-agent = {
         enable = true;
         enableZshIntegration = true;
-        enableSshSupport = true;
+        enableSshSupport = false;
         pinentry.package = pkgs.pinentry-curses;
     };
+
+    services.ssh-agent = {
+        enable = true;
+    };
+
 
     # It's much easier to manage neovim through Lua
     xdg.configFile."nvim".source = ../../home/.config/nvim;
