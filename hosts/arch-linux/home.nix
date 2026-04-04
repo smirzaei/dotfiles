@@ -4,9 +4,12 @@
         ../../modules/fzf.nix
         ../../modules/git.nix
         ../../modules/ghostty.nix
+        ../../modules/lsp-tools.nix
+        ../../modules/neovim.nix
         ../../modules/starship.nix
         ../../modules/tmux.nix
         ../../modules/zsh.nix
+        ./lsp-tools.nix
     ];
 
     home.username = "soroush";
@@ -21,7 +24,6 @@
         hexyl                     # better xxd
         kubectl                   #
         kubectx                   #
-        neovim                    #
         ripgrep                   # Better grep
         # Disabling this because it brings a bunch of dependencies which I
         # don't necessarily need.
@@ -31,17 +33,6 @@
         stylua                    # Lua formatter
         wabt                      # WebAssembly tools
         nerd-fonts.caskaydia-cove #
-
-        # LSPs
-        lua-language-server
-        copilot-language-server
-        yaml-language-server
-        bash-language-server
-        gopls
-        golangci-lint
-        golangci-lint-langserver
-        nil
-        helm-ls
     ];
 
     programs.git = {
@@ -88,6 +79,15 @@
         package = null;
     };
 
+    dotfiles.neovim = {
+        enable = true;
+        package = null;
+        nativeInstallHint = ''
+            Install Neovim with pacman, for example:
+              sudo pacman -S --needed neovim
+        '';
+    };
+
     services.gpg-agent = {
         enable = true;
         enableZshIntegration = true;
@@ -98,10 +98,6 @@
     services.ssh-agent = {
         enable = true;
     };
-
-
-    # It's much easier to manage neovim through Lua
-    xdg.configFile."nvim".source = ../../home/.config/nvim;
 
     # This value determines the Home Manager release that your
     # configuration is compatible with. This helps avoid breakage
