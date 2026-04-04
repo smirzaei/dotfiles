@@ -1,7 +1,6 @@
 { config, pkgs, private, ... }:
 
 let
-    monoFont = "CaskaydiaCove Nerd Font";
     theme = {
         red = "#ffc0b9";
         green = "#c4ffd3";
@@ -16,6 +15,7 @@ in
     imports = [
         ../../modules/fzf.nix
         ../../modules/git.nix
+        ../../modules/ghostty.nix
         ../../modules/starship.nix
         ../../modules/zsh.nix
     ];
@@ -89,49 +89,9 @@ in
         };
     };
 
-    programs.ghostty = {
+    dotfiles.ghostty = {
         enable = true;
-        enableZshIntegration = true;
-        installBatSyntax = true;
-        installVimSyntax = true;
-        settings = {
-            # Don't ask for confirmation when exiting
-            confirm-close-surface = false;
-
-            # General look and feel
-            theme = "Nvim Dark";
-            window-decoration = true;
-
-            # Font
-            font-size = 10;
-            font-family = monoFont;
-            font-family-bold = monoFont;
-            font-family-italic = monoFont;
-            font-family-bold-italic = monoFont;
-            font-feature = "calt=1,liga=1,ss01=0,ss02=1,ss19=1";
-            window-title-font-family = monoFont;
-
-            # Cell (char and line) space adjustment
-            adjust-cell-width = 0;
-            adjust-cell-height = 10;
-
-            # Cursor
-            cursor-style = "block";
-            cursor-style-blink = false;
-
-            # Linux
-            gtk-single-instance = false;
-            gtk-titlebar = false;
-
-            # Mouse
-            mouse-hide-while-typing = true;
-
-            shell-integration-features = "no-cursor,title";
-
-            keybind = [
-                "ctrl+shift+i=inspector:toggle"
-            ];
-        };
+        package = null;
     };
 
     programs.tmux = {
