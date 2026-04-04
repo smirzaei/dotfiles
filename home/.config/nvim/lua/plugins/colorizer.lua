@@ -1,10 +1,7 @@
-return {
-	"norcalli/nvim-colorizer.lua",
-	opts = {
-		"css",
-		"javascript",
-		"html",
-		"lua",
-		"tmux",
-	},
-}
+require("colorizer").setup({
+	"css",
+	"javascript",
+	"html",
+	"lua",
+	"tmux",
+})

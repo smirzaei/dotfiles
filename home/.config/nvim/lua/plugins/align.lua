@@ -1,4 +1,1 @@
-return {
-	"echasnovski/mini.align",
-	opts = {},
-}
+require("mini.align").setup({})

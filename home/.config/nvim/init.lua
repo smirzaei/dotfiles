@@ -1,16 +1,12 @@
+vim.loader.enable()
+
 require("options")
 require("keybindings")
 require("diagnostics")
 require("autocmds")
 require("bracket_escape")
-require("init_lazy")
 require("lsp")
-
-require("lazy").setup({
-	import = "plugins",
-}, {
-	lockfile = vim.fn.stdpath("data") .. "/lazy/lazy-lock.json",
-})
+require("plugins")
 
 -- Language specific
 require("lang.lua")

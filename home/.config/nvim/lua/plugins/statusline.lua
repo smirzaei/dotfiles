@@ -95,15 +95,7 @@ local lualine_cfg = {
 	extensions = {},
 }
 
-return {
-	"nvim-lualine/lualine.nvim",
-	dependencies = {
-		"echasnovski/mini.icons",
-	},
-	config = function()
-		require("mini.icons").setup()
-		require("mini.icons").mock_nvim_web_devicons()
+require("mini.icons").setup()
+require("mini.icons").mock_nvim_web_devicons()
 
-		require("lualine").setup(lualine_cfg)
-	end,
-}
+require("lualine").setup(lualine_cfg)

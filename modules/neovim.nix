@@ -30,6 +30,7 @@ in
     config = lib.mkIf cfg.enable {
         home.packages = lib.optional (cfg.package != null) cfg.package;
         xdg.configFile."nvim".source = ../home/.config/nvim;
+        xdg.configFile."nvim".recursive = true;
 
         home.activation.checkNeovimBinary = lib.hm.dag.entryAfter [ "installPackages" ] ''
             PATH="${config.home.profileDirectory}/bin:${"$"}PATH"
