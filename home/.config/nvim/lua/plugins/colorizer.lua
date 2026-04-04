@@ -1,7 +1,9 @@
 require("colorizer").setup({
-	"css",
-	"javascript",
-	"html",
-	"lua",
-	"tmux",
+	filetypes = {
+		"css",
+		"javascript",
+		"html",
+		"lua",
+		"tmux",
+	},
 })

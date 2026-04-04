@@ -2,7 +2,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("lsp-highlight-group", {}),
 	callback = function(args)
 		local client = vim.lsp.get_client_by_id(args.data.client_id)
-		if client.supports_method("textDocument/documentHighlight", args.buf) then
+		if client:supports_method("textDocument/documentHighlight", args.buf) then
 			local highlight_augroup = vim.api.nvim_create_augroup("lsp-highlight", { clear = false })
 
 			-- Highlight references when cursor holds still
@@ -29,7 +29,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			})
 
 			-- Inside LspAttach
-			if client.supports_method("textDocument/codeLens", args.buf) then
+			if client:supports_method("textDocument/codeLens", args.buf) then
 				vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
 					buffer = args.buf,
 					callback = vim.lsp.codelens.refresh,

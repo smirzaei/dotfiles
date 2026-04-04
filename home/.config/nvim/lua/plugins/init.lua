@@ -25,7 +25,7 @@ vim.pack.add({
 	},
 	"https://github.com/rafamadriz/friendly-snippets",
 	"https://github.com/fang2hou/blink-copilot",
-	"https://github.com/norcalli/nvim-colorizer.lua",
+	"https://github.com/catgoose/nvim-colorizer.lua",
 	"https://github.com/numToStr/Comment.nvim",
 	"https://github.com/stevearc/conform.nvim",
 	"https://github.com/zbirenbaum/copilot.lua",

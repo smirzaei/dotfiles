@@ -125,7 +125,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end, "[G]oto [D]efinition in Split")
 
 		local client = vim.lsp.get_client_by_id(args.data.client_id)
-		if client.supports_method("textDocument/formatting", args.buf) then
+		if client:supports_method("textDocument/formatting", args.buf) then
 			lsp_map("<leader>f", function()
 				vim.lsp.buf.format({ async = true })
 			end, "Format Document")
