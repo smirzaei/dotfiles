@@ -36,6 +36,10 @@ let
             package = pkgs.nil;
             binary = "nil";
         };
+        "tree-sitter-cli" = {
+            package = pkgs.tree-sitter;
+            binary = "tree-sitter";
+        };
         "yaml-language-server" = {
             package = pkgs.yaml-language-server;
             binary = "yaml-language-server";
