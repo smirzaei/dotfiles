@@ -36,22 +36,22 @@
  (#any-of? @custom.method.alloc
    "clone"
    "to_string"
-    "to_owned"
-    "into_owned"
-    "to_vec"
-    "into_vec"
-    "to_path_buf"
-    "to_os_string"
-    "to_boxed_slice"
-    "into_boxed_slice"
-    "to_ascii_lowercase"
-    "to_ascii_uppercase"
-    "collect"
-    "concat"
-    "join"
-    "repeat"
-    "replace"
-    "replacen")
+   "to_owned"
+   "into_owned"
+   "to_vec"
+   "into_vec"
+   "to_path_buf"
+   "to_os_string"
+   "to_boxed_slice"
+   "into_boxed_slice"
+   "to_ascii_lowercase"
+   "to_ascii_uppercase"
+   "collect"
+   "concat"
+   "join"
+   "repeat"
+   "replace"
+   "replacen")
  (#set! "priority" 130))
 
 ((macro_invocation

@@ -16,6 +16,8 @@ if not success then
 	return
 end
 
+require("lang.rust_clone_analysis").setup({})
+
 local targets = {
 	linux = "x86_64-unknown-linux-gnu",
 	macos = "aarch64-apple-darwin",
