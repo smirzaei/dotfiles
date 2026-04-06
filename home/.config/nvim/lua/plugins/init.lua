@@ -32,6 +32,7 @@ vim.pack.add({
 	"https://github.com/j-hui/fidget.nvim",
 	"https://github.com/ibhagwan/fzf-lua",
 	"https://github.com/lewis6991/gitsigns.nvim",
+	"https://github.com/folke/lazydev.nvim",
 	"https://github.com/sindrets/diffview.nvim",
 	"https://github.com/NeogitOrg/neogit",
 	"https://github.com/nvim-lua/plenary.nvim",
@@ -65,6 +66,7 @@ require("plugins.fzf")
 require("plugins.git")
 require("plugins.highlight")
 require("plugins.indent")
+require("plugins.lazydev")
 require("plugins.oil")
 require("plugins.statusline")
 require("plugins.surround")
