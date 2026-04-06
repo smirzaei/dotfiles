@@ -17,6 +17,7 @@ if not success then
 end
 
 require("lang.rust_clone_analysis").setup({})
+require("lang.rust_symbol_focus").setup({})
 
 local targets = {
 	linux = "x86_64-unknown-linux-gnu",

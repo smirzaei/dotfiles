@@ -9,14 +9,26 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
 				buffer = args.buf,
 				group = highlight_augroup,
-				callback = vim.lsp.buf.document_highlight,
+				callback = function()
+					if vim.b[args.buf].rust_symbol_focus_active then
+						return
+					end
+
+					vim.lsp.buf.document_highlight()
+				end,
 			})
 
 			-- Clear highlights when cursor moves
 			vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
 				buffer = args.buf,
 				group = highlight_augroup,
-				callback = vim.lsp.buf.clear_references,
+				callback = function()
+					if vim.b[args.buf].rust_symbol_focus_active then
+						return
+					end
+
+					vim.lsp.buf.clear_references()
+				end,
 			})
 
 			-- Clear highlights when LSP detaches
