@@ -1,20 +1,4 @@
-local default_lsp_cfg_path = vim.api.nvim_get_runtime_file("lsp/rust_analyzer.lua", false)[1]
-if not default_lsp_cfg_path then
-	vim.notify("Default Rust Analyzer config not found", vim.log.levels.ERROR)
-	return
-end
-
-local chunk, err = loadfile(default_lsp_cfg_path)
-if not chunk then
-	vim.notify("Failed to load default Rust Analyzer config: " .. err, vim.log.levels.ERROR)
-	return
-end
-
-local success, lspconfig = pcall(chunk)
-if not success then
-	vim.notify("Error executing Rust Analyzer config: " .. lspconfig, vim.log.levels.ERROR)
-	return
-end
+local lspconfig = vim.deepcopy(vim.lsp.config.rust_analyzer or {})
 
 require("lang.rust_clone_analysis").setup({})
 require("lang.rust_symbol_focus").setup({})
