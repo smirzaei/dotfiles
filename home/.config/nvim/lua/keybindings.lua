@@ -6,11 +6,57 @@ map("", "<Space>", "<nop>", { silent = true })
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+local function swap_buffer(direction)
+	local current_win = vim.api.nvim_get_current_win()
+	local current_winnr = vim.fn.winnr()
+	local target_winnr = vim.fn.winnr(direction)
+
+	if target_winnr == current_winnr then
+		return
+	end
+
+	local target_win = vim.fn.win_getid(target_winnr)
+	if target_win == 0 then
+		return
+	end
+
+	if
+		vim.api.nvim_win_get_config(current_win).relative ~= ""
+		or vim.api.nvim_win_get_config(target_win).relative ~= ""
+	then
+		return
+	end
+
+	local current_buf = vim.api.nvim_win_get_buf(current_win)
+	local target_buf = vim.api.nvim_win_get_buf(target_win)
+	if current_buf == target_buf then
+		return
+	end
+
+	vim.api.nvim_win_set_buf(current_win, target_buf)
+	vim.api.nvim_win_set_buf(target_win, current_buf)
+	vim.api.nvim_set_current_win(target_win)
+end
+
 -- Move to window using the <ctrl> hjkl keys
 map("n", "<C-h>", "<C-w>h", { desc = "Go to left window" })
 map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window" })
 map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
 map("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
+
+-- Swap buffers between adjacent windows using the <ctrl><shift> hjkl keys
+vim.keymap.set({ "n", "t" }, "<C-S-h>", function()
+	swap_buffer("h")
+end, { desc = "Swap buffer left", silent = true })
+vim.keymap.set({ "n", "t" }, "<C-S-j>", function()
+	swap_buffer("j")
+end, { desc = "Swap buffer down", silent = true })
+vim.keymap.set({ "n", "t" }, "<C-S-k>", function()
+	swap_buffer("k")
+end, { desc = "Swap buffer up", silent = true })
+vim.keymap.set({ "n", "t" }, "<C-S-l>", function()
+	swap_buffer("l")
+end, { desc = "Swap buffer right", silent = true })
 
 -- Resize window using <ctrl> arrow keys
 map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })

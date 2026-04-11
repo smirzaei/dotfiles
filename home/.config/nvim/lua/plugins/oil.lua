@@ -11,6 +11,10 @@ require("oil").setup({
 		["<C-l>"] = function() end,
 		["<C-k>"] = function() end,
 		["<C-j>"] = function() end,
+		["<C-S-h>"] = function() end,
+		["<C-S-l>"] = function() end,
+		["<C-S-k>"] = function() end,
+		["<C-S-j>"] = function() end,
 	},
 })
 

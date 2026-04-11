@@ -12,6 +12,10 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.keymap.set("t", "<C-j>", "<Nop>", opts)
 		vim.keymap.set("t", "<C-k>", "<Nop>", opts)
 		vim.keymap.set("t", "<C-l>", "<Nop>", opts)
+		vim.keymap.set("t", "<C-S-h>", "<Nop>", opts)
+		vim.keymap.set("t", "<C-S-j>", "<Nop>", opts)
+		vim.keymap.set("t", "<C-S-k>", "<Nop>", opts)
+		vim.keymap.set("t", "<C-S-l>", "<Nop>", opts)
 	end,
 })
 
