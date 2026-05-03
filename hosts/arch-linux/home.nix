@@ -4,6 +4,7 @@
         ../../modules/fzf.nix
         ../../modules/git.nix
         ../../modules/ghostty.nix
+        ../../modules/k8s.nix
         ../../modules/lsp-tools.nix
         ../../modules/neovim.nix
         ../../modules/starship.nix
@@ -22,8 +23,6 @@
         fd                        # better find
         fx                        # interactive JSON viewer
         hexyl                     # better xxd
-        kubectl                   #
-        kubectx                   #
         ripgrep                   # Better grep
         # Disabling this because it brings a bunch of dependencies which I
         # don't necessarily need.
@@ -55,15 +54,6 @@
         settings = {
             git_protocol = "ssh";
         };
-    };
-
-    programs.k9s = {
-        enable = true;
-    };
-
-    programs.kubecolor = {
-        enable = true;
-        enableZshIntegration = true;
     };
 
     programs.ssh = {
