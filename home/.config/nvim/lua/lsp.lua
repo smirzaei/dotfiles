@@ -1,3 +1,7 @@
+-- Keep the built-in LSP log off by default because WARN/ERROR can grow forever
+-- from noisy server stderr. Turn this on temporarily when debugging an LSP issue.
+vim.lsp.log.set_level("OFF")
+
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("lsp-highlight-group", {}),
 	callback = function(args)
