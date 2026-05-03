@@ -24,11 +24,9 @@ vim.pack.add({
 		version = vim.version.range("1.*"),
 	},
 	"https://github.com/rafamadriz/friendly-snippets",
-	"https://github.com/fang2hou/blink-copilot",
 	"https://github.com/catgoose/nvim-colorizer.lua",
 	"https://github.com/numToStr/Comment.nvim",
 	"https://github.com/stevearc/conform.nvim",
-	"https://github.com/zbirenbaum/copilot.lua",
 	"https://github.com/j-hui/fidget.nvim",
 	"https://github.com/ibhagwan/fzf-lua",
 	"https://github.com/lewis6991/gitsigns.nvim",
@@ -60,7 +58,6 @@ require("plugins.blink")
 require("plugins.colorizer")
 require("plugins.comment")
 require("plugins.conform")
-require("plugins.copilot")
 require("plugins.fidget")
 require("plugins.fzf")
 require("plugins.git")

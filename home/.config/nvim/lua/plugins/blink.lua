@@ -26,14 +26,7 @@ require("blink.cmp").setup({
 	-- Keep copilot in default sources for blink-copilot integration.
 	sources = {
 		-- Default list of enabled providers.
-		default = { "lsp", "copilot", "path", "snippets", "buffer" },
-		providers = {
-			copilot = {
-				name = "copilot",
-				module = "blink-copilot",
-				async = true,
-			},
-		},
+		default = { "lsp", "path", "snippets", "buffer" },
 	},
 	fuzzy = { implementation = "prefer_rust_with_warning" },
 })
