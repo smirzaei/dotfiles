@@ -1,3 +1,5 @@
+# ctrl-shift-comma -> reload config
+
 # Don't ask for confirmation when exiting
 confirm-close-surface = false
 
@@ -7,12 +9,12 @@ window-decoration = true
 
 # Font
 font-size = 10
-font-family = CaskaydiaCove Nerd Font
-font-family-bold = CaskaydiaCove Nerd Font
-font-family-italic = CaskaydiaCove Nerd Font
-font-family-bold-italic = CaskaydiaCove Nerd Font
-font-feature = calt=1,liga=1,ss01=0,ss02=1,ss19=1
-window-title-font-family = CaskaydiaCove Nerd Font
+font-family = CaskaydiaCove Nerd Font Mono
+font-family-bold = CaskaydiaMono Nerd Font Mono
+font-family-italic = CaskaydiaMono Nerd Font Mono
+font-family-bold-italic = CaskaydiaMono Nerd Font Mono
+font-feature = calt=0,liga=0,ss01=0,ss02=0,ss19=1
+window-title-font-family = CaskaydiaMono Nerd Font Mono
 
 # Cell (char and line) space adjustment
 adjust-cell-width = 0
