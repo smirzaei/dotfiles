@@ -32,7 +32,12 @@
         shfmt                     # shell script formatter
         stylua                    # Lua formatter
         wabt                      # WebAssembly tools
-        nerd-fonts.caskaydia-cove #
+
+        # Fonts
+        nerd-fonts.hack
+        nerd-fonts.sauce-code-pro
+        nerd-fonts.caskaydia-cove
+        nerd-fonts.caskaydia-mono
     ];
 
     programs.git = {
