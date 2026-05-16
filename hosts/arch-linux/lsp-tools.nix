@@ -12,13 +12,14 @@
             "yaml-language-server"
         ];
         nativePkgs = [
+            "buf"
             "golangci-lint"
             "gopls"
             "tree-sitter-cli"
         ];
         nativeInstallHint = ''
             Install native LSP packages with pacman, for example:
-              sudo pacman -S --needed gopls golangci-lint tree-sitter-cli
+              sudo pacman -S --needed buf gopls golangci-lint tree-sitter-cli
         '';
     };
 }

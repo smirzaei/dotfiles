@@ -8,6 +8,10 @@ let
             package = pkgs.bash-language-server;
             binary = "bash-language-server";
         };
+        buf = {
+            package = pkgs.buf;
+            binary = "buf";
+        };
         "copilot-language-server" = {
             package = pkgs.copilot-language-server;
             binary = "copilot-language-server";
