@@ -23,6 +23,7 @@ vim.pack.add({
 		src = "https://github.com/saghen/blink.cmp",
 		version = vim.version.range("1.*"),
 	},
+	"https://github.com/fang2hou/blink-copilot",
 	"https://github.com/rafamadriz/friendly-snippets",
 	"https://github.com/catgoose/nvim-colorizer.lua",
 	"https://github.com/numToStr/Comment.nvim",
@@ -48,7 +49,9 @@ vim.pack.add({
 
 	-- "https://github.com/sainnhe/gruvbox-material",
 }, {
-	load = true,
+	load = function(plugin)
+		vim.cmd.packadd(plugin.spec.name)
+	end,
 	confirm = false,
 })
 
@@ -58,6 +61,7 @@ require("plugins.blink")
 require("plugins.colorizer")
 require("plugins.comment")
 require("plugins.conform")
+require("plugins.copilot")
 require("plugins.fidget")
 require("plugins.fzf")
 require("plugins.git")
