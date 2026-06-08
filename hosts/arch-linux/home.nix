@@ -9,6 +9,7 @@
         ../../modules/neovim.nix
         ../../modules/starship.nix
         ../../modules/tmux.nix
+        ../../modules/zed.nix
         ../../modules/zsh.nix
         ./lsp-tools.nix
     ];
@@ -81,6 +82,11 @@
             Install Neovim with pacman, for example:
               sudo pacman -S --needed neovim
         '';
+    };
+
+    dotfiles.zed = {
+        enable = true;
+        package = null;
     };
 
     services.gpg-agent = {

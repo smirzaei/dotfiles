@@ -1,0 +1,208 @@
+[
+  {
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-j": "editor::MoveLineDown",
+      "alt-k": "editor::MoveLineUp",
+      "ctrl-.": "editor::ToggleCodeActions"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "ctrl-up": "vim::ResizePaneUp",
+      "ctrl-down": "vim::ResizePaneDown",
+      "ctrl-left": "vim::ResizePaneLeft",
+      "ctrl-right": "vim::ResizePaneRight",
+      "space w w": "workspace::ActivatePreviousPane",
+      "space w d": "pane::CloseActiveItem",
+      "space w -": "pane::SplitDown",
+      "space w |": "pane::SplitRight",
+      "space -": "pane::SplitDown",
+      "space |": "pane::SplitRight",
+      "space tab $": "pane::ActivateLastItem",
+      "space tab 0": [
+        "pane::ActivateItem",
+        0
+      ],
+      "space tab n": "workspace::NewFile",
+      "space tab l": "pane::ActivateNextItem",
+      "space tab x": "pane::CloseActiveItem",
+      "space tab h": "pane::ActivatePreviousItem",
+      "space o d f": "editor::Hover",
+      "space o d l": "diagnostics::Deploy",
+      "g d": "editor::GoToDefinition",
+      "g shift-d": "editor::GoToDeclaration",
+      "g r": "editor::FindAllReferences",
+      "g shift-i": "editor::GoToImplementation",
+      "shift-k": "editor::Hover",
+      "g t d": "editor::GoToTypeDefinition",
+      "space s d s": "outline::Toggle",
+      "space s s": "project_symbols::Toggle",
+      "space r n": "editor::Rename",
+      "space c a": "editor::ToggleCodeActions",
+      "g s d": "editor::GoToDefinitionSplit",
+      "space f": "editor::Format",
+      "space y": [
+        "workspace::SendKeystrokes",
+        "y"
+      ],
+      "space space": "file_finder::Toggle",
+      "space s f": "file_finder::Toggle",
+      "space s g": "pane::DeploySearch",
+      "space s w": "pane::DeploySearch",
+      "space s W": "pane::DeploySearch",
+      "space s o": "tab_switcher::Toggle",
+      "space s d b": "diagnostics::Deploy",
+      "space s d w": "diagnostics::Deploy",
+      "space /": "buffer_search::Deploy",
+      "space g s": "git_panel::ToggleFocus",
+      "space g b": "branches::OpenRecent",
+      "space g l": "editor::ToggleGitBlame",
+      "space s h": "command_palette::Toggle",
+      "space s k": "zed::OpenKeymap",
+      "space s n c": "zed::OpenSettings",
+      "space c s": "theme_selector::Toggle",
+      "-": "project_panel::ToggleFocus",
+      "space a i": "assistant::InlineAssist",
+      "space a a": "agent::ToggleFocus",
+      "space a t": "agents_sidebar::ToggleThreadSwitcher",
+      "space a shift-t": [
+        "agents_sidebar::ToggleThreadSwitcher",
+        {
+          "select_last": true
+        }
+      ],
+      "space a n": "agent::NewThread"
+    }
+  },
+  {
+    "context": "vim_mode == normal",
+    "bindings": {
+      "ctrl-d": [
+        "workspace::SendKeystrokes",
+        "ctrl-d z z"
+      ],
+      "ctrl-u": [
+        "workspace::SendKeystrokes",
+        "ctrl-u z z"
+      ],
+      "space d": [
+        "workspace::SendKeystrokes",
+        "\" _ d"
+      ],
+      "space *": [
+        "workspace::SendKeystrokes",
+        "* N c g n"
+      ]
+    }
+  },
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "space d": [
+        "workspace::SendKeystrokes",
+        "\" _ d"
+      ]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "shift-tab": "editor::Outdent"
+    }
+  },
+  {
+    "context": "Editor && showing_completions",
+    "bindings": {
+      "ctrl-y": "editor::ConfirmCompletion",
+      "ctrl-n": "editor::ContextMenuNext",
+      "ctrl-p": "editor::ContextMenuPrevious"
+    }
+  },
+  {
+    "context": "ProjectSearchView > Editor",
+    "bindings": {
+      "escape": "pane::CloseActiveItem",
+      "g f": "editor::OpenExcerpts"
+    }
+  },
+  {
+    "context": "ProjectSearchBar",
+    "bindings": {
+      "escape": "pane::CloseActiveItem"
+    }
+  },
+  {
+    "context": "ProjectSearchBar > Editor",
+    "bindings": {
+      "escape": "pane::CloseActiveItem"
+    }
+  },
+  {
+    "context": "Picker || menu",
+    "bindings": {
+      "ctrl-v": "menu::SecondaryConfirm"
+    }
+  },
+  {
+    "context": "FileFinder || (FileFinder > Picker > Editor)",
+    "bindings": {
+      "ctrl-v": "pane::SplitRight"
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "escape": "workspace::ToggleLeftDock",
+      "-": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "AcpThread",
+    "bindings": {
+      "ctrl-y": "agent::AllowOnce",
+      "ctrl-shift-y": "agent::AllowAlways",
+      "ctrl-alt-y": "agent::OpenPermissionDropdown",
+      "ctrl-alt-n": "agent::RejectOnce"
+    }
+  },
+  {
+    "context": "AcpThread > Editor",
+    "bindings": {
+      "ctrl-y": "agent::AllowOnce",
+      "ctrl-shift-y": "agent::AllowAlways",
+      "ctrl-alt-y": "agent::OpenPermissionDropdown",
+      "ctrl-alt-n": "agent::RejectOnce"
+    }
+  },
+  {
+    "context": "ThreadSwitcher",
+    "bindings": {
+      "ctrl-n": "agents_sidebar::ToggleThreadSwitcher",
+      "ctrl-p": [
+        "agents_sidebar::ToggleThreadSwitcher",
+        {
+          "select_last": true
+        }
+      ]
+    }
+  },
+  {
+    "context": "Editor && multibuffer && !(showing_code_actions || showing_completions)",
+    "bindings": {
+      "ctrl-n": "editor::MoveToStartOfNextExcerpt",
+      "ctrl-p": "editor::MoveToStartOfExcerpt",
+      "g f": "editor::OpenExcerpts",
+      "g space": null
+    }
+  }
+]
