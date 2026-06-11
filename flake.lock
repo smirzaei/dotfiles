@@ -39,11 +39,11 @@
     },
     "private": {
       "locked": {
-        "lastModified": 1759708305,
-        "narHash": "sha256-zfD3hhXbcdwKY+0ryWhYq6BnovD3EGEjyJOPVnhBWhU=",
+        "lastModified": 1781138567,
+        "narHash": "sha256-WJkEg6RPPerhS+YUsN+NTIXNPBvBXLWuoT+Ku86Tm98=",
         "ref": "refs/heads/master",
-        "rev": "0562b04157358bcc6048bd3ec2ef690cdce9a347",
-        "revCount": 4,
+        "rev": "166632aab2984c27be7676c50b2ebfc7fe01a934",
+        "revCount": 5,
         "type": "git",
         "url": "ssh://git@github.com/smirzaei/nix-private.git"
       },

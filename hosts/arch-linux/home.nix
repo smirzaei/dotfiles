@@ -60,9 +60,7 @@
     programs.ssh = {
         enable = true;
         enableDefaultConfig = false;
-        matchBlocks = {
-            zima = private.ssh.hosts.zima;
-        };
+        matchBlocks = private.ssh.hosts;
     };
 
     dotfiles.ghostty = {
