@@ -1,6 +1,7 @@
 { config, pkgs, private, ... }:
 {
     imports = [
+        ../../modules/alacritty.nix
         ../../modules/fzf.nix
         ../../modules/git.nix
         ../../modules/ghostty.nix
@@ -61,6 +62,11 @@
         enable = true;
         enableDefaultConfig = false;
         matchBlocks = private.ssh.hosts;
+    };
+
+    dotfiles.alacritty = {
+        enable = true;
+        package = null;
     };
 
     dotfiles.ghostty = {
