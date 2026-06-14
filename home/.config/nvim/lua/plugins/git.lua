@@ -17,6 +17,14 @@ vim.keymap.set("n", "<leader>gdvc", function()
 	vim.cmd("DiffviewClose")
 end, { desc = "[G]it [D]iff[v]iew [C]lose" })
 
+vim.keymap.set("n", "=", function()
+	if require("diffview.lib").get_current_view() then
+		vim.cmd("DiffviewClose")
+	else
+		vim.cmd("DiffviewOpen")
+	end
+end, { desc = "Toggle Diffview" })
+
 require("neogit").setup({
 	graph_style = "unicode",
 	process_spinner = true,
