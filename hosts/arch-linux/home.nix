@@ -8,6 +8,7 @@
         ../../modules/k8s.nix
         ../../modules/lsp-tools.nix
         ../../modules/neovim.nix
+        ../../modules/opencode.nix
         ../../modules/starship.nix
         ../../modules/tmux.nix
         ../../modules/zed.nix
@@ -86,6 +87,11 @@
             Install Neovim with pacman, for example:
               sudo pacman -S --needed neovim
         '';
+    };
+
+    dotfiles.opencode = {
+        enable = true;
+        package = null;
     };
 
     dotfiles.zed = {
