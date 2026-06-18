@@ -25,6 +25,12 @@ style = "Italic"
 family = "Hack"
 style = "Bold Italic"
 
+[keyboard]
+bindings = [
+  # Force CSI-u Shift+Return
+  { key = "Enter", mods = "Shift", chars = "\u001b[13;2u" },
+]
+
 [colors.primary]
 background = "#14161b"
 foreground = "#ffffff"
