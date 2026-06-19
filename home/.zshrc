@@ -35,6 +35,8 @@ fi
 bindkey '^Y' autosuggest-accept
 bindkey -r '^U' # Make `C-u` do nothing.
 
+alias v='nvim'
+
 export GPG_TTY=$(tty)
 
 # Start ssh agent for agent forwarding only if it's not already running
@@ -64,5 +66,4 @@ if [ -e "$HOME/.local/share/flatpak/exports/share" ];
 then
     export XDG_DATA_DIRS="$HOME/.local/share/flatpak/exports/share:$XDG_DATA_DIRS"
 fi
-
 
