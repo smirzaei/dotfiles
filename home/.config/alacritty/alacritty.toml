@@ -3,26 +3,26 @@ size = 10
 
 [font.offset]
 x = 0
-y = 4
+y = 2
 
 [font.glyph_offset]
 x = 0
-y = 2
+y = 1
 
 [font.normal]
-family = "Hack"
+family = "MesloLGS Nerd Font Mono"
 style = "Regular"
 
 [font.bold]
-family = "Hack"
+family = "MesloLGS Nerd Font Mono"
 style = "Bold"
 
 [font.italic]
-family = "Hack"
+family = "MesloLGS Nerd Font Mono"
 style = "Italic"
 
 [font.bold_italic]
-family = "Hack"
+family = "MesloLGS Nerd Font Mono"
 style = "Bold Italic"
 
 [keyboard]
