@@ -4,6 +4,21 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Print Screen -> Cmd+Shift+4",
+                        "manipulators": [
+                            {
+                                "from": { "key_code": "print_screen" },
+                                "to": [
+                                    {
+                                        "key_code": "4",
+                                        "modifiers": ["command", "shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Home/End → beginning/end of line (Ctrl+A / Ctrl+E) [keeps SUPER+Arrow free for Rectangle]",
                         "manipulators": [
                             {
