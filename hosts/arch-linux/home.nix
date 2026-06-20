@@ -38,6 +38,7 @@
         # Fonts
         nerd-fonts.hack
         nerd-fonts.meslo-lg
+        nerd-fonts.jetbrains-mono
         nerd-fonts.sauce-code-pro
         nerd-fonts.caskaydia-cove
         nerd-fonts.caskaydia-mono

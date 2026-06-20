@@ -11,18 +11,22 @@ y = 1
 
 [font.normal]
 family = "MesloLGS Nerd Font Mono"
+# family = "JetBrains Mono"
 style = "Regular"
 
 [font.bold]
 family = "MesloLGS Nerd Font Mono"
+# family = "JetBrains Mono"
 style = "Bold"
 
 [font.italic]
 family = "MesloLGS Nerd Font Mono"
+# family = "JetBrains Mono"
 style = "Italic"
 
 [font.bold_italic]
 family = "MesloLGS Nerd Font Mono"
+# family = "JetBrains Mono"
 style = "Bold Italic"
 
 [keyboard]
