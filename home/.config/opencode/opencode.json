@@ -8,5 +8,11 @@
     "plan": {
       "color": "primary"
     }
+  },
+  "permission": {
+    "external_directory": {
+      "~/.cargo": "allow",
+      "~/.cargo/**": "allow"
+    }
   }
 }
