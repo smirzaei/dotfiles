@@ -33,6 +33,8 @@ style = "Bold Italic"
 bindings = [
   # Force CSI-u Shift+Return
   { key = "Enter", mods = "Shift", chars = "\u001b[13;2u" },
+  # Force CSI-u Ctrl+.
+  { key = ".", mods = "Control", chars = "\u001b[46;5u" },
 ]
 
 [colors.primary]
