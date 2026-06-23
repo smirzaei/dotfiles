@@ -64,6 +64,7 @@ local default_cheap_clone_types = {
 	"tokio::sync::watch::Sender",
 	"tokio::sync::watch::Receiver",
 	"tokio_util::sync::CancellationToken",
+	"tokio_util::sync::cancellation_token::CancellationToken",
 	"sqlx::Pool",
 	"sqlx::PgPool",
 	"tonic::transport::Channel",
