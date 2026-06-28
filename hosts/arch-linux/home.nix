@@ -33,6 +33,7 @@
         shellcheck                # shell script analyzer
         shfmt                     # shell script formatter
         stylua                    # Lua formatter
+        tailwindcss_4             # Tailwind CSS CLI
         wabt                      # WebAssembly tools
 
         # Fonts
