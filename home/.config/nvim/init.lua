@@ -18,6 +18,7 @@ require("lang.go")
 require("lang.helm")
 require("lang.html")
 require("lang.proto")
+require("lang.tailwind")
 require("lang.typescript")
 
 local colorscheme = require("colorscheme")

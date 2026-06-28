@@ -40,6 +40,10 @@ let
             package = pkgs.nil;
             binary = "nil";
         };
+        "tailwindcss-language-server" = {
+            package = pkgs.tailwindcss-language-server;
+            binary = "tailwindcss-language-server";
+        };
         "tree-sitter-cli" = {
             package = pkgs.tree-sitter;
             binary = "tree-sitter";
