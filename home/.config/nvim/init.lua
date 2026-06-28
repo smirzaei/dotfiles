@@ -17,6 +17,7 @@ require("lang.bash")
 require("lang.go")
 require("lang.helm")
 require("lang.proto")
+require("lang.typescript")
 
 local colorscheme = require("colorscheme")
 colorscheme.apply()

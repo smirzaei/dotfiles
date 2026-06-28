@@ -9,6 +9,7 @@
             "helm-ls"
             "lua-language-server"
             "nil"
+            "vtsls"
             "yaml-language-server"
         ];
         nativePkgs = [

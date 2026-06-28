@@ -44,6 +44,10 @@ let
             package = pkgs.tree-sitter;
             binary = "tree-sitter";
         };
+        vtsls = {
+            package = pkgs.vtsls;
+            binary = "vtsls";
+        };
         "yaml-language-server" = {
             package = pkgs.yaml-language-server;
             binary = "yaml-language-server";
