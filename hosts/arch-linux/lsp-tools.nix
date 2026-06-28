@@ -9,6 +9,7 @@
             "helm-ls"
             "lua-language-server"
             "nil"
+            "vscode-langservers-extracted"
             "vtsls"
             "yaml-language-server"
         ];

@@ -16,6 +16,7 @@ require("lang.yaml")
 require("lang.bash")
 require("lang.go")
 require("lang.helm")
+require("lang.html")
 require("lang.proto")
 require("lang.typescript")
 

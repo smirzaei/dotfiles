@@ -48,6 +48,10 @@ let
             package = pkgs.vtsls;
             binary = "vtsls";
         };
+        "vscode-langservers-extracted" = {
+            package = pkgs.vscode-langservers-extracted;
+            binary = "vscode-html-language-server";
+        };
         "yaml-language-server" = {
             package = pkgs.yaml-language-server;
             binary = "yaml-language-server";
