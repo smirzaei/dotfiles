@@ -11,6 +11,7 @@
         ../../modules/opencode.nix
         ../../modules/starship.nix
         ../../modules/tmux.nix
+        ../../modules/web-dev.nix
         ../../modules/zed.nix
         ../../modules/zsh.nix
         ./lsp-tools.nix
@@ -33,7 +34,6 @@
         shellcheck                # shell script analyzer
         shfmt                     # shell script formatter
         stylua                    # Lua formatter
-        tailwindcss_4             # Tailwind CSS CLI
         wabt                      # WebAssembly tools
 
         # Fonts
@@ -93,6 +93,8 @@
               sudo pacman -S --needed neovim
         '';
     };
+
+    dotfiles.webDev.enable = true;
 
     dotfiles.opencode = {
         enable = true;

@@ -9,9 +9,6 @@
             "helm-ls"
             "lua-language-server"
             "nil"
-            "tailwindcss-language-server"
-            "vscode-langservers-extracted"
-            "vtsls"
             "yaml-language-server"
         ];
         nativePkgs = [
