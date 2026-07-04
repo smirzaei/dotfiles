@@ -1088,6 +1088,10 @@
                                             {
                                                 "product_id": 661,
                                                 "vendor_id": 5426
+                                            },
+                                            {
+                                                "product_id": 53288,
+                                                "vendor_id": 13364
                                             }
                                         ],
                                         "type": "device_if"
@@ -1112,6 +1116,10 @@
                                             {
                                                 "product_id": 661,
                                                 "vendor_id": 5426
+                                            },
+                                            {
+                                                "product_id": 53288,
+                                                "vendor_id": 13364
                                             }
                                         ],
                                         "type": "device_if"
@@ -1152,6 +1160,10 @@
                                             {
                                                 "product_id": 661,
                                                 "vendor_id": 5426
+                                            },
+                                            {
+                                                "product_id": 53288,
+                                                "vendor_id": 13364
                                             }
                                         ],
                                         "type": "device_if"
@@ -1190,6 +1202,10 @@
                                             {
                                                 "product_id": 661,
                                                 "vendor_id": 5426
+                                            },
+                                            {
+                                                "product_id": 53288,
+                                                "vendor_id": 13364
                                             }
                                         ],
                                         "type": "device_if"
@@ -1222,6 +1238,10 @@
                                             {
                                                 "product_id": 661,
                                                 "vendor_id": 5426
+                                            },
+                                            {
+                                                "product_id": 53288,
+                                                "vendor_id": 13364
                                             }
                                         ],
                                         "type": "device_if"
@@ -1260,6 +1280,10 @@
                                             {
                                                 "product_id": 661,
                                                 "vendor_id": 5426
+                                            },
+                                            {
+                                                "product_id": 53288,
+                                                "vendor_id": 13364
                                             }
                                         ],
                                         "type": "device_if"
@@ -1303,6 +1327,10 @@
                                             {
                                                 "product_id": 661,
                                                 "vendor_id": 5426
+                                            },
+                                            {
+                                                "product_id": 53288,
+                                                "vendor_id": 13364
                                             }
                                         ],
                                         "type": "device_if"
@@ -1330,6 +1358,10 @@
                                             {
                                                 "product_id": 661,
                                                 "vendor_id": 5426
+                                            },
+                                            {
+                                                "product_id": 53288,
+                                                "vendor_id": 13364
                                             }
                                         ],
                                         "type": "device_if"
@@ -1368,6 +1400,10 @@
                                             {
                                                 "product_id": 661,
                                                 "vendor_id": 5426
+                                            },
+                                            {
+                                                "product_id": 53288,
+                                                "vendor_id": 13364
                                             }
                                         ],
                                         "type": "device_if"
@@ -1409,6 +1445,14 @@
                         "is_keyboard": true,
                         "product_id": 661,
                         "vendor_id": 5426
+                    },
+                    "ignore_vendor_events": true
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 53288,
+                        "vendor_id": 13364
                     },
                     "ignore_vendor_events": true
                 }
