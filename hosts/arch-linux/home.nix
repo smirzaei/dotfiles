@@ -1,4 +1,4 @@
-{ config, pkgs, private, ... }:
+{ agents, config, pkgs, private, ... }:
 {
     imports = [
         ../../modules/alacritty.nix
@@ -19,6 +19,8 @@
 
     home.username = "soroush";
     home.homeDirectory = "/home/soroush";
+
+    home.file.".agents".source = "${agents.outPath}/.agents";
 
     home.packages = with pkgs; [
         bat                       # better cat

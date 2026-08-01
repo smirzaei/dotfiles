@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "agents": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1785549299,
+        "narHash": "sha256-hIpFbciK5WJKKi8y65Sls3u0cSg7mSYV0b/uCUfqJJ4=",
+        "ref": "refs/heads/master",
+        "rev": "ef6338688e9c40a7c6a7ff620739b90ed9e4b263",
+        "revCount": 12,
+        "type": "git",
+        "url": "ssh://git@github.com/smirzaei/agents.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/smirzaei/agents.git"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -54,6 +70,7 @@
     },
     "root": {
       "inputs": {
+        "agents": "agents",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "private": "private"

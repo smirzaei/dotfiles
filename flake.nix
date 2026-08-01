@@ -2,6 +2,10 @@
   description = "Soroush's personal Nix configuration";
 
   inputs = {
+    agents = {
+      url = "git+ssh://git@github.com/smirzaei/agents.git";
+      flake = false;
+    };
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -15,6 +19,7 @@
   outputs =
     {
       self,
+      agents,
       nixpkgs,
       home-manager,
       private,
@@ -33,7 +38,7 @@
               ];
           };
         };
-        extraSpecialArgs = { inherit private; };
+        extraSpecialArgs = { inherit agents private; };
         modules = [ ./hosts/arch-linux/home.nix ];
       };
     };
