@@ -17,6 +17,7 @@ in
     config = lib.mkIf cfg.enable {
         home.packages = lib.optional (cfg.package != null) cfg.package;
         xdg.configFile."opencode/opencode.json".source = ../home/.config/opencode/opencode.json;
+        xdg.configFile."opencode/plugins/tmux-status.ts".source = ../home/.config/opencode/plugins/tmux-status.ts;
         xdg.configFile."opencode/tui.json".source = ../home/.config/opencode/tui.json;
         xdg.configFile."opencode/themes/soroush.json".source = ../home/.config/opencode/themes/soroush.json;
     };
