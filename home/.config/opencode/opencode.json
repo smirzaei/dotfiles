@@ -12,7 +12,9 @@
   "permission": {
     "external_directory": {
       "~/.cargo": "allow",
-      "~/.cargo/**": "allow"
+      "~/.cargo/**": "allow",
+      "~/.plans": "allow",
+      "~/.plans/**": "allow"
     }
   }
 }
