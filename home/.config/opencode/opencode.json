@@ -1,6 +1,14 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "share": "disabled",
+  "providers": {
+    "openai": {
+      "settings": {
+        "apiKey": "{env:OPENAI_API_KEY}",
+        "baseURL": "{env:OPENAI_BASE_URL}"
+      }
+    }
+  },
   "agent": {
     "build": {
       "color": "error"
