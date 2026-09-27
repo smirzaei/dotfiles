@@ -1,0 +1,39 @@
+{
+  "$schema": "https://opencode.ai/v2/cli.json",
+  "theme": {
+    "name": "soroush"
+  },
+  "diffs": {
+    "wrap": "word",
+    "view": "auto"
+  },
+  "session": {
+    "sidebar": "hide",
+    "scrollbar": false,
+    "thinking": "show",
+    "tps": true
+  },
+  "tabs": {
+    "enabled": false,
+    "indicators": "numbers"
+  },
+  "animations": true,
+  "scroll": {
+    "acceleration": false
+  },
+  "prompt": {
+    "paste": "compact"
+  },
+  "debug": {
+    "devtools": false
+  },
+  "plugins": ["./tmux-status"],
+  "keybinds": {
+    "agent.cycle": "tab",
+    "model.cycle_favorite": "f1",
+    "model.cycle_favorite_reverse": "shift+f1"
+  },
+  "attention": {
+    "notifications": false
+  }
+}

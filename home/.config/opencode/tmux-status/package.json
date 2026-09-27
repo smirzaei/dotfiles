@@ -1,0 +1,7 @@
+{
+  "name": "tmux-status",
+  "type": "module",
+  "exports": {
+    "./tui": "./tui.ts"
+  }
+}

@@ -9,12 +9,12 @@
       }
     }
   },
-  "agent": {
+  "agents": {
     "build": {
-      "color": "error"
+      "color": "#ffa9a0"
     },
     "plan": {
-      "color": "primary"
+      "color": "#8cd1ff"
     }
   },
   "permission": {
