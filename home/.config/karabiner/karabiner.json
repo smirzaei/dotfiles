@@ -4,14 +4,14 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Print Screen -> Cmd+Shift+4",
+                        "description": "Print Screen -> Ctrl+Cmd+Shift+4 (copy screenshot to clipboard)",
                         "manipulators": [
                             {
                                 "from": { "key_code": "print_screen" },
                                 "to": [
                                     {
                                         "key_code": "4",
-                                        "modifiers": ["command", "shift"]
+                                        "modifiers": ["command", "shift", "control"]
                                     }
                                 ],
                                 "type": "basic"
