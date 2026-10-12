@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ agents, config, lib, pkgs, ... }:
 
 let
     cfg = config.dotfiles.opencode;
@@ -16,6 +16,7 @@ in
 
     config = lib.mkIf cfg.enable {
         home.packages = lib.optional (cfg.package != null) cfg.package;
+        xdg.configFile."opencode/AGENTS.md".source = "${agents.outPath}/.agents/AGENTS.md";
         xdg.configFile."opencode/opencode.json".source = ../home/.config/opencode/opencode.json;
         xdg.configFile."opencode/tmux-status/package.json".source = ../home/.config/opencode/tmux-status/package.json;
         xdg.configFile."opencode/tmux-status/tui.ts".source = ../home/.config/opencode/tmux-status/tui.ts;
