@@ -2,6 +2,12 @@
   "$schema": "https://opencode.ai/config.json",
   "share": "disabled",
   "providers": {
+    "anthropic": {
+      "settings": {
+        "apiKey": "{env:ANTHROPIC_API_KEY}",
+        "baseURL": "{env:ANTHROPIC_BASE_URL}"
+      }
+    },
     "openai": {
       "settings": {
         "apiKey": "{env:OPENAI_API_KEY}",

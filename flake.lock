@@ -3,11 +3,11 @@
     "agents": {
       "flake": false,
       "locked": {
-        "lastModified": 1791825092,
-        "narHash": "sha256-qCCVl9qUBHEHoQpkOX1rGsaKmliElWhO04nkXST12nU=",
+        "lastModified": 1792264238,
+        "narHash": "sha256-hYdwrej9TjG4kM+v2bEjKERZwFij39ljUfIHxzzodPU=",
         "ref": "refs/heads/master",
-        "rev": "9355ecbda2426a3d0730031a2707694ecd19157a",
-        "revCount": 26,
+        "rev": "a8114020fba638f2c316fef1186cb7dfdbcd5546",
+        "revCount": 31,
         "type": "git",
         "url": "ssh://git@github.com/smirzaei/agents.git"
       },
