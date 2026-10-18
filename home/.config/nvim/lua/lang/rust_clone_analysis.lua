@@ -69,6 +69,22 @@ local default_cheap_clone_types = {
 	"sqlx::PgPool",
 	"tonic::transport::Channel",
 	"tonic::transport::channel::Channel",
+	"gpui::Entity",
+	"gpui::AnyEntity",
+	"gpui::WeakEntity",
+	"gpui::AnyWeakEntity",
+	"gpui::AnyView",
+	"gpui::FocusHandle",
+	"gpui::WeakFocusHandle",
+	"gpui::SharedString",
+	"gpui::SharedUri",
+	"gpui::BackgroundExecutor",
+	"gpui::ForegroundExecutor",
+	"gpui::AsyncApp",
+	"gpui::AsyncWindowContext",
+	"gpui::ScrollHandle",
+	"gpui::UniformListScrollHandle",
+	"gpui::ListState",
 }
 
 local defaults = {
