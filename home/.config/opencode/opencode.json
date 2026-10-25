@@ -1,6 +1,10 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "share": "disabled",
+  "model": "anthropic/claude-opus-5-5",
+  "experimental": {
+    "subagent_depth": 2
+  },
   "providers": {
     "anthropic": {
       "settings": {
@@ -15,20 +19,98 @@
       }
     }
   },
+  "permissions": [
+    { "action": "subagent", "resource": "slice-lead-*", "effect": "deny" },
+    { "action": "shell", "resource": "git push *", "effect": "deny" },
+    { "action": "shell", "resource": "gh stack push *", "effect": "deny" },
+    { "action": "shell", "resource": "gh stack submit *", "effect": "deny" },
+    { "action": "shell", "resource": "gh stack sync *", "effect": "deny" }
+  ],
   "agents": {
     "build": {
-      "color": "#ffa9a0"
+      "color": "#ffa9a0",
+      "permissions": [
+        { "action": "shell", "resource": "git push *", "effect": "allow" },
+        { "action": "shell", "resource": "gh stack push *", "effect": "allow" },
+        { "action": "shell", "resource": "gh stack submit *", "effect": "allow" },
+        { "action": "shell", "resource": "gh stack sync *", "effect": "allow" }
+      ]
     },
     "plan": {
       "color": "#8cd1ff"
+    },
+    "swarm": {
+      "description": "Runs an orchestrated run the user explicitly asked for",
+      "mode": "primary",
+      "color": "#c8a2ff",
+      "model": "anthropic/claude-opus-5-5#xhigh",
+      "permissions": [
+        { "action": "subagent", "resource": "slice-lead-*", "effect": "allow" },
+        { "action": "edit", "resource": "*", "effect": "deny" },
+        { "action": "edit", "resource": "~/.opencode/plan/*", "effect": "allow" },
+        { "action": "shell", "resource": "git push *", "effect": "allow" },
+        { "action": "shell", "resource": "gh stack push *", "effect": "allow" },
+        { "action": "shell", "resource": "gh stack submit *", "effect": "allow" },
+        { "action": "shell", "resource": "gh stack sync *", "effect": "allow" }
+      ]
+    },
+    "slice-lead-light": {
+      "description": "Orchestrated-run slice lead for light slices",
+      "mode": "subagent",
+      "model": "anthropic/claude-haiku-5-5#xhigh",
+      "permissions": [
+        { "action": "question", "resource": "*", "effect": "deny" }
+      ]
+    },
+    "slice-lead-medium": {
+      "description": "Orchestrated-run slice lead for medium slices",
+      "mode": "subagent",
+      "model": "anthropic/claude-sonnet-5-5#xhigh",
+      "permissions": [
+        { "action": "question", "resource": "*", "effect": "deny" }
+      ]
+    },
+    "slice-lead-heavy": {
+      "description": "Orchestrated-run slice lead for heavy slices",
+      "mode": "subagent",
+      "model": "anthropic/claude-opus-5-5#xhigh",
+      "permissions": [
+        { "action": "question", "resource": "*", "effect": "deny" }
+      ]
+    },
+    "correctness-reviewer": {
+      "description": "Orchestrated-run correctness reviewer for one slice",
+      "mode": "subagent",
+      "model": "openai/gpt-6.1-sol#xhigh",
+      "permissions": [
+        { "action": "edit", "resource": "*", "effect": "deny" },
+        { "action": "question", "resource": "*", "effect": "deny" }
+      ]
+    },
+    "design-reviewer": {
+      "description": "Orchestrated-run design reviewer for one slice",
+      "mode": "subagent",
+      "model": "anthropic/claude-opus-5-5#xhigh",
+      "permissions": [
+        { "action": "edit", "resource": "*", "effect": "deny" },
+        { "action": "question", "resource": "*", "effect": "deny" }
+      ]
+    },
+    "stack-reviewer": {
+      "description": "Orchestrated-run reviewer of the whole stack",
+      "mode": "subagent",
+      "model": "anthropic/claude-opus-5-5#xhigh",
+      "permissions": [
+        { "action": "edit", "resource": "*", "effect": "deny" },
+        { "action": "question", "resource": "*", "effect": "deny" }
+      ]
     }
   },
-  "permission": {
-    "external_directory": {
-      "~/.cargo": "allow",
-      "~/.cargo/**": "allow",
-      "~/.plans": "allow",
-      "~/.plans/**": "allow"
+  "commands": {
+    "swarm": {
+      "description": "Start an orchestrated run of a written plan in swarm mode",
+      "agent": "swarm",
+      "template": "Start an orchestrated run of the plan at $ARGUMENTS, following the orchestrated-delivery skill."
     }
   }
 }
