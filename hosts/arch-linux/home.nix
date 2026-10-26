@@ -24,7 +24,6 @@
 
     home.packages = with pkgs; [
         bat                       # better cat
-        difftastic                # better diff
         eza                       # better ls
         fd                        # better find
         fx                        # interactive JSON viewer
@@ -50,8 +49,10 @@
     fonts.fontconfig.enable = true;
 
     programs.git = {
-        userEmail = private.git.personalEmail;
-        userName = "Soroush Mirzaei";
+        settings.user = {
+            email = private.git.personalEmail;
+            name = "Soroush Mirzaei";
+        };
         signing = {
             signByDefault = true;
             key = private.git.signingKey;
@@ -69,7 +70,7 @@
     programs.ssh = {
         enable = true;
         enableDefaultConfig = false;
-        matchBlocks = private.ssh.hosts;
+        settings = private.ssh.hosts;
     };
 
     dotfiles.alacritty = {

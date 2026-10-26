@@ -23,11 +23,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1759691947,
-        "narHash": "sha256-+A9wFkB266FZH8Lz/TQfgWf5sOWmYPQZ6p3K8NgpuxU=",
+        "lastModified": 1792896866,
+        "narHash": "sha256-/0tELNnhdSnP+bHSdWiEe6KpfSwi6WrTnT9cm/jNkjA=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "06e268d66bbf6d606b349a4f0be3af66ab3ea2be",
+        "rev": "c216bf5a1f173b0481bd5c8c489ebe5595ecc68c",
         "type": "github"
       },
       "original": {
@@ -39,11 +39,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1759381078,
-        "narHash": "sha256-gTrEEp5gEspIcCOx9PD8kMaF1iEmfBcTbO0Jag2QhQs=",
+        "lastModified": 1792773339,
+        "narHash": "sha256-rZLrzrC6i+jnTAlvPZHogKDulY7WWDEv9hJeHieO7Zw=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "7df7ff7d8e00218376575f0acdcc5d66741351ee",
+        "rev": "3ec636362e1816bc2f0888fa0fa2c69f1bc9e504",
         "type": "github"
       },
       "original": {
@@ -55,11 +55,11 @@
     },
     "private": {
       "locked": {
-        "lastModified": 1781139620,
-        "narHash": "sha256-QbhJ8f0/WBNxytooCn7yKCUPnTmhwh6pqRI/ILcGIxY=",
+        "lastModified": 1792981286,
+        "narHash": "sha256-CaMhm8W8qxidIAdvtL2v9taK65B3HnX3wmI9MRS6mlQ=",
         "ref": "refs/heads/master",
-        "rev": "b556f2566c2de9f50dda78d633785ea3917b39b7",
-        "revCount": 6,
+        "rev": "0744d2499846d60da4a68ab4ed7c4b83d8e547df",
+        "revCount": 7,
         "type": "git",
         "url": "ssh://git@github.com/smirzaei/nix-private.git"
       },
