@@ -1,4 +1,4 @@
-{ agents, config, pkgs, private, ... }:
+{ agents, config, lib, pkgs, private, ... }:
 {
     imports = [
         ../../modules/alacritty.nix
@@ -49,6 +49,8 @@
     fonts.fontconfig.enable = true;
 
     programs.git = {
+        package = null;
+        lfs.package = null;
         settings.user = {
             email = private.git.personalEmail;
             name = "Soroush Mirzaei";
@@ -58,6 +60,14 @@
             key = private.git.signingKey;
         };
     };
+
+    home.activation.checkGitPackages = lib.hm.dag.entryBefore [ "writeBoundary" ] ''
+        if ! /usr/bin/pacman -Q git git-lfs >/dev/null; then
+            echo "Git setup requires git and git-lfs to be installed with pacman." >&2
+            echo "  sudo pacman -S --needed git git-lfs" >&2
+            exit 1
+        fi
+    '';
 
     # Github CLI
     programs.gh = {

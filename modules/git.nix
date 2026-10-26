@@ -2,6 +2,7 @@
 {
     programs.git = {
         enable = true;
+        lfs.enable = true;
         settings = {
             alias.tree = "log --graph --decorate --pretty=oneline --abbrev-commit";
             core = {
