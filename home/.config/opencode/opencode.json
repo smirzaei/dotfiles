@@ -9,7 +9,7 @@
     "anthropic": {
       "settings": {
         "apiKey": "{env:ANTHROPIC_API_KEY}",
-        "baseURL": "{env:ANTHROPIC_BASE_URL}"
+        "baseURL": "{env:ANTHROPIC_BASE_URL_OPENCODE}"
       }
     },
     "openai": {
@@ -48,6 +48,8 @@
         { "action": "subagent", "resource": "slice-lead-*", "effect": "allow" },
         { "action": "edit", "resource": "*", "effect": "deny" },
         { "action": "edit", "resource": "~/.opencode/plan/*", "effect": "allow" },
+        { "action": "edit", "resource": ".plans/*", "effect": "allow" },
+        { "action": "edit", "resource": "*/.plans/*", "effect": "allow" },
         { "action": "shell", "resource": "git push *", "effect": "allow" },
         { "action": "shell", "resource": "gh stack push *", "effect": "allow" },
         { "action": "shell", "resource": "gh stack submit *", "effect": "allow" },
