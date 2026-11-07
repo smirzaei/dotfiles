@@ -12,6 +12,33 @@
         "baseURL": "{env:ANTHROPIC_BASE_URL_OPENCODE}"
       }
     },
+    "anthropic-preferred": {
+      "name": "Anthropic (preferred)",
+      "canonical": "anthropic",
+      "settings": {
+        "apiKey": "{env:ANTHROPIC_API_KEY}",
+        "baseURL": "{env:ANTHROPIC_BASE_URL_OPENCODE}"
+      },
+      "models": {
+        "claude-opus-5-5": { "modelID": "{env:ANTHROPIC_PREFERRED_MODEL_PREFIX}claude-opus-5-5" },
+        "claude-sonnet-5-5": { "modelID": "{env:ANTHROPIC_PREFERRED_MODEL_PREFIX}claude-sonnet-5-5" },
+        "claude-haiku-5-5": { "modelID": "{env:ANTHROPIC_PREFERRED_MODEL_PREFIX}claude-haiku-5-5" }
+      }
+    },
+    "anthropic-preferred-long-cache": {
+      "name": "Anthropic (preferred, long cache)",
+      "canonical": "anthropic",
+      "settings": {
+        "apiKey": "{env:ANTHROPIC_API_KEY}",
+        "baseURL": "{env:ANTHROPIC_BASE_URL_OPENCODE}",
+        "cache": { "ttl": "1h" }
+      },
+      "models": {
+        "claude-opus-5-5": { "modelID": "{env:ANTHROPIC_PREFERRED_MODEL_PREFIX}claude-opus-5-5" },
+        "claude-sonnet-5-5": { "modelID": "{env:ANTHROPIC_PREFERRED_MODEL_PREFIX}claude-sonnet-5-5" },
+        "claude-haiku-5-5": { "modelID": "{env:ANTHROPIC_PREFERRED_MODEL_PREFIX}claude-haiku-5-5" }
+      }
+    },
     "openai": {
       "settings": {
         "apiKey": "{env:OPENAI_API_KEY}",
@@ -43,7 +70,7 @@
       "description": "Runs an orchestrated run the user explicitly asked for",
       "mode": "primary",
       "color": "#c8a2ff",
-      "model": "anthropic/claude-opus-5-5#xhigh",
+      "model": "anthropic-preferred-long-cache/claude-opus-5-5#xhigh",
       "permissions": [
         { "action": "subagent", "resource": "slice-lead-*", "effect": "allow" },
         { "action": "edit", "resource": "*", "effect": "deny" },
@@ -59,7 +86,7 @@
     "slice-lead-light": {
       "description": "Orchestrated-run slice lead for light slices",
       "mode": "subagent",
-      "model": "anthropic/claude-haiku-5-5#xhigh",
+      "model": "anthropic-preferred/claude-haiku-5-5#xhigh",
       "permissions": [
         { "action": "question", "resource": "*", "effect": "deny" }
       ]
@@ -67,7 +94,7 @@
     "slice-lead-medium": {
       "description": "Orchestrated-run slice lead for medium slices",
       "mode": "subagent",
-      "model": "anthropic/claude-sonnet-5-5#xhigh",
+      "model": "anthropic-preferred/claude-sonnet-5-5#xhigh",
       "permissions": [
         { "action": "question", "resource": "*", "effect": "deny" }
       ]
@@ -75,7 +102,7 @@
     "slice-lead-heavy": {
       "description": "Orchestrated-run slice lead for heavy slices",
       "mode": "subagent",
-      "model": "anthropic/claude-opus-5-5#xhigh",
+      "model": "anthropic-preferred/claude-opus-5-5#xhigh",
       "permissions": [
         { "action": "question", "resource": "*", "effect": "deny" }
       ]
@@ -92,7 +119,7 @@
     "design-reviewer": {
       "description": "Orchestrated-run design reviewer for one slice",
       "mode": "subagent",
-      "model": "anthropic/claude-opus-5-5#xhigh",
+      "model": "anthropic-preferred/claude-opus-5-5#xhigh",
       "permissions": [
         { "action": "edit", "resource": "*", "effect": "deny" },
         { "action": "question", "resource": "*", "effect": "deny" }
@@ -101,7 +128,7 @@
     "stack-reviewer": {
       "description": "Orchestrated-run reviewer of the whole stack",
       "mode": "subagent",
-      "model": "anthropic/claude-opus-5-5#xhigh",
+      "model": "anthropic-preferred/claude-opus-5-5#xhigh",
       "permissions": [
         { "action": "edit", "resource": "*", "effect": "deny" },
         { "action": "question", "resource": "*", "effect": "deny" }
