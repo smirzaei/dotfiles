@@ -6,6 +6,7 @@
         ../../modules/git.nix
         ../../modules/ghostty.nix
         ../../modules/k8s.nix
+        ../../modules/kache.nix
         ../../modules/lsp-tools.nix
         ../../modules/neovim.nix
         ../../modules/opencode.nix
