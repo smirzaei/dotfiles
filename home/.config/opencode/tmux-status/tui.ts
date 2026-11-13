@@ -43,9 +43,9 @@ export default Plugin.define({
       const next: Status =
         selected && errorSessions.has(selected)
           ? "error"
-          : selected && [...pendingRequests.values()].some((sessionID) => root(sessionID) === selected)
+          : selected && pendingRequests.values().some((sessionID) => root(sessionID) === selected)
             ? "waiting"
-            : selected && busySessions.has(selected)
+            : selected && busySessions.values().some((sessionID) => root(sessionID) === selected)
               ? "busy"
               : "idle"
       if (next === status) return
@@ -76,9 +76,9 @@ export default Plugin.define({
       if (next === selected) return
       selected = next
       if (next) {
-        if (ctx.data.session.status(next) === "running") busySessions.add(next)
         for (const member of [next, ...ctx.data.session.family(next)]) {
-          if (root(member) !== next && member !== next) continue
+          if (root(member) !== next) continue
+          if (ctx.data.session.status(member) === "running") busySessions.add(member)
           for (const request of ctx.data.session.permission.list(member) ?? []) {
             pendingRequests.set(`permission:${request.id}`, member)
           }
