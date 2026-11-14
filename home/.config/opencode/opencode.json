@@ -18,7 +18,7 @@
       "canonical": "anthropic",
       "settings": {
         "apiKey": "{env:ANTHROPIC_API_KEY}",
-        "baseURL": "{env:ANTHROPIC_BASE_URL_OPENCODE}"
+        "baseURL": "{env:ANTHROPIC_PREFERRED_BASE_URL}"
       },
       "models": {
         "claude-opus-5-5": { "modelID": "{env:ANTHROPIC_PREFERRED_MODEL_PREFIX}claude-opus-5-5" },
@@ -31,13 +31,40 @@
       "canonical": "anthropic",
       "settings": {
         "apiKey": "{env:ANTHROPIC_API_KEY}",
-        "baseURL": "{env:ANTHROPIC_BASE_URL_OPENCODE}",
+        "baseURL": "{env:ANTHROPIC_PREFERRED_BASE_URL}",
         "cache": { "ttl": "1h" }
       },
       "models": {
         "claude-opus-5-5": { "modelID": "{env:ANTHROPIC_PREFERRED_MODEL_PREFIX}claude-opus-5-5" },
         "claude-sonnet-5-5": { "modelID": "{env:ANTHROPIC_PREFERRED_MODEL_PREFIX}claude-sonnet-5-5" },
         "claude-haiku-5-5": { "modelID": "{env:ANTHROPIC_PREFERRED_MODEL_PREFIX}claude-haiku-5-5" }
+      }
+    },
+    "anthropic-preferred-b": {
+      "name": "Anthropic (preferred B)",
+      "canonical": "anthropic",
+      "settings": {
+        "apiKey": "{env:ANTHROPIC_API_KEY}",
+        "baseURL": "{env:ANTHROPIC_BASE_URL_OPENCODE}"
+      },
+      "models": {
+        "claude-opus-5-5": { "modelID": "{env:ANTHROPIC_PREFERRED_B_MODEL_PREFIX}claude-opus-5-5" },
+        "claude-sonnet-5-5": { "modelID": "{env:ANTHROPIC_PREFERRED_B_MODEL_PREFIX}claude-sonnet-5-5" },
+        "claude-haiku-5-5": { "modelID": "{env:ANTHROPIC_PREFERRED_B_MODEL_PREFIX}claude-haiku-5-5" }
+      }
+    },
+    "anthropic-preferred-b-long-cache": {
+      "name": "Anthropic (preferred B, long cache)",
+      "canonical": "anthropic",
+      "settings": {
+        "apiKey": "{env:ANTHROPIC_API_KEY}",
+        "baseURL": "{env:ANTHROPIC_BASE_URL_OPENCODE}",
+        "cache": { "ttl": "1h" }
+      },
+      "models": {
+        "claude-opus-5-5": { "modelID": "{env:ANTHROPIC_PREFERRED_B_MODEL_PREFIX}claude-opus-5-5" },
+        "claude-sonnet-5-5": { "modelID": "{env:ANTHROPIC_PREFERRED_B_MODEL_PREFIX}claude-sonnet-5-5" },
+        "claude-haiku-5-5": { "modelID": "{env:ANTHROPIC_PREFERRED_B_MODEL_PREFIX}claude-haiku-5-5" }
       }
     },
     "openai": {
