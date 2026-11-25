@@ -112,6 +112,9 @@
       "mode": "subagent",
       "model": "anthropic-preferred/claude-haiku-5-5#xhigh",
       "permissions": [
+        { "action": "shell", "resource": "git push *", "effect": "allow" },
+        { "action": "shell", "resource": "gh stack push *", "effect": "allow" },
+        { "action": "shell", "resource": "gh stack submit *", "effect": "allow" },
         { "action": "question", "resource": "*", "effect": "deny" }
       ]
     },
@@ -120,6 +123,9 @@
       "mode": "subagent",
       "model": "anthropic-preferred/claude-sonnet-5-5#xhigh",
       "permissions": [
+        { "action": "shell", "resource": "git push *", "effect": "allow" },
+        { "action": "shell", "resource": "gh stack push *", "effect": "allow" },
+        { "action": "shell", "resource": "gh stack submit *", "effect": "allow" },
         { "action": "question", "resource": "*", "effect": "deny" }
       ]
     },
@@ -128,13 +134,16 @@
       "mode": "subagent",
       "model": "anthropic-preferred/claude-opus-5-5#xhigh",
       "permissions": [
+        { "action": "shell", "resource": "git push *", "effect": "allow" },
+        { "action": "shell", "resource": "gh stack push *", "effect": "allow" },
+        { "action": "shell", "resource": "gh stack submit *", "effect": "allow" },
         { "action": "question", "resource": "*", "effect": "deny" }
       ]
     },
     "correctness-reviewer": {
       "description": "Orchestrated-run correctness reviewer for one slice",
       "mode": "subagent",
-      "model": "openai/gpt-6.1-sol#xhigh",
+      "model": "openai/gpt-6.2-sol#xhigh",
       "permissions": [
         { "action": "edit", "resource": "*", "effect": "deny" },
         { "action": "question", "resource": "*", "effect": "deny" }
@@ -159,7 +168,7 @@
       ]
     },
     "auditor": {
-      "description": "Maintenance-run auditor or investigator",
+      "description": "Maintenance-run auditor, investigator, or test lead",
       "mode": "subagent",
       "model": "anthropic-preferred/claude-opus-5-5#xhigh",
       "permissions": [
